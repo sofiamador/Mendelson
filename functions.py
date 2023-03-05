@@ -100,7 +100,7 @@ def sort_streets_by_ratio_makat_per_street_amount_of_makat_in_orders_per_street(
     ####---- get amount of makatim per steet----####
     dict_amount_of_makat_per_street = lines_c1_by_street_df['מק_ט'].nunique().to_dict()
     ####---- get amount of orders of makats per steet----####
-    dict_amount_of_makat_in_orders_per_street = lines_c1_by_street_df.size().to_dict()
+    dict_amount_of_makat_in_orders_per_street = lines_c1_by_street_df['הזמנה'].nunique().to_dict()
 
     dict_street_ratio = {}
     for street in dict_amount_of_makat_per_street.keys():
