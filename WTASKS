@@ -1,0 +1,6282 @@
+{
+    "@odata.context": "https://10.100.1.2/odata/Priority/tabula.ini/a121204/$metadata#WTASKS(STZONECODE,WTASKNUM,PRIO,DOERLOGIN,STATDES,ADCSTARTED,WTASKTYPECODE,WTASKITEMS_SUBFORM(PARTNAME,LOCNAME,PTQUANT,KLINE))",
+    "value": [
+        {
+            "WTASKNUM": "TK1903160",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 2,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "955R1A4A3",
+                    "PTQUANT": 1,
+                    "LOCNAME": "47.05.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903157",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "SA-SHN2",
+                    "PTQUANT": 80,
+                    "LOCNAME": "47.09.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903154",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1S3TM1/2",
+                    "PTQUANT": 120,
+                    "LOCNAME": "27.12.05.01",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "SA-SHN1/2",
+                    "PTQUANT": 61,
+                    "LOCNAME": "26.10.04.04",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "SA-SNL200-1/2W",
+                    "PTQUANT": 20,
+                    "LOCNAME": "26.04.04.04",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "SA-SNL200-2W",
+                    "PTQUANT": 10,
+                    "LOCNAME": "26.09.04.04",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "1F9LS3",
+                    "PTQUANT": 10,
+                    "LOCNAME": "39.02.01.01",
+                    "KLINE": 5
+                },
+                {
+                    "PARTNAME": "1LCS3",
+                    "PTQUANT": 36,
+                    "LOCNAME": "37.01.01.01",
+                    "KLINE": 6
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903149",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "8PPVC110X100",
+                    "PTQUANT": 10,
+                    "LOCNAME": "47.14.01.03",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "8PPVC110X50",
+                    "PTQUANT": 50,
+                    "LOCNAME": "47.12.01.01",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "HUL40040150",
+                    "PTQUANT": 15,
+                    "LOCNAME": "48.05.01.03",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "HUL40040350",
+                    "PTQUANT": 15,
+                    "LOCNAME": "47.04.02.02",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "HUL40040460",
+                    "PTQUANT": 20,
+                    "LOCNAME": "48.02.01.01",
+                    "KLINE": 5
+                },
+                {
+                    "PARTNAME": "HUL41740250",
+                    "PTQUANT": 20,
+                    "LOCNAME": "47.02.02.03",
+                    "KLINE": 6
+                },
+                {
+                    "PARTNAME": "HUL42240050",
+                    "PTQUANT": 15,
+                    "LOCNAME": "31.04.01.16",
+                    "KLINE": 7
+                },
+                {
+                    "PARTNAME": "HUL40642460",
+                    "PTQUANT": 10,
+                    "LOCNAME": "29.14.01.15",
+                    "KLINE": 8
+                },
+                {
+                    "PARTNAME": "HUL70644460",
+                    "PTQUANT": 10,
+                    "LOCNAME": "31.08.01.04",
+                    "KLINE": 9
+                },
+                {
+                    "PARTNAME": "HUL70633460",
+                    "PTQUANT": 10,
+                    "LOCNAME": "29.03.01.05",
+                    "KLINE": 10
+                },
+                {
+                    "PARTNAME": "HUL70033460",
+                    "PTQUANT": 50,
+                    "LOCNAME": "47.17.02.02",
+                    "KLINE": 11
+                },
+                {
+                    "PARTNAME": "HUL70043930",
+                    "PTQUANT": 40,
+                    "LOCNAME": "48.06.01.03",
+                    "KLINE": 12
+                },
+                {
+                    "PARTNAME": "HUL72143260",
+                    "PTQUANT": 30,
+                    "LOCNAME": "31.13.01.19",
+                    "KLINE": 13
+                },
+                {
+                    "PARTNAME": "HUL70051300",
+                    "PTQUANT": 30,
+                    "LOCNAME": "46.06.01.07",
+                    "KLINE": 14
+                },
+                {
+                    "PARTNAME": "HUL70051460",
+                    "PTQUANT": 30,
+                    "LOCNAME": "46.03.01.07",
+                    "KLINE": 15
+                },
+                {
+                    "PARTNAME": "HUL70054960",
+                    "PTQUANT": 30,
+                    "LOCNAME": "48.10.01.03",
+                    "KLINE": 16
+                },
+                {
+                    "PARTNAME": "HUL7070744870",
+                    "PTQUANT": 15,
+                    "LOCNAME": "47.05.01.01",
+                    "KLINE": 17
+                },
+                {
+                    "PARTNAME": "HUL70123663",
+                    "PTQUANT": 30,
+                    "LOCNAME": "47.10.01.02",
+                    "KLINE": 18
+                },
+                {
+                    "PARTNAME": "HUL41620050",
+                    "PTQUANT": 3,
+                    "LOCNAME": "28.11.02.04",
+                    "KLINE": 19
+                },
+                {
+                    "PARTNAME": "SP780201",
+                    "PTQUANT": 10,
+                    "LOCNAME": "26.01.03.04",
+                    "KLINE": 20
+                },
+                {
+                    "PARTNAME": "SP780241",
+                    "PTQUANT": 2,
+                    "LOCNAME": "26.10.02.02",
+                    "KLINE": 21
+                },
+                {
+                    "PARTNAME": "PG4-0-16",
+                    "PTQUANT": 10,
+                    "LOCNAME": "26.12.05.01",
+                    "KLINE": 22
+                },
+                {
+                    "PARTNAME": "122B-1/2",
+                    "PTQUANT": 10,
+                    "LOCNAME": "32.06.01.07",
+                    "KLINE": 23
+                },
+                {
+                    "PARTNAME": "MARICH-50D",
+                    "PTQUANT": 5,
+                    "LOCNAME": "27.12.03.04",
+                    "KLINE": 24
+                },
+                {
+                    "PARTNAME": "MARICH-30D",
+                    "PTQUANT": 5,
+                    "LOCNAME": "25.15.03.02",
+                    "KLINE": 25
+                },
+                {
+                    "PARTNAME": "MARICH-25D",
+                    "PTQUANT": 5,
+                    "LOCNAME": "29.06.01.12",
+                    "KLINE": 26
+                },
+                {
+                    "PARTNAME": "MARICH-15D",
+                    "PTQUANT": 5,
+                    "LOCNAME": "25.13.05.01",
+                    "KLINE": 27
+                },
+                {
+                    "PARTNAME": "MARICH-10D",
+                    "PTQUANT": 5,
+                    "LOCNAME": "26.13.05.03",
+                    "KLINE": 28
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903142",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 5,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "2G151-2",
+                    "PTQUANT": 37,
+                    "LOCNAME": "42.03.01.01",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "2G161-1-1/2X1",
+                    "PTQUANT": 18,
+                    "LOCNAME": "42.18.01.05",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "2G161-2X1",
+                    "PTQUANT": 6,
+                    "LOCNAME": "42.05.01.03",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "SA-SNL200-1-1/2W",
+                    "PTQUANT": 6,
+                    "LOCNAME": "26.09.03.01",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "YO-1550I",
+                    "PTQUANT": 9,
+                    "LOCNAME": "49.08.01.03",
+                    "KLINE": 5
+                },
+                {
+                    "PARTNAME": "SA-SAL200-1W",
+                    "PTQUANT": 9,
+                    "LOCNAME": "25.15.02.03",
+                    "KLINE": 6
+                },
+                {
+                    "PARTNAME": "YO-1025LI",
+                    "PTQUANT": 128,
+                    "LOCNAME": "42.16.01.03",
+                    "KLINE": 7
+                },
+                {
+                    "PARTNAME": "ARD-SR3/4",
+                    "PTQUANT": 128,
+                    "LOCNAME": "28.04.05.01",
+                    "KLINE": 8
+                },
+                {
+                    "PARTNAME": "VIC-60D-3X1",
+                    "PTQUANT": 1,
+                    "LOCNAME": "32.09.01.04",
+                    "KLINE": 9
+                },
+                {
+                    "PARTNAME": "VIC-005-3",
+                    "PTQUANT": 3,
+                    "LOCNAME": "44.01.01.01",
+                    "KLINE": 10
+                },
+                {
+                    "PARTNAME": "VIC-920-3X2",
+                    "PTQUANT": 2,
+                    "LOCNAME": "44.09.01.01",
+                    "KLINE": 11
+                },
+                {
+                    "PARTNAME": "VIC-920-3X1",
+                    "PTQUANT": 1,
+                    "LOCNAME": "44.14.01.02",
+                    "KLINE": 12
+                },
+                {
+                    "PARTNAME": "GM1132100",
+                    "PTQUANT": 48,
+                    "LOCNAME": "26.04.02.02",
+                    "KLINE": 13
+                },
+                {
+                    "PARTNAME": "GM1232100",
+                    "PTQUANT": 16,
+                    "LOCNAME": "26.13.04.02",
+                    "KLINE": 14
+                },
+                {
+                    "PARTNAME": "2G179-1X1/2",
+                    "PTQUANT": 1,
+                    "LOCNAME": "41.02.01.02",
+                    "KLINE": 15
+                },
+                {
+                    "PARTNAME": "STUD6",
+                    "PTQUANT": 64,
+                    "LOCNAME": "36.07.01.01",
+                    "KLINE": 16
+                },
+                {
+                    "PARTNAME": "2GN5X1",
+                    "PTQUANT": 35,
+                    "LOCNAME": "27.02.05.02",
+                    "KLINE": 17
+                },
+                {
+                    "PARTNAME": "2GN10X1",
+                    "PTQUANT": 35,
+                    "LOCNAME": "27.03.05.03",
+                    "KLINE": 18
+                },
+                {
+                    "PARTNAME": "2GN15X1",
+                    "PTQUANT": 35,
+                    "LOCNAME": "27.04.05.02",
+                    "KLINE": 19
+                },
+                {
+                    "PARTNAME": "2G161-2X1-1/2",
+                    "PTQUANT": 2,
+                    "LOCNAME": "41.19.02.02",
+                    "KLINE": 20
+                },
+                {
+                    "PARTNAME": "2G176-2",
+                    "PTQUANT": 4,
+                    "LOCNAME": "41.04.01.01",
+                    "KLINE": 21
+                },
+                {
+                    "PARTNAME": "2G151-1/2",
+                    "PTQUANT": 3,
+                    "LOCNAME": "42.03.01.07",
+                    "KLINE": 22
+                },
+                {
+                    "PARTNAME": "SA-SAL200-1-1/2W",
+                    "PTQUANT": 3,
+                    "LOCNAME": "26.10.04.02",
+                    "KLINE": 23
+                },
+                {
+                    "PARTNAME": "2GN20X1",
+                    "PTQUANT": 64,
+                    "LOCNAME": "27.04.05.01",
+                    "KLINE": 24
+                },
+                {
+                    "PARTNAME": "PEX24X16-50",
+                    "PTQUANT": 100,
+                    "LOCNAME": "50.10.02.01",
+                    "KLINE": 25
+                },
+                {
+                    "PARTNAME": "PLA7140-25X3/4X25",
+                    "PTQUANT": 15,
+                    "LOCNAME": "25.07.02.01",
+                    "KLINE": 26
+                },
+                {
+                    "PARTNAME": "N-PEX-CB-16X3/4LM",
+                    "PTQUANT": 20,
+                    "LOCNAME": "26.06.03.03",
+                    "KLINE": 27
+                },
+                {
+                    "PARTNAME": "HUL5747500100",
+                    "PTQUANT": 14,
+                    "LOCNAME": "47.15.02.01",
+                    "KLINE": 28
+                },
+                {
+                    "PARTNAME": "HUL7070030470",
+                    "PTQUANT": 30,
+                    "LOCNAME": "32.06.01.01",
+                    "KLINE": 29
+                },
+                {
+                    "PARTNAME": "HUL7070632870",
+                    "PTQUANT": 10,
+                    "LOCNAME": "29.02.01.08",
+                    "KLINE": 30
+                },
+                {
+                    "PARTNAME": "HUL70145960",
+                    "PTQUANT": 10,
+                    "LOCNAME": "48.07.01.01",
+                    "KLINE": 31
+                },
+                {
+                    "PARTNAME": "HUL7070030870",
+                    "PTQUANT": 10,
+                    "LOCNAME": "41.13.02.01",
+                    "KLINE": 32
+                },
+                {
+                    "PARTNAME": "8PAFO75",
+                    "PTQUANT": 50,
+                    "LOCNAME": "30.09.01.18",
+                    "KLINE": 33
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903136",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 3,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "MISH-3.5",
+                    "PTQUANT": 1,
+                    "LOCNAME": "42.18.01.03",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "HUL62550060",
+                    "PTQUANT": 1,
+                    "LOCNAME": "48.07.01.03",
+                    "KLINE": 2
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903135",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 3,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-005-3G",
+                    "PTQUANT": 18,
+                    "LOCNAME": "44.06.01.03",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "VIC-005-3",
+                    "PTQUANT": 24,
+                    "LOCNAME": "44.01.01.01",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "VIC-10-3G",
+                    "PTQUANT": 8,
+                    "LOCNAME": "43.17.01.01",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "VIC-10-3",
+                    "PTQUANT": 4,
+                    "LOCNAME": "44.05.01.01",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "STUG3/8",
+                    "PTQUANT": 20,
+                    "LOCNAME": "36.10.01.03",
+                    "KLINE": 5
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903133",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "CBL-35",
+                    "PTQUANT": 100,
+                    "LOCNAME": "50.05.01.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903132",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "BALL BRASS2LFM",
+                    "PTQUANT": 4,
+                    "LOCNAME": "41.11.01.01",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "BALL BRASS2LF",
+                    "PTQUANT": 4,
+                    "LOCNAME": "41.12.01.01",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "2G140-2X1-1/2",
+                    "PTQUANT": 6,
+                    "LOCNAME": "41.06.01.03",
+                    "KLINE": 3
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903129",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "2G140-1-1/2X1",
+                    "PTQUANT": 16,
+                    "LOCNAME": "42.14.01.06",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "2G140-1X3/4",
+                    "PTQUANT": 16,
+                    "LOCNAME": "41.04.01.04",
+                    "KLINE": 2
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903128",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL7072186070",
+                    "PTQUANT": 3,
+                    "LOCNAME": "32.07.01.17",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "VIC-009N-1-1/2",
+                    "PTQUANT": 50,
+                    "LOCNAME": "43.03.01.03",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "VIC-009N-2",
+                    "PTQUANT": 180,
+                    "LOCNAME": "43.01.01.01",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "VIC-009N-3",
+                    "PTQUANT": 50,
+                    "LOCNAME": "44.02.01.01",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "VIC-009N-4",
+                    "PTQUANT": 10,
+                    "LOCNAME": "44.03.01.01",
+                    "KLINE": 5
+                },
+                {
+                    "PARTNAME": "VIC-920G-3X1-1/2",
+                    "PTQUANT": 20,
+                    "LOCNAME": "44.11.01.02",
+                    "KLINE": 6
+                },
+                {
+                    "PARTNAME": "VIC-922-2X1/2",
+                    "PTQUANT": 60,
+                    "LOCNAME": "43.12.01.03",
+                    "KLINE": 7
+                },
+                {
+                    "PARTNAME": "VIC-922-1-1/2X1/2",
+                    "PTQUANT": 20,
+                    "LOCNAME": "44.04.01.01",
+                    "KLINE": 8
+                },
+                {
+                    "PARTNAME": "VIC-67-1-1/2X1/2",
+                    "PTQUANT": 20,
+                    "LOCNAME": "43.05.01.04",
+                    "KLINE": 9
+                },
+                {
+                    "PARTNAME": "UF130-1-1/2",
+                    "PTQUANT": 50,
+                    "LOCNAME": "46.14.01.01",
+                    "KLINE": 10
+                },
+                {
+                    "PARTNAME": "UF130-2",
+                    "PTQUANT": 50,
+                    "LOCNAME": "46.12.01.03",
+                    "KLINE": 11
+                },
+                {
+                    "PARTNAME": "UF130-3",
+                    "PTQUANT": 50,
+                    "LOCNAME": "46.12.02.03",
+                    "KLINE": 12
+                },
+                {
+                    "PARTNAME": "STUD6",
+                    "PTQUANT": 100,
+                    "LOCNAME": "36.07.01.01",
+                    "KLINE": 13
+                },
+                {
+                    "PARTNAME": "TRBR-3/8",
+                    "PTQUANT": 50,
+                    "LOCNAME": "36.16.01.01",
+                    "KLINE": 14
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903126",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1LCRN4X2",
+                    "PTQUANT": 6,
+                    "LOCNAME": "37.01.01.06",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "1LCRN3X2",
+                    "PTQUANT": 12,
+                    "LOCNAME": "33.09.01.06",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903106",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 2,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "10021389",
+                    "PTQUANT": 6,
+                    "LOCNAME": "21.16.06.02",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "OAB810",
+                    "PTQUANT": 2,
+                    "LOCNAME": "23.06.06.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903099",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "GAL30T-1",
+                    "PTQUANT": 2,
+                    "LOCNAME": "50.01.01.01",
+                    "KLINE": 8
+                },
+                {
+                    "PARTNAME": "HUL7070040470",
+                    "PTQUANT": 8,
+                    "LOCNAME": "47.03.01.03",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "HUL7070644470",
+                    "PTQUANT": 3,
+                    "LOCNAME": "47.04.01.01",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "HUL7071740275",
+                    "PTQUANT": 2,
+                    "LOCNAME": "47.06.02.01",
+                    "KLINE": 5
+                },
+                {
+                    "PARTNAME": "HUL7079140070",
+                    "PTQUANT": 1,
+                    "LOCNAME": "47.11.01.02",
+                    "KLINE": 10
+                },
+                {
+                    "PARTNAME": "UF130-2",
+                    "PTQUANT": 15,
+                    "LOCNAME": "46.12.01.03",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "HUL7070020470",
+                    "PTQUANT": 10,
+                    "LOCNAME": "46.11.01.05",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "2G151-1X3/4",
+                    "PTQUANT": 19,
+                    "LOCNAME": "41.13.01.03",
+                    "KLINE": 7
+                },
+                {
+                    "PARTNAME": "HUL7071720275",
+                    "PTQUANT": 2,
+                    "LOCNAME": "31.11.01.17",
+                    "KLINE": 6
+                },
+                {
+                    "PARTNAME": "VK23870FB",
+                    "PTQUANT": 19,
+                    "LOCNAME": "28.02.05.01",
+                    "KLINE": 9
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903098",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "MLS-1MD-3/4",
+                    "PTQUANT": 250,
+                    "LOCNAME": "41.13.01.04",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903053",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "yehudaa",
+            "PRIO": 2,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "QRNF032",
+                    "PTQUANT": 20,
+                    "LOCNAME": "24.06.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903052",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "yehudaa",
+            "PRIO": 2,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "OAB400",
+                    "PTQUANT": 20,
+                    "LOCNAME": "24.07.05.02",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "ODB225",
+                    "PTQUANT": 2,
+                    "LOCNAME": "22.16.01.01",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "OAB200",
+                    "PTQUANT": 30,
+                    "LOCNAME": "22.16.01.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903040",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "NUT-5/8",
+                    "PTQUANT": 200,
+                    "LOCNAME": "36.12.01.05",
+                    "KLINE": 15
+                },
+                {
+                    "PARTNAME": "SM1.2X100",
+                    "PTQUANT": 2,
+                    "LOCNAME": "52.14.01.01",
+                    "KLINE": 18
+                },
+                {
+                    "PARTNAME": "FDC86B",
+                    "PTQUANT": 2,
+                    "LOCNAME": "46.06.01.03",
+                    "KLINE": 19
+                },
+                {
+                    "PARTNAME": "YO-1050LI",
+                    "PTQUANT": 2,
+                    "LOCNAME": "42.11.01.01",
+                    "KLINE": 7
+                },
+                {
+                    "PARTNAME": "PAG3",
+                    "PTQUANT": 20,
+                    "LOCNAME": "41.04.01.02",
+                    "KLINE": 16
+                },
+                {
+                    "PARTNAME": "1F9LS4C",
+                    "PTQUANT": 2,
+                    "LOCNAME": "40.01.01.03",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "1F9LS3C",
+                    "PTQUANT": 2,
+                    "LOCNAME": "40.02.01.01",
+                    "KLINE": 8
+                },
+                {
+                    "PARTNAME": "1FTS4C",
+                    "PTQUANT": 2,
+                    "LOCNAME": "40.04.01.03",
+                    "KLINE": 10
+                },
+                {
+                    "PARTNAME": "1F9LS3G",
+                    "PTQUANT": 2,
+                    "LOCNAME": "39.05.01.01",
+                    "KLINE": 9
+                },
+                {
+                    "PARTNAME": "RA-FH2-F",
+                    "PTQUANT": 2,
+                    "LOCNAME": "40.10.01.06",
+                    "KLINE": 11
+                },
+                {
+                    "PARTNAME": "W-D20G-4",
+                    "PTQUANT": 2,
+                    "LOCNAME": "40.13.01.01",
+                    "KLINE": 5
+                },
+                {
+                    "PARTNAME": "1LD1S3",
+                    "PTQUANT": 2,
+                    "LOCNAME": "38.01.01.01",
+                    "KLINE": 13
+                },
+                {
+                    "PARTNAME": "1LD1S3",
+                    "PTQUANT": 20,
+                    "LOCNAME": "38.01.01.01",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "1LD1S4",
+                    "PTQUANT": 20,
+                    "LOCNAME": "38.01.01.03",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "PAGB3",
+                    "PTQUANT": 2,
+                    "LOCNAME": "30.01.01.06",
+                    "KLINE": 14
+                },
+                {
+                    "PARTNAME": "PAG4",
+                    "PTQUANT": 20,
+                    "LOCNAME": "26.15.02.02",
+                    "KLINE": 17
+                },
+                {
+                    "PARTNAME": "MLS-STRD4",
+                    "PTQUANT": 2,
+                    "LOCNAME": "20.08.01.03",
+                    "KLINE": 12
+                },
+                {
+                    "PARTNAME": "AV0661D4",
+                    "PTQUANT": 4,
+                    "LOCNAME": "20.05.01.01",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "AV0661D3",
+                    "PTQUANT": 2,
+                    "LOCNAME": "20.04.01.03",
+                    "KLINE": 6
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903035",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "zamane",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "2G144-1/2",
+                    "PTQUANT": 50,
+                    "LOCNAME": "42.06.01.07",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "2G140-1X3/4",
+                    "PTQUANT": 20,
+                    "LOCNAME": "41.04.01.04",
+                    "KLINE": 5
+                },
+                {
+                    "PARTNAME": "2G151-1/2",
+                    "PTQUANT": 25,
+                    "LOCNAME": "42.03.01.07",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "2G144-1",
+                    "PTQUANT": 30,
+                    "LOCNAME": "42.02.01.01",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "2G151-1",
+                    "PTQUANT": 20,
+                    "LOCNAME": "42.01.01.03",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "BALL BRASS3/8FM",
+                    "PTQUANT": 20,
+                    "LOCNAME": "27.11.03.04",
+                    "KLINE": 6
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903034",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HAK302-3",
+                    "PTQUANT": 1,
+                    "LOCNAME": "20.05.04.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903033",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "zamane",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "STUDB1/2X70",
+                    "PTQUANT": 24,
+                    "LOCNAME": "30.05.01.07",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "DISK-1/2",
+                    "PTQUANT": 24,
+                    "LOCNAME": "27.10.02.02",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "PLA490500-90",
+                    "PTQUANT": 5,
+                    "LOCNAME": "25.12.05.01",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "PLA4927308-90X3",
+                    "PTQUANT": 2,
+                    "LOCNAME": "25.07.03.02",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "PLA490100-90",
+                    "PTQUANT": 3,
+                    "LOCNAME": "25.01.03.02",
+                    "KLINE": 5
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903031",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "PLA490100-315",
+                    "PTQUANT": 2,
+                    "LOCNAME": "26.12.07.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903029",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1F9LS1-1/2",
+                    "PTQUANT": 15,
+                    "LOCNAME": "40.01.01.05",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "HRM-01-1-1/2",
+                    "PTQUANT": 17,
+                    "LOCNAME": "32.05.01.11",
+                    "KLINE": 2
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903028",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "yehudaa",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "NUT-5/8",
+                    "PTQUANT": 50,
+                    "LOCNAME": "36.12.01.05",
+                    "KLINE": 6
+                },
+                {
+                    "PARTNAME": "TRBR-5/8",
+                    "PTQUANT": 5,
+                    "LOCNAME": "46.17.01.03",
+                    "KLINE": 5
+                },
+                {
+                    "PARTNAME": "1F9LS3",
+                    "PTQUANT": 20,
+                    "LOCNAME": "39.02.01.01",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "1FCS3",
+                    "PTQUANT": 2,
+                    "LOCNAME": "40.03.01.04",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "1LCS3",
+                    "PTQUANT": 4,
+                    "LOCNAME": "37.01.01.01",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "HAK107G-3",
+                    "PTQUANT": 2,
+                    "LOCNAME": "35.14.01.04",
+                    "KLINE": 2
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903022",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 3,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HAK3433-4",
+                    "PTQUANT": 1,
+                    "LOCNAME": "33.06.05.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903021",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 3,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "W-D40G-4",
+                    "PTQUANT": 1,
+                    "LOCNAME": "35.07.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903018",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "zamane",
+            "PRIO": 3,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-920G-4X3G",
+                    "PTQUANT": 1,
+                    "LOCNAME": "43.14.01.04",
+                    "KLINE": 7
+                },
+                {
+                    "PARTNAME": "MOL1744",
+                    "PTQUANT": 4,
+                    "LOCNAME": "51.16.01.03",
+                    "KLINE": 5
+                },
+                {
+                    "PARTNAME": "VIC-50-4X3",
+                    "PTQUANT": 1,
+                    "LOCNAME": "44.09.01.05",
+                    "KLINE": 8
+                },
+                {
+                    "PARTNAME": "VIC-009N-4G",
+                    "PTQUANT": 15,
+                    "LOCNAME": "44.14.01.03",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "VIC-10-4G",
+                    "PTQUANT": 4,
+                    "LOCNAME": "44.17.01.02",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "VIC-009N-3G",
+                    "PTQUANT": 1,
+                    "LOCNAME": "44.17.01.03",
+                    "KLINE": 6
+                },
+                {
+                    "PARTNAME": "VIC-50-4X3G",
+                    "PTQUANT": 1,
+                    "LOCNAME": "44.17.01.05",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "VIC-91-4",
+                    "PTQUANT": 1,
+                    "LOCNAME": "35.02.01.01",
+                    "KLINE": 9
+                },
+                {
+                    "PARTNAME": "PAGB3",
+                    "PTQUANT": 2,
+                    "LOCNAME": "30.01.01.06",
+                    "KLINE": 10
+                },
+                {
+                    "PARTNAME": "GBG4",
+                    "PTQUANT": 2,
+                    "LOCNAME": "20.09.01.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903017",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 3,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "8DDM315",
+                    "PTQUANT": 2,
+                    "LOCNAME": "46.06.02.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903012",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VS0313027",
+                    "PTQUANT": 3,
+                    "LOCNAME": "45.18.02.03",
+                    "KLINE": 16
+                },
+                {
+                    "PARTNAME": "VS0309017",
+                    "PTQUANT": 7,
+                    "LOCNAME": "45.17.01.01",
+                    "KLINE": 7
+                },
+                {
+                    "PARTNAME": "VS0310047",
+                    "PTQUANT": 3,
+                    "LOCNAME": "45.17.01.02",
+                    "KLINE": 6
+                },
+                {
+                    "PARTNAME": "TRBR-1/2",
+                    "PTQUANT": 50,
+                    "LOCNAME": "46.17.01.04",
+                    "KLINE": 14
+                },
+                {
+                    "PARTNAME": "VS0324015",
+                    "PTQUANT": 6,
+                    "LOCNAME": "45.15.02.01",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "VS0306015",
+                    "PTQUANT": 6,
+                    "LOCNAME": "46.15.02.01",
+                    "KLINE": 8
+                },
+                {
+                    "PARTNAME": "VS0328015",
+                    "PTQUANT": 17,
+                    "LOCNAME": "45.12.01.03",
+                    "KLINE": 12
+                },
+                {
+                    "PARTNAME": "W3123168",
+                    "PTQUANT": 100,
+                    "LOCNAME": "46.13.02.03",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "W3123117",
+                    "PTQUANT": 30,
+                    "LOCNAME": "46.12.01.01",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "VS0306017",
+                    "PTQUANT": 30,
+                    "LOCNAME": "45.10.01.01",
+                    "KLINE": 9
+                },
+                {
+                    "PARTNAME": "VS0324011",
+                    "PTQUANT": 20,
+                    "LOCNAME": "45.08.01.01",
+                    "KLINE": 22
+                },
+                {
+                    "PARTNAME": "VS0328017",
+                    "PTQUANT": 7,
+                    "LOCNAME": "45.08.02.01",
+                    "KLINE": 13
+                },
+                {
+                    "PARTNAME": "VS0328012",
+                    "PTQUANT": 6,
+                    "LOCNAME": "45.07.01.01",
+                    "KLINE": 11
+                },
+                {
+                    "PARTNAME": "VS0350015",
+                    "PTQUANT": 30,
+                    "LOCNAME": "45.05.01.01",
+                    "KLINE": 18
+                },
+                {
+                    "PARTNAME": "VS0306013",
+                    "PTQUANT": 45,
+                    "LOCNAME": "45.02.01.01",
+                    "KLINE": 10
+                },
+                {
+                    "PARTNAME": "VS0350011",
+                    "PTQUANT": 28,
+                    "LOCNAME": "45.01.01.01",
+                    "KLINE": 17
+                },
+                {
+                    "PARTNAME": "VS0348015",
+                    "PTQUANT": 15,
+                    "LOCNAME": "45.01.02.01",
+                    "KLINE": 19
+                },
+                {
+                    "PARTNAME": "SBR3/8",
+                    "PTQUANT": 20,
+                    "LOCNAME": "41.17.01.04",
+                    "KLINE": 21
+                },
+                {
+                    "PARTNAME": "VS0358038",
+                    "PTQUANT": 10,
+                    "LOCNAME": "40.08.02.01",
+                    "KLINE": 5
+                },
+                {
+                    "PARTNAME": "W3123220",
+                    "PTQUANT": 27,
+                    "LOCNAME": "36.13.01.01",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "STUD8",
+                    "PTQUANT": 100,
+                    "LOCNAME": "36.17.01.01",
+                    "KLINE": 15
+                },
+                {
+                    "PARTNAME": "SBR1/2",
+                    "PTQUANT": 20,
+                    "LOCNAME": "31.14.01.10",
+                    "KLINE": 20
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903007",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-20-4",
+                    "PTQUANT": 3,
+                    "LOCNAME": "43.08.01.05",
+                    "KLINE": 13
+                },
+                {
+                    "PARTNAME": "VIC-922-2X1",
+                    "PTQUANT": 6,
+                    "LOCNAME": "43.08.01.06",
+                    "KLINE": 10
+                },
+                {
+                    "PARTNAME": "VIC-922-1-1/2X1",
+                    "PTQUANT": 8,
+                    "LOCNAME": "43.15.01.04",
+                    "KLINE": 6
+                },
+                {
+                    "PARTNAME": "MISH-LUB",
+                    "PTQUANT": 1,
+                    "LOCNAME": "50.15.01.03",
+                    "KLINE": 26
+                },
+                {
+                    "PARTNAME": "UF-P120FM",
+                    "PTQUANT": 40,
+                    "LOCNAME": "49.19.01.01",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "VIC-12-1-1/2X1",
+                    "PTQUANT": 2,
+                    "LOCNAME": "46.16.02.03",
+                    "KLINE": 18
+                },
+                {
+                    "PARTNAME": "UF130-1-1/2",
+                    "PTQUANT": 30,
+                    "LOCNAME": "46.14.01.01",
+                    "KLINE": 23
+                },
+                {
+                    "PARTNAME": "UF130-1",
+                    "PTQUANT": 6,
+                    "LOCNAME": "46.13.01.01",
+                    "KLINE": 22
+                },
+                {
+                    "PARTNAME": "UF130-2",
+                    "PTQUANT": 20,
+                    "LOCNAME": "46.12.01.03",
+                    "KLINE": 20
+                },
+                {
+                    "PARTNAME": "UF130-3",
+                    "PTQUANT": 15,
+                    "LOCNAME": "46.12.02.03",
+                    "KLINE": 19
+                },
+                {
+                    "PARTNAME": "UF130-4",
+                    "PTQUANT": 25,
+                    "LOCNAME": "46.08.01.02",
+                    "KLINE": 21
+                },
+                {
+                    "PARTNAME": "VIC-10-4",
+                    "PTQUANT": 4,
+                    "LOCNAME": "43.02.01.01",
+                    "KLINE": 14
+                },
+                {
+                    "PARTNAME": "VIC-920G-4X2",
+                    "PTQUANT": 2,
+                    "LOCNAME": "44.02.01.04",
+                    "KLINE": 9
+                },
+                {
+                    "PARTNAME": "VIC-10-3",
+                    "PTQUANT": 5,
+                    "LOCNAME": "44.05.01.01",
+                    "KLINE": 15
+                },
+                {
+                    "PARTNAME": "VIC-67-1-1/2X1",
+                    "PTQUANT": 31,
+                    "LOCNAME": "44.06.01.01",
+                    "KLINE": 7
+                },
+                {
+                    "PARTNAME": "VIC-920G-4X1-1/2",
+                    "PTQUANT": 8,
+                    "LOCNAME": "44.08.01.06",
+                    "KLINE": 5
+                },
+                {
+                    "PARTNAME": "VIC-50-4X3",
+                    "PTQUANT": 1,
+                    "LOCNAME": "44.09.01.05",
+                    "KLINE": 16
+                },
+                {
+                    "PARTNAME": "VIC-20-1-1/2",
+                    "PTQUANT": 4,
+                    "LOCNAME": "44.10.01.01",
+                    "KLINE": 8
+                },
+                {
+                    "PARTNAME": "VIC-60-3",
+                    "PTQUANT": 1,
+                    "LOCNAME": "44.10.01.05",
+                    "KLINE": 17
+                },
+                {
+                    "PARTNAME": "VIC-20-2",
+                    "PTQUANT": 2,
+                    "LOCNAME": "43.12.01.02",
+                    "KLINE": 11
+                },
+                {
+                    "PARTNAME": "VIC-920G-3X1-1/2",
+                    "PTQUANT": 10,
+                    "LOCNAME": "44.11.01.02",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "VIC-67-2X1",
+                    "PTQUANT": 5,
+                    "LOCNAME": "43.16.01.02",
+                    "KLINE": 12
+                },
+                {
+                    "PARTNAME": "TEF",
+                    "PTQUANT": 20,
+                    "LOCNAME": "41.19.01.03",
+                    "KLINE": 25
+                },
+                {
+                    "PARTNAME": "PISHTAN-T",
+                    "PTQUANT": 2,
+                    "LOCNAME": "42.19.01.03",
+                    "KLINE": 24
+                },
+                {
+                    "PARTNAME": "STUD6",
+                    "PTQUANT": 50,
+                    "LOCNAME": "36.07.01.01",
+                    "KLINE": 28
+                },
+                {
+                    "PARTNAME": "TRBR-3/8",
+                    "PTQUANT": 50,
+                    "LOCNAME": "36.16.01.01",
+                    "KLINE": 27
+                },
+                {
+                    "PARTNAME": "VK23870FB",
+                    "PTQUANT": 36,
+                    "LOCNAME": "28.02.05.01",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "E-GBCR",
+                    "PTQUANT": 36,
+                    "LOCNAME": "25.14.05.01",
+                    "KLINE": 3
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903006",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "8FD4L160A",
+                    "PTQUANT": 1,
+                    "LOCNAME": "48.17.01.01",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "8FD4L110A",
+                    "PTQUANT": 2,
+                    "LOCNAME": "48.19.02.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1903003",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "G0501083",
+                    "PTQUANT": 20,
+                    "LOCNAME": "50.02.05.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902999",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "GMPB16",
+                    "PTQUANT": 200,
+                    "LOCNAME": "51.09.01.03",
+                    "KLINE": 10
+                },
+                {
+                    "PARTNAME": "GMP25",
+                    "PTQUANT": 50,
+                    "LOCNAME": "51.11.01.01",
+                    "KLINE": 11
+                },
+                {
+                    "PARTNAME": "GMP32",
+                    "PTQUANT": 50,
+                    "LOCNAME": "51.12.01.01",
+                    "KLINE": 9
+                },
+                {
+                    "PARTNAME": "HUL70145960",
+                    "PTQUANT": 48,
+                    "LOCNAME": "48.07.01.01",
+                    "KLINE": 17
+                },
+                {
+                    "PARTNAME": "HUL60203651",
+                    "PTQUANT": 48,
+                    "LOCNAME": "48.14.01.01",
+                    "KLINE": 18
+                },
+                {
+                    "PARTNAME": "8PPVC75X100",
+                    "PTQUANT": 15,
+                    "LOCNAME": "46.09.02.03",
+                    "KLINE": 6
+                },
+                {
+                    "PARTNAME": "PISHTAN-T",
+                    "PTQUANT": 10,
+                    "LOCNAME": "42.19.01.03",
+                    "KLINE": 16
+                },
+                {
+                    "PARTNAME": "2G176-1",
+                    "PTQUANT": 10,
+                    "LOCNAME": "42.09.01.03",
+                    "KLINE": 13
+                },
+                {
+                    "PARTNAME": "ANV19X28",
+                    "PTQUANT": 80,
+                    "LOCNAME": "38.19.03.02",
+                    "KLINE": 15
+                },
+                {
+                    "PARTNAME": "ANV19X35",
+                    "PTQUANT": 80,
+                    "LOCNAME": "32.15.02.01",
+                    "KLINE": 14
+                },
+                {
+                    "PARTNAME": "HUL40632860",
+                    "PTQUANT": 12,
+                    "LOCNAME": "29.08.01.16",
+                    "KLINE": 8
+                },
+                {
+                    "PARTNAME": "G0504015",
+                    "PTQUANT": 50,
+                    "LOCNAME": "27.11.01.03",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "G0510023",
+                    "PTQUANT": 18,
+                    "LOCNAME": "27.12.02.02",
+                    "KLINE": 7
+                },
+                {
+                    "PARTNAME": "G0504013",
+                    "PTQUANT": 21,
+                    "LOCNAME": "27.14.03.04",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "G0508013",
+                    "PTQUANT": 40,
+                    "LOCNAME": "28.14.02.01",
+                    "KLINE": 5
+                },
+                {
+                    "PARTNAME": "G0504005",
+                    "PTQUANT": 3,
+                    "LOCNAME": "28.14.03.03",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "GM2025250",
+                    "PTQUANT": 5,
+                    "LOCNAME": "26.01.03.03",
+                    "KLINE": 12
+                },
+                {
+                    "PARTNAME": "G0504017",
+                    "PTQUANT": 50,
+                    "LOCNAME": "23.02.05.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902997",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "AR120",
+                    "PTQUANT": 2,
+                    "LOCNAME": "51.01.01.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902996",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "ARD-112-3/4",
+                    "PTQUANT": 1,
+                    "LOCNAME": "30.08.01.11",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "ARD-SR3/4",
+                    "PTQUANT": 2,
+                    "LOCNAME": "28.04.05.01",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "HUL91117007",
+                    "PTQUANT": 1,
+                    "LOCNAME": "25.05.04.01",
+                    "KLINE": 2
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902992",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1F9LS2-1/2",
+                    "PTQUANT": 9,
+                    "LOCNAME": "40.01.01.04",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "1FCX1-1/2",
+                    "PTQUANT": 1,
+                    "LOCNAME": "39.09.02.02",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "1F9LX2",
+                    "PTQUANT": 14,
+                    "LOCNAME": "40.12.01.06",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "1FRCX1X3/4",
+                    "PTQUANT": 2,
+                    "LOCNAME": "39.13.01.08",
+                    "KLINE": 3
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902959",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "osherm",
+            "PRIO": 2,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "19400134",
+                    "PTQUANT": 4,
+                    "LOCNAME": "21.14.08.01",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "19400112",
+                    "PTQUANT": 10,
+                    "LOCNAME": "23.08.08.02",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "19400129",
+                    "PTQUANT": 2,
+                    "LOCNAME": "22.14.07.01",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "19400132",
+                    "PTQUANT": 5,
+                    "LOCNAME": "23.01.09.02",
+                    "KLINE": 2
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902939",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HAK302-3",
+                    "PTQUANT": 1,
+                    "LOCNAME": "20.05.04.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902936",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "YO-1025LI",
+                    "PTQUANT": 20,
+                    "LOCNAME": "42.16.01.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902935",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "PLA490500-90",
+                    "PTQUANT": 2,
+                    "LOCNAME": "25.12.05.01",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "PLA490500-63",
+                    "PTQUANT": 2,
+                    "LOCNAME": "24.10.02.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902934",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "UF-WB300-8",
+                    "PTQUANT": 1,
+                    "LOCNAME": "36.07.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902932",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "8DP160",
+                    "PTQUANT": 30,
+                    "LOCNAME": "48.16.01.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902930",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 3,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL41730050",
+                    "PTQUANT": 1,
+                    "LOCNAME": "48.17.02.02",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "VS0313023",
+                    "PTQUANT": 2,
+                    "LOCNAME": "45.05.02.03",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "VS0306013",
+                    "PTQUANT": 2,
+                    "LOCNAME": "45.02.01.01",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "VS0306013",
+                    "PTQUANT": 2,
+                    "LOCNAME": "45.02.01.01",
+                    "KLINE": 5
+                },
+                {
+                    "PARTNAME": "VS0312025",
+                    "PTQUANT": 2,
+                    "LOCNAME": "46.01.01.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902926",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "aviw",
+            "PRIO": 3,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "PEX-KOFK",
+                    "PTQUANT": 100,
+                    "LOCNAME": "50.05.02.03",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "VS0302005",
+                    "PTQUANT": 100,
+                    "LOCNAME": "45.19.01.01",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "W3123168",
+                    "PTQUANT": 30,
+                    "LOCNAME": "46.13.02.03",
+                    "KLINE": 5
+                },
+                {
+                    "PARTNAME": "W3123117",
+                    "PTQUANT": 25,
+                    "LOCNAME": "46.12.01.01",
+                    "KLINE": 6
+                },
+                {
+                    "PARTNAME": "VS0328012",
+                    "PTQUANT": 5,
+                    "LOCNAME": "45.07.01.01",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "VS0358038",
+                    "PTQUANT": 10,
+                    "LOCNAME": "40.08.02.01",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "N-PEX-CB-20X3/4LM",
+                    "PTQUANT": 50,
+                    "LOCNAME": "25.14.05.02",
+                    "KLINE": 8
+                },
+                {
+                    "PARTNAME": "N-PEX-MZ16X3/4LM",
+                    "PTQUANT": 100,
+                    "LOCNAME": "26.01.01.03",
+                    "KLINE": 7
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902925",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 3,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "CBL-35",
+                    "PTQUANT": 200,
+                    "LOCNAME": "50.05.01.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902918",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "MLS-SB1-1/2H",
+                    "PTQUANT": 1,
+                    "LOCNAME": "28.06.04.03",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "MLS-SB2H",
+                    "PTQUANT": 2,
+                    "LOCNAME": "27.14.05.02",
+                    "KLINE": 2
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902916",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL7070060870",
+                    "PTQUANT": 4,
+                    "LOCNAME": "47.07.02.01",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "HRM-02-6",
+                    "PTQUANT": 4,
+                    "LOCNAME": "46.16.01.05",
+                    "KLINE": 2
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902915",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-67-2X1/2",
+                    "PTQUANT": 5,
+                    "LOCNAME": "44.19.02.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902914",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL7070666870",
+                    "PTQUANT": 3,
+                    "LOCNAME": "47.06.02.02",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "HUL7072260070",
+                    "PTQUANT": 2,
+                    "LOCNAME": "48.05.02.03",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "NUT-3/8",
+                    "PTQUANT": 50,
+                    "LOCNAME": "35.10.01.01",
+                    "KLINE": 3
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902913",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-005-2G",
+                    "PTQUANT": 200,
+                    "LOCNAME": "44.04.01.05",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902912",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VK08388UAB12",
+                    "PTQUANT": 1,
+                    "LOCNAME": "27.11.04.01",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "VK12987AG",
+                    "PTQUANT": 8,
+                    "LOCNAME": "24.08.04.04",
+                    "KLINE": 2
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902835",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "osherm",
+            "PRIO": 2,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "040N046",
+                    "PTQUANT": 30,
+                    "LOCNAME": "46.09.03.01",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "072N080",
+                    "PTQUANT": 11,
+                    "LOCNAME": "51.03.04.03",
+                    "KLINE": 2
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902792",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1S3ST2",
+                    "PTQUANT": 3,
+                    "LOCNAME": "41.04.03.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902791",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "yehudaa",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL70145960",
+                    "PTQUANT": 5,
+                    "LOCNAME": "48.07.01.01",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "W3123168",
+                    "PTQUANT": 14,
+                    "LOCNAME": "46.13.02.03",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "W3123117",
+                    "PTQUANT": 10,
+                    "LOCNAME": "46.12.01.01",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "BALL BRASS1LFM",
+                    "PTQUANT": 5,
+                    "LOCNAME": "42.14.01.01",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "BALL BRASS3/4LFM",
+                    "PTQUANT": 5,
+                    "LOCNAME": "41.11.01.03",
+                    "KLINE": 5
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902790",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "ST235BS2",
+                    "PTQUANT": 3,
+                    "LOCNAME": "29.13.01.07",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "1S3TU1",
+                    "PTQUANT": 2,
+                    "LOCNAME": "26.08.04.03",
+                    "KLINE": 2
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902789",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1LCS14",
+                    "PTQUANT": 5,
+                    "LOCNAME": "32.04.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902788",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "AR120F",
+                    "PTQUANT": 4,
+                    "LOCNAME": "49.11.05.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902785",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "UF-GB300-3",
+                    "PTQUANT": 4,
+                    "LOCNAME": "20.11.01.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902784",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "MTFAV6",
+                    "PTQUANT": 11,
+                    "LOCNAME": "51.13.01.01",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "MAT18-2",
+                    "PTQUANT": 22,
+                    "LOCNAME": "51.15.01.01",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "YO-1550I",
+                    "PTQUANT": 11,
+                    "LOCNAME": "49.08.01.03",
+                    "KLINE": 5
+                },
+                {
+                    "PARTNAME": "MAT197-2-15",
+                    "PTQUANT": 11,
+                    "LOCNAME": "50.02.01.01",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "GAL30T-1",
+                    "PTQUANT": 11,
+                    "LOCNAME": "50.01.01.01",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "VIC-009N-2",
+                    "PTQUANT": 50,
+                    "LOCNAME": "43.01.01.01",
+                    "KLINE": 10
+                },
+                {
+                    "PARTNAME": "VIC-10-4",
+                    "PTQUANT": 10,
+                    "LOCNAME": "43.02.01.01",
+                    "KLINE": 7
+                },
+                {
+                    "PARTNAME": "VIC-10-2",
+                    "PTQUANT": 20,
+                    "LOCNAME": "43.03.01.01",
+                    "KLINE": 8
+                },
+                {
+                    "PARTNAME": "VIC-009N-4",
+                    "PTQUANT": 30,
+                    "LOCNAME": "44.03.01.01",
+                    "KLINE": 9
+                },
+                {
+                    "PARTNAME": "VIC-25-4X2",
+                    "PTQUANT": 5,
+                    "LOCNAME": "43.13.01.01",
+                    "KLINE": 6
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902783",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "8FD8T200X200A",
+                    "PTQUANT": 10,
+                    "LOCNAME": "46.11.05.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902782",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "8FD8L200A",
+                    "PTQUANT": 10,
+                    "LOCNAME": "48.17.01.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902778",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "NUT-5/8",
+                    "PTQUANT": 120,
+                    "LOCNAME": "36.12.01.05",
+                    "KLINE": 10
+                },
+                {
+                    "PARTNAME": "HUL7070060470",
+                    "PTQUANT": 4,
+                    "LOCNAME": "47.06.01.02",
+                    "KLINE": 13
+                },
+                {
+                    "PARTNAME": "HUL7070666870",
+                    "PTQUANT": 2,
+                    "LOCNAME": "47.06.02.02",
+                    "KLINE": 11
+                },
+                {
+                    "PARTNAME": "HUL7070060870",
+                    "PTQUANT": 4,
+                    "LOCNAME": "47.07.02.01",
+                    "KLINE": 12
+                },
+                {
+                    "PARTNAME": "SA-SAL200-2W",
+                    "PTQUANT": 6,
+                    "LOCNAME": "41.13.01.06",
+                    "KLINE": 5
+                },
+                {
+                    "PARTNAME": "1LD1S3",
+                    "PTQUANT": 10,
+                    "LOCNAME": "38.01.01.01",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "1LCS4",
+                    "PTQUANT": 10,
+                    "LOCNAME": "37.01.01.03",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "STUG3/8",
+                    "PTQUANT": 100,
+                    "LOCNAME": "36.10.01.03",
+                    "KLINE": 14
+                },
+                {
+                    "PARTNAME": "STUDB5/8X120",
+                    "PTQUANT": 20,
+                    "LOCNAME": "36.17.01.03",
+                    "KLINE": 9
+                },
+                {
+                    "PARTNAME": "CFFTF4",
+                    "PTQUANT": 6,
+                    "LOCNAME": "33.10.01.03",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "1LCRN3X2",
+                    "PTQUANT": 3,
+                    "LOCNAME": "33.09.01.06",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "SA-SAL200-1W",
+                    "PTQUANT": 28,
+                    "LOCNAME": "25.15.02.03",
+                    "KLINE": 7
+                },
+                {
+                    "PARTNAME": "SA-SAL200-1/2W",
+                    "PTQUANT": 7,
+                    "LOCNAME": "26.14.03.02",
+                    "KLINE": 8
+                },
+                {
+                    "PARTNAME": "SA-SAL200-1-1/2W",
+                    "PTQUANT": 12,
+                    "LOCNAME": "26.10.04.02",
+                    "KLINE": 6
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902777",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "yehudaa",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "8PTR-33",
+                    "PTQUANT": 25,
+                    "LOCNAME": "52.09.01.01",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "8PTR-40",
+                    "PTQUANT": 25,
+                    "LOCNAME": "51.07.01.02",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "SP502010501",
+                    "PTQUANT": 150,
+                    "LOCNAME": "51.16.01.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902776",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "2G151-2",
+                    "PTQUANT": 15,
+                    "LOCNAME": "42.03.01.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902775",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "YO-1550I",
+                    "PTQUANT": 8,
+                    "LOCNAME": "49.08.01.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902770",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "AR120F",
+                    "PTQUANT": 4,
+                    "LOCNAME": "29.10.06.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902767",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL5747500100",
+                    "PTQUANT": 18,
+                    "LOCNAME": "47.15.02.01",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "HUL7070030870",
+                    "PTQUANT": 20,
+                    "LOCNAME": "41.13.02.01",
+                    "KLINE": 2
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902766",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "PLA7050-25X25",
+                    "PTQUANT": 5,
+                    "LOCNAME": "25.08.03.02",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "PLA7010-25X25",
+                    "PTQUANT": 10,
+                    "LOCNAME": "25.06.03.02",
+                    "KLINE": 2
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902765",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "yehudaa",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "PEX25MT40A",
+                    "PTQUANT": 200,
+                    "LOCNAME": "52.04.01.01",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "AR120",
+                    "PTQUANT": 5,
+                    "LOCNAME": "51.01.01.01",
+                    "KLINE": 5
+                },
+                {
+                    "PARTNAME": "AR120F",
+                    "PTQUANT": 2,
+                    "LOCNAME": "51.04.01.01",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "YO-1550I",
+                    "PTQUANT": 30,
+                    "LOCNAME": "49.08.01.03",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "BALL BRASS1LFM",
+                    "PTQUANT": 30,
+                    "LOCNAME": "42.14.01.01",
+                    "KLINE": 2
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902764",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "8FD8L160A",
+                    "PTQUANT": 10,
+                    "LOCNAME": "48.15.01.03",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "8FD4L160A",
+                    "PTQUANT": 10,
+                    "LOCNAME": "48.17.01.01",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "8FD4T110X160A",
+                    "PTQUANT": 10,
+                    "LOCNAME": "46.18.02.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902762",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "STUD6",
+                    "PTQUANT": 2500,
+                    "LOCNAME": "36.07.01.01",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "TRBR-3/8",
+                    "PTQUANT": 400,
+                    "LOCNAME": "36.16.01.01",
+                    "KLINE": 2
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902761",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "PLA3000-0010",
+                    "PTQUANT": 1,
+                    "LOCNAME": "28.15.05.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902751",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 3,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "2G179-1X1/2",
+                    "PTQUANT": 60,
+                    "LOCNAME": "41.02.01.02",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "2GN5X1",
+                    "PTQUANT": 20,
+                    "LOCNAME": "27.02.05.02",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "2GN10X1",
+                    "PTQUANT": 20,
+                    "LOCNAME": "27.03.05.03",
+                    "KLINE": 5
+                },
+                {
+                    "PARTNAME": "2GN20X1",
+                    "PTQUANT": 40,
+                    "LOCNAME": "27.04.05.01",
+                    "KLINE": 6
+                },
+                {
+                    "PARTNAME": "2GN3X1",
+                    "PTQUANT": 20,
+                    "LOCNAME": "27.05.05.02",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "2GN8X1",
+                    "PTQUANT": 20,
+                    "LOCNAME": "27.08.05.03",
+                    "KLINE": 4
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902750",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 3,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "TRBR-1/2",
+                    "PTQUANT": 50,
+                    "LOCNAME": "46.17.01.04",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "STUD8",
+                    "PTQUANT": 200,
+                    "LOCNAME": "36.17.01.01",
+                    "KLINE": 2
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902747",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 3,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "STUD6",
+                    "PTQUANT": 200,
+                    "LOCNAME": "36.07.01.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902746",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "zamane",
+            "PRIO": 3,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL70124599",
+                    "PTQUANT": 10,
+                    "LOCNAME": "48.01.01.03",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "HUL70124590",
+                    "PTQUANT": 10,
+                    "LOCNAME": "48.10.01.02",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "VIC-67-1-1/2X1/2W",
+                    "PTQUANT": 30,
+                    "LOCNAME": "44.16.01.04",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902743",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 3,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VS0304015",
+                    "PTQUANT": 4,
+                    "LOCNAME": "46.02.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902738",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 3,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "AK1534-1",
+                    "PTQUANT": 2,
+                    "LOCNAME": "49.15.02.03",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "YO-N1/2O",
+                    "PTQUANT": 6,
+                    "LOCNAME": "31.01.01.20",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "HUL61480100",
+                    "PTQUANT": 1,
+                    "LOCNAME": "30.14.01.13",
+                    "KLINE": 5
+                },
+                {
+                    "PARTNAME": "BALL GAR1/2",
+                    "PTQUANT": 1,
+                    "LOCNAME": "26.14.05.01",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "N-PEX-9L16LK",
+                    "PTQUANT": 1,
+                    "LOCNAME": "26.02.02.04",
+                    "KLINE": 3
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902736",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "zamane",
+            "PRIO": 3,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "BALL BRASS1LFM",
+                    "PTQUANT": 4,
+                    "LOCNAME": "42.14.01.01",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "BALL BRASS3/4LFM",
+                    "PTQUANT": 2,
+                    "LOCNAME": "41.11.01.03",
+                    "KLINE": 5
+                },
+                {
+                    "PARTNAME": "2G256-1",
+                    "PTQUANT": 1,
+                    "LOCNAME": "42.10.01.01",
+                    "KLINE": 9
+                },
+                {
+                    "PARTNAME": "2G256-2",
+                    "PTQUANT": 1,
+                    "LOCNAME": "42.09.01.01",
+                    "KLINE": 8
+                },
+                {
+                    "PARTNAME": "2G144-2",
+                    "PTQUANT": 3,
+                    "LOCNAME": "42.08.01.03",
+                    "KLINE": 7
+                },
+                {
+                    "PARTNAME": "2G176-2",
+                    "PTQUANT": 2,
+                    "LOCNAME": "41.04.01.01",
+                    "KLINE": 6
+                },
+                {
+                    "PARTNAME": "PLA7140-50X2",
+                    "PTQUANT": 1,
+                    "LOCNAME": "25.13.02.03",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "PLA7050-50X50",
+                    "PTQUANT": 1,
+                    "LOCNAME": "25.11.05.01",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "PLA7020-50X2",
+                    "PTQUANT": 1,
+                    "LOCNAME": "25.07.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902731",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1L3S3",
+                    "PTQUANT": 15,
+                    "LOCNAME": "42.19.03.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902728",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "yehudaa",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1FRES4X3",
+                    "PTQUANT": 5,
+                    "LOCNAME": "39.10.01.01",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "1LD1T1-1/2",
+                    "PTQUANT": 20,
+                    "LOCNAME": "37.04.01.04",
+                    "KLINE": 4
+                },
+                {
+                    "PARTNAME": "1LCS4",
+                    "PTQUANT": 20,
+                    "LOCNAME": "37.01.01.03",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "1LCS2",
+                    "PTQUANT": 20,
+                    "LOCNAME": "37.01.01.04",
+                    "KLINE": 2
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902727",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "PLA7010-40X40",
+                    "PTQUANT": 5,
+                    "LOCNAME": "29.01.01.07",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902724",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "N-PEX-CB-16X1/2LF",
+                    "PTQUANT": 15,
+                    "LOCNAME": "26.06.05.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902721",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "2GN3X1/2",
+                    "PTQUANT": 200,
+                    "LOCNAME": "27.01.02.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902720",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL61450060",
+                    "PTQUANT": 40,
+                    "LOCNAME": "48.08.02.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902719",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "KND4",
+                    "PTQUANT": 2,
+                    "LOCNAME": "39.01.04.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902718",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1F9LSE4",
+                    "PTQUANT": 50,
+                    "LOCNAME": "40.10.01.01",
+                    "KLINE": 1
+                },
+                {
+                    "PARTNAME": "1F9LSE4",
+                    "PTQUANT": 2,
+                    "LOCNAME": "40.10.01.01",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "1F9LSE4",
+                    "PTQUANT": 1,
+                    "LOCNAME": "40.10.01.01",
+                    "KLINE": 3
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902716",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-920G-4X1-1/2G",
+                    "PTQUANT": 15,
+                    "LOCNAME": "44.11.02.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902715",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 4,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-922-1-1/2X1/2G",
+                    "PTQUANT": 30,
+                    "LOCNAME": "44.15.01.06",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902613",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 5,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "MLS-CHB1",
+                    "PTQUANT": 12,
+                    "LOCNAME": "28.15.03.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902610",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 5,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "2G161-3/4",
+                    "PTQUANT": 70,
+                    "LOCNAME": "42.04.01.03",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "2GN15X1/2",
+                    "PTQUANT": 11,
+                    "LOCNAME": "27.01.03.01",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "MLS-CHB1",
+                    "PTQUANT": 20,
+                    "LOCNAME": "28.15.03.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902228",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 5,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "WPG",
+                    "PTQUANT": 2,
+                    "LOCNAME": "46.06.01.01",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "2G140-1/2X1/4",
+                    "PTQUANT": 2,
+                    "LOCNAME": "42.04.01.05",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "3-1-9L1/2",
+                    "PTQUANT": 10,
+                    "LOCNAME": "32.06.01.08",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901909",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "zivm",
+            "PRIO": 5,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1L6WX4",
+                    "PTQUANT": 7,
+                    "LOCNAME": "50.14.03.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901788",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 5,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "KE54740G02",
+                    "PTQUANT": 30,
+                    "LOCNAME": "29.10.01.14",
+                    "KLINE": 3
+                },
+                {
+                    "PARTNAME": "KE54601GF0",
+                    "PTQUANT": 5,
+                    "LOCNAME": "29.06.01.03",
+                    "KLINE": 2
+                },
+                {
+                    "PARTNAME": "KE54601ED0",
+                    "PTQUANT": 11,
+                    "LOCNAME": "24.13.03.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901648",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 5,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "ST235BS3/4",
+                    "PTQUANT": 4,
+                    "LOCNAME": "29.15.01.12",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901194",
+            "WTASKTYPECODE": "PIK",
+            "STATDES": "לביצוע",
+            "STZONECODE": "C1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 5,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1S3T9L1-1/2",
+                    "PTQUANT": 50,
+                    "LOCNAME": "41.14.01.04",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902593",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "PLA490207-90",
+                    "PTQUANT": 80,
+                    "LOCNAME": "23.18.07.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902592",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1LD0S20",
+                    "PTQUANT": 9,
+                    "LOCNAME": "37.16.02.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902591",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "PEX16MT25B",
+                    "PTQUANT": 3200,
+                    "LOCNAME": "51.05.05.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902590",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "PEX16MT25B",
+                    "PTQUANT": 3200,
+                    "LOCNAME": "33.09.06.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902589",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1F9LS4",
+                    "PTQUANT": 250,
+                    "LOCNAME": "32.12.04.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902588",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1FTS4C",
+                    "PTQUANT": 60,
+                    "LOCNAME": "33.06.02.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902587",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1L1WS16",
+                    "PTQUANT": 20,
+                    "LOCNAME": "32.04.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902586",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "PSI-GKOMK36",
+                    "PTQUANT": 260,
+                    "LOCNAME": "46.11.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902585",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-91-3G",
+                    "PTQUANT": 142,
+                    "LOCNAME": "36.02.04.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902584",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1F9LSE10",
+                    "PTQUANT": 5,
+                    "LOCNAME": "40.05.05.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902583",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1F9LS4",
+                    "PTQUANT": 3,
+                    "LOCNAME": "34.04.02.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902582",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL5901600100",
+                    "PTQUANT": 46,
+                    "LOCNAME": "33.14.06.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902581",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "GIV040",
+                    "PTQUANT": 1069,
+                    "LOCNAME": "25.02.07.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902580",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "GIV075",
+                    "PTQUANT": 384,
+                    "LOCNAME": "25.08.08.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902579",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL5901100100",
+                    "PTQUANT": 140,
+                    "LOCNAME": "51.10.05.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902578",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HIV090",
+                    "PTQUANT": 137,
+                    "LOCNAME": "25.02.07.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902577",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-009N-1-1/2",
+                    "PTQUANT": 795,
+                    "LOCNAME": "51.15.02.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902576",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL40040860",
+                    "PTQUANT": 160,
+                    "LOCNAME": "51.12.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902575",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "W009-3",
+                    "PTQUANT": 24,
+                    "LOCNAME": "42.01.02.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902574",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "W009-3",
+                    "PTQUANT": 9,
+                    "LOCNAME": "42.17.02.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902573",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1L1WS16",
+                    "PTQUANT": 5,
+                    "LOCNAME": "38.12.03.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902572",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HIV090",
+                    "PTQUANT": 21,
+                    "LOCNAME": "24.02.06.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902571",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "GIV075",
+                    "PTQUANT": 166,
+                    "LOCNAME": "21.11.06.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902570",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-009N-2G",
+                    "PTQUANT": 720,
+                    "LOCNAME": "47.11.03.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902569",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "PEX-16",
+                    "PTQUANT": 18,
+                    "LOCNAME": "31.15.06.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902568",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-009N-2G",
+                    "PTQUANT": 720,
+                    "LOCNAME": "46.15.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902567",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "H10209",
+                    "PTQUANT": 538,
+                    "LOCNAME": "56.09.07.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902566",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1LD1B12",
+                    "PTQUANT": 52,
+                    "LOCNAME": "41.11.03.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902565",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "MLS-STRG2",
+                    "PTQUANT": 9,
+                    "LOCNAME": "35.01.02.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902564",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "10026785",
+                    "PTQUANT": 1,
+                    "LOCNAME": "23.09.10.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902563",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1LD1B12",
+                    "PTQUANT": 32,
+                    "LOCNAME": "32.14.02.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902562",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL61650060",
+                    "PTQUANT": 23,
+                    "LOCNAME": "48.07.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1902561",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1F9LSE10",
+                    "PTQUANT": 9,
+                    "LOCNAME": "55.55",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901193",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "UF-GB300-4",
+                    "PTQUANT": 5,
+                    "LOCNAME": "49.12.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901192",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "UF-GB300-2",
+                    "PTQUANT": 35,
+                    "LOCNAME": "51.16.02.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901191",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "UF-GB300-2",
+                    "PTQUANT": 15,
+                    "LOCNAME": "51.16.02.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901190",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "UF-GB300-3",
+                    "PTQUANT": 25,
+                    "LOCNAME": "49.08.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901189",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "UF-CH90-3",
+                    "PTQUANT": 99,
+                    "LOCNAME": "40.09.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901188",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "UF-CH90-3",
+                    "PTQUANT": 100,
+                    "LOCNAME": "40.01.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901187",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "UF-GB300-4",
+                    "PTQUANT": 30,
+                    "LOCNAME": "51.18.02.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901186",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "UF-CH90-4",
+                    "PTQUANT": 50,
+                    "LOCNAME": "44.11.03.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901185",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "UF-CH90-4",
+                    "PTQUANT": 40,
+                    "LOCNAME": "44.11.03.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901184",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL41542866",
+                    "PTQUANT": 216,
+                    "LOCNAME": "48.17.05.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901183",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL41542866",
+                    "PTQUANT": 144,
+                    "LOCNAME": "48.08.05.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901182",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1F9LS3C",
+                    "PTQUANT": 104,
+                    "LOCNAME": "30.08.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901181",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-91-4G",
+                    "PTQUANT": 140,
+                    "LOCNAME": "31.12.04.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901180",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "MLS-STRD4",
+                    "PTQUANT": 30,
+                    "LOCNAME": "31.15.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901179",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1L3S6",
+                    "PTQUANT": 25,
+                    "LOCNAME": "39.15.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901178",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "2GN80X2",
+                    "PTQUANT": 64,
+                    "LOCNAME": "51.11.02.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901177",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-922-2X3/4",
+                    "PTQUANT": 611,
+                    "LOCNAME": "47.04.03.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901028",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "FPMXH204",
+                    "PTQUANT": 1,
+                    "LOCNAME": "36.15.03.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901027",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1FRTS6X4C",
+                    "PTQUANT": 4,
+                    "LOCNAME": "42.05.03.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901026",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1F4LS4C",
+                    "PTQUANT": 27,
+                    "LOCNAME": "46.04.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901025",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "AV0661B4",
+                    "PTQUANT": 15,
+                    "LOCNAME": "48.05.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901024",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HAK122RBS3",
+                    "PTQUANT": 4,
+                    "LOCNAME": "49.18.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901021",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "SM-1.2X100A",
+                    "PTQUANT": 58,
+                    "LOCNAME": "25.15.06.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901020",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-50-3X2G",
+                    "PTQUANT": 149,
+                    "LOCNAME": "46.02.03.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901019",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-10-2",
+                    "PTQUANT": 540,
+                    "LOCNAME": "44.09.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901018",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-10-2",
+                    "PTQUANT": 540,
+                    "LOCNAME": "43.02.04.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901017",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-10-2",
+                    "PTQUANT": 540,
+                    "LOCNAME": "47.09.04.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901015",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-10-2",
+                    "PTQUANT": 540,
+                    "LOCNAME": "43.01.02.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901014",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-10-2",
+                    "PTQUANT": 262,
+                    "LOCNAME": "47.06.04.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901013",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-920G-4X1-1/2",
+                    "PTQUANT": 252,
+                    "LOCNAME": "47.10.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901012",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "2G140-1X3/4",
+                    "PTQUANT": 2000,
+                    "LOCNAME": "45.19.03.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901011",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL7070040470",
+                    "PTQUANT": 240,
+                    "LOCNAME": "39.03.03.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901010",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL7070040470",
+                    "PTQUANT": 240,
+                    "LOCNAME": "52.11.02.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901009",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL7070040470",
+                    "PTQUANT": 240,
+                    "LOCNAME": "52.04.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901008",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "N-PEX-MZ16X1/2LM",
+                    "PTQUANT": 4000,
+                    "LOCNAME": "42.03.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901007",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "13000046",
+                    "PTQUANT": 150,
+                    "LOCNAME": "24.01.06.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901006",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HAK107G-3",
+                    "PTQUANT": 15,
+                    "LOCNAME": "47.09.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901005",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "2G161-1",
+                    "PTQUANT": 1920,
+                    "LOCNAME": "30.10.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901004",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "PEX24X25",
+                    "PTQUANT": 600,
+                    "LOCNAME": "36.06.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901003",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL5741100100",
+                    "PTQUANT": 130,
+                    "LOCNAME": "51.11.05.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901001",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-920G-4X1-1/2",
+                    "PTQUANT": 97,
+                    "LOCNAME": "39.17.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1901000",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-10-6",
+                    "PTQUANT": 60,
+                    "LOCNAME": "42.03.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900999",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-009N-1-1/2W",
+                    "PTQUANT": 900,
+                    "LOCNAME": "51.10.02.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900998",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-10-4G",
+                    "PTQUANT": 108,
+                    "LOCNAME": "47.12.03.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900997",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "UF130-3",
+                    "PTQUANT": 3120,
+                    "LOCNAME": "41.04.05.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900996",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "TEF-R",
+                    "PTQUANT": 3000,
+                    "LOCNAME": "30.08.06.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900995",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL40040460",
+                    "PTQUANT": 240,
+                    "LOCNAME": "52.11.02.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900994",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL40040460",
+                    "PTQUANT": 60,
+                    "LOCNAME": "49.03.03.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900993",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1LD1S8",
+                    "PTQUANT": 3,
+                    "LOCNAME": "34.14.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900992",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "UF-GB300-6",
+                    "PTQUANT": 20,
+                    "LOCNAME": "43.11.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900991",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-009N-1-1/2W",
+                    "PTQUANT": 598,
+                    "LOCNAME": "44.04.03.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900990",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL7070764870",
+                    "PTQUANT": 48,
+                    "LOCNAME": "45.18.05.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900989",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL7070764870",
+                    "PTQUANT": 48,
+                    "LOCNAME": "45.18.05.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900988",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "19400043",
+                    "PTQUANT": 120,
+                    "LOCNAME": "23.02.09.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900987",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "PLA490500-160",
+                    "PTQUANT": 24,
+                    "LOCNAME": "25.10.07.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900986",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HIV075",
+                    "PTQUANT": 144,
+                    "LOCNAME": "23.03.08.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900985",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-005-8",
+                    "PTQUANT": 78,
+                    "LOCNAME": "43.05.02.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900984",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL7070764870",
+                    "PTQUANT": 2,
+                    "LOCNAME": "29.11.03.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900983",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VM506ABL-6DM",
+                    "PTQUANT": 1,
+                    "LOCNAME": "20.03.02.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900982",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "P7G3",
+                    "PTQUANT": 57,
+                    "LOCNAME": "31.08.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900981",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "AR-D040-2",
+                    "PTQUANT": 24,
+                    "LOCNAME": "30.11.02.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900980",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-10-6",
+                    "PTQUANT": 18,
+                    "LOCNAME": "46.18.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900979",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "UF130-6",
+                    "PTQUANT": 755,
+                    "LOCNAME": "37.13.06.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900978",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "MPO-3",
+                    "PTQUANT": 9,
+                    "LOCNAME": "39.17.04.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900977",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1LD1S8",
+                    "PTQUANT": 225,
+                    "LOCNAME": "32.10.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900976",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "PAS-BSF8",
+                    "PTQUANT": 7,
+                    "LOCNAME": "33.07.05.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900975",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-920G-6X4W",
+                    "PTQUANT": 10,
+                    "LOCNAME": "29.12.03.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900974",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "AVPIV8",
+                    "PTQUANT": 1,
+                    "LOCNAME": "45.15.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900973",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "H817-040",
+                    "PTQUANT": 30,
+                    "LOCNAME": "25.06.07.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900972",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "W3123117",
+                    "PTQUANT": 2040,
+                    "LOCNAME": "50.08.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1900971",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "2B161-4",
+                    "PTQUANT": 86,
+                    "LOCNAME": "34.10.05.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899715",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "MISH-3.5",
+                    "PTQUANT": 100,
+                    "LOCNAME": "41.01.04.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899713",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "TIV090",
+                    "PTQUANT": 144,
+                    "LOCNAME": "25.01.09.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899712",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "BIV110E",
+                    "PTQUANT": 60,
+                    "LOCNAME": "25.01.09.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899711",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1L1L16",
+                    "PTQUANT": 20,
+                    "LOCNAME": "31.11.04.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899710",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1FTS4C",
+                    "PTQUANT": 58,
+                    "LOCNAME": "33.06.02.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899709",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1FTS4G",
+                    "PTQUANT": 41,
+                    "LOCNAME": "31.02.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899708",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "N-PEX-100L-16",
+                    "PTQUANT": 432,
+                    "LOCNAME": "50.03.03.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899705",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "2GN100X2",
+                    "PTQUANT": 64,
+                    "LOCNAME": "33.06.02.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899703",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-750-4X3",
+                    "PTQUANT": 72,
+                    "LOCNAME": "50.10.03.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899702",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-10-3",
+                    "PTQUANT": 216,
+                    "LOCNAME": "43.08.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899701",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-10-3",
+                    "PTQUANT": 216,
+                    "LOCNAME": "43.13.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899700",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-10-3",
+                    "PTQUANT": 216,
+                    "LOCNAME": "46.09.04.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899699",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-10-3",
+                    "PTQUANT": 216,
+                    "LOCNAME": "46.09.04.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899698",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-10-3",
+                    "PTQUANT": 14,
+                    "LOCNAME": "47.04.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899697",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-10-3",
+                    "PTQUANT": 216,
+                    "LOCNAME": "50.15.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899695",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL70123663",
+                    "PTQUANT": 140,
+                    "LOCNAME": "52.07.03.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899694",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL7070642470",
+                    "PTQUANT": 160,
+                    "LOCNAME": "47.17.05.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899693",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-10-3",
+                    "PTQUANT": 114,
+                    "LOCNAME": "39.17.03.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899692",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-920-3X2G",
+                    "PTQUANT": 150,
+                    "LOCNAME": "44.01.02.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899691",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "YO-1020LI",
+                    "PTQUANT": 642,
+                    "LOCNAME": "41.04.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899690",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "YO-1020LI",
+                    "PTQUANT": 1296,
+                    "LOCNAME": "41.06.06.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899689",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VS0358038",
+                    "PTQUANT": 150,
+                    "LOCNAME": "50.02.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899688",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1LD1S6",
+                    "PTQUANT": 198,
+                    "LOCNAME": "30.10.04.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899687",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "MOL1746",
+                    "PTQUANT": 50,
+                    "LOCNAME": "46.15.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899686",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "N-PEX-9L16L",
+                    "PTQUANT": 2025,
+                    "LOCNAME": "43.09.02.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899685",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1L3B8",
+                    "PTQUANT": 1,
+                    "LOCNAME": "41.05.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899684",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1L1WS10",
+                    "PTQUANT": 11,
+                    "LOCNAME": "33.12.02.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899683",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1L1S10",
+                    "PTQUANT": 52,
+                    "LOCNAME": "38.03.04.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899681",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "KIS9000033",
+                    "PTQUANT": 71,
+                    "LOCNAME": "25.09.05.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899680",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "TIV090",
+                    "PTQUANT": 11,
+                    "LOCNAME": "29.13.06.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899679",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "ODB110",
+                    "PTQUANT": 240,
+                    "LOCNAME": "22.05.08.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899678",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-10-3",
+                    "PTQUANT": 216,
+                    "LOCNAME": "39.02.05.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899677",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "PLA5050-75",
+                    "PTQUANT": 93,
+                    "LOCNAME": "23.15.06.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899676",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VS0312025",
+                    "PTQUANT": 240,
+                    "LOCNAME": "50.10.05.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899675",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VS0302013",
+                    "PTQUANT": 160,
+                    "LOCNAME": "52.07.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899674",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VS0302013",
+                    "PTQUANT": 160,
+                    "LOCNAME": "52.07.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899673",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VS0302013",
+                    "PTQUANT": 160,
+                    "LOCNAME": "52.07.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899672",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VS0358038",
+                    "PTQUANT": 13,
+                    "LOCNAME": "52.08.02.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899671",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1FRCS4X2C",
+                    "PTQUANT": 100,
+                    "LOCNAME": "34.13.03.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899670",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "ODB110",
+                    "PTQUANT": 294,
+                    "LOCNAME": "24.14.06.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899669",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1L1WS10",
+                    "PTQUANT": 20,
+                    "LOCNAME": "31.10.03.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899668",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VKDIM020E",
+                    "PTQUANT": 17,
+                    "LOCNAME": "22.10.07.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899667",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HUL70123663",
+                    "PTQUANT": 112,
+                    "LOCNAME": "52.13.03.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899666",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "MPN10",
+                    "PTQUANT": 44695,
+                    "LOCNAME": "36.05.02.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899665",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VS0312025",
+                    "PTQUANT": 78,
+                    "LOCNAME": "50.17.05.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899664",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1FRTS6X4",
+                    "PTQUANT": 30,
+                    "LOCNAME": "41.17.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899663",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "8FD8L250A",
+                    "PTQUANT": 5,
+                    "LOCNAME": "52.04.02.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899662",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "UC3010 1/2 EG",
+                    "PTQUANT": 31393,
+                    "LOCNAME": "22.15.06.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899661",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "19200187",
+                    "PTQUANT": 6,
+                    "LOCNAME": "24.06.09.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899660",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "1LD1S6",
+                    "PTQUANT": 11,
+                    "LOCNAME": "39.02.04.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1899659",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "בודק3",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "BFE-GA300-1-1/2",
+                    "PTQUANT": 10,
+                    "LOCNAME": "29.15.04.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1895888",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "zivm",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VEEIV050E",
+                    "PTQUANT": 360,
+                    "LOCNAME": "24.05.09.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1895887",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "zivm",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "TIV110",
+                    "PTQUANT": 96,
+                    "LOCNAME": "22.11.06.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1893189",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "zivm",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "HAK107G-10",
+                    "PTQUANT": 1,
+                    "LOCNAME": "31.08.02.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1893188",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "zivm",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "19200206",
+                    "PTQUANT": 7,
+                    "LOCNAME": "24.10.06.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1893187",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "zivm",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "SH-EXT80",
+                    "PTQUANT": 6,
+                    "LOCNAME": "51.16.05.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1884973",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "idanb",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "10600205",
+                    "PTQUANT": 6,
+                    "LOCNAME": "23.05.09.01",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1884971",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "idanb",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-25-6X4",
+                    "PTQUANT": 30,
+                    "LOCNAME": "48.08.03.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1884970",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "idanb",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-25-6X4",
+                    "PTQUANT": 30,
+                    "LOCNAME": "50.01.03.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1884966",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "idanb",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "19200280",
+                    "PTQUANT": 8,
+                    "LOCNAME": "25.14.09.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1884965",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "idanb",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "19200098",
+                    "PTQUANT": 6,
+                    "LOCNAME": "23.10.06.02",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1884963",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W2",
+            "DOERLOGIN": "idanb",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-109N-4",
+                    "PTQUANT": 154,
+                    "LOCNAME": "37.06.05.03",
+                    "KLINE": 1
+                }
+            ]
+        },
+        {
+            "WTASKNUM": "TK1883715",
+            "WTASKTYPECODE": "RPI",
+            "STATDES": "לביצוע",
+            "STZONECODE": "W1",
+            "DOERLOGIN": "idanb",
+            "PRIO": 60,
+            "ADCSTARTED": null,
+            "WTASKITEMS_SUBFORM": [
+                {
+                    "PARTNAME": "VIC-920G-3X1-1/2W",
+                    "PTQUANT": 324,
+                    "LOCNAME": "44.01.04.01",
+                    "KLINE": 1
+                }
+            ]
+        }
+    ]
+}
