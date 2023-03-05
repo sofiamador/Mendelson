@@ -15,6 +15,24 @@ date ="2023-01-08"
 dir = "input_by_date/"
 lines_input = read_input(dir + "input_" + date + ".xlsx")
 print(lines_input.info)
+
+street_dict = sort_streets_by_ratio_makat_per_street_amount_of_makat_in_orders_per_street(lines_input)
+
+print()
+
+#dict_makat_per_street = lines_c1_by_street_df['מק_ט'].unique().to_dict()
+#lines_input.groupby('אזור_במחסן').get_group('C1')
+
+
+
+
+
+
+
+
+
+
+
 lines = create_lines( lines_input)
 pick_tasks = get_lines_by_order(lines)
 ##pick_tasks = remove_pick_tasks_that_are_finished(pick_tasks)

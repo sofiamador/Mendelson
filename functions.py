@@ -95,6 +95,20 @@ def get_task_by_id(id_to_delete, pick_tasks):
         if task.id_ == id_to_delete:
             return task
 
+def sort_streets_by_ratio_makat_per_street_amount_of_makat_in_orders_per_street(lines_input):
+    lines_c1_by_street_df = lines_input.groupby('אזור_במחסן').get_group('C1').groupby('רחוב')
+    ####---- get amount of makatim per steet----####
+    dict_amount_of_makat_per_street = lines_c1_by_street_df['מק_ט'].nunique().to_dict()
+    ####---- get amount of orders of makats per steet----####
+    dict_amount_of_makat_in_orders_per_street = lines_c1_by_street_df.size().to_dict()
+
+    dict_street_ratio = {}
+    for street in dict_amount_of_makat_per_street.keys():
+        dict_street_ratio[street] = dict_amount_of_makat_per_street[street] / dict_amount_of_makat_in_orders_per_street[
+            street]
+
+    sorted_dict = dict(sorted(dict_street_ratio.items(), key=lambda item: item[1]))
+    return sorted_dict
 
 def get_lines_by_item(lines):
     dict_ = {}
