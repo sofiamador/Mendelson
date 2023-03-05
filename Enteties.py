@@ -42,7 +42,7 @@ class TaskPick(Task):
         self.lines = lines
         self.id_ = id_
         self.importance = lines[0].importance
-        self.total_weight = calc_total_volume(lines)
+        self.total_weight = calc_total_weight(lines)
         self.number_of_lines = len(lines)
         self.is_in_transfer= False
         self.numberOfIds = self.getNumberOfIds();
@@ -61,7 +61,7 @@ class GroupOfItem():
         self.item_id = item_id
         self.importance = 1 # data not avaliable
         self.total_quantity = calc_total_quantity(lines)
-        self.total_volume = calc_total_volume(lines)
+        self.total_volume = calc_total_weight(lines)
         self.number_of_lines = len(lines)  # number of distinct orders\
         self.location = lines[0].location
         self.street = lines[0].location.street
@@ -76,7 +76,7 @@ class GroupOfItem():
         return self.item_id == other.item_id
 
 
-def calc_total_volume(lines):
+def calc_total_weight(lines):
     sum_weight = 0
     for line in lines:
         sum_weight = sum_weight + line.weight
