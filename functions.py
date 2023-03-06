@@ -49,14 +49,16 @@ def create_lines(lines_input_):
     return lines
 
 
-def create_streets(ratio_dict,dict_amount_of_makat_per_street,dict_amount_of_makat_in_orders_per_street,lines_by_street_dict,lines):
+def create_streets(lines_by_street_dict, min_amount_of_unique_items):
     streets = []
     for k, v in lines_by_street_dict.items():
         street = StreetObj(k, v)
-        street.ratio_val = ratio_dict[k]
-        street.makat_amount = dict_amount_of_makat_per_street[k]
-        street.order_amount = dict_amount_of_makat_in_orders_per_street[k]
-        streets.append(street)
+        street_unique_items = street.number_of_unique_items
+        if street_unique_items>min_amount_of_unique_items:
+        #street.ratio_val = ratio_dict[k]
+        #street.makat_amount = dict_amount_of_makat_per_street[k]
+        #street.order_amount = dict_amount_of_makat_in_orders_per_street[k]
+            streets.append(street)
     return streets
 
 
@@ -114,10 +116,11 @@ def create_lines_by_street(lines):
     lines_by_street = {}
 
     for line in lines:
-        street = line.location.street
-        if street not in lines_by_street:
-            lines_by_street[street] = []
-        lines_by_street[street].append(line)
+        if line.location.warehouse_id == "C1":
+            street = line.location.street
+            if street not in lines_by_street:
+                lines_by_street[street] = []
+            lines_by_street[street].append(line)
     return lines_by_street
 
 def sort_streets_by_ratio_makat_per_street_amount_of_makat_in_orders_per_street(lines_input):
@@ -136,40 +139,80 @@ def sort_streets_by_ratio_makat_per_street_amount_of_makat_in_orders_per_street(
     sorted_dict = dict(sorted(dict_street_ratio.items(), key=lambda item: item[1]))
     return sorted_dict,dict_amount_of_makat_per_street,dict_amount_of_makat_in_orders_per_street
 
-def get_lines_by_item(lines):
-    dict_ = {}
-    for line in lines:
-        item_id = line.item_id
-        if item_id not in dict_.keys():
-            dict_[item_id] = []
-        dict_[item_id].append(line)
-    ans = []
-    for line_list in dict_.values():
-        ans.append(GroupOfItem(item_id=line_list[0].item_id, lines=line_list))
-    return ans
 
-def get_dict_by_street(item_groups,werehouse_id):
+def get_unique_orders(lines_for_transfer,orders_to_remove):
+    for line in lines_for_transfer:
+        order_id = line.order_id
+        if order_id not in orders_to_remove:
+            orders_to_remove.append(order_id)
+
+
+def get_lines_by_task_transfer(max_makats_in_transfer_task,min_amount_of_unique_items,max_transfer_tasks,streets):
+    lines_by_task_transfer = {}
+    orders_to_remove = []
+    while max_transfer_tasks != 0:
+        street = streets[0]
+        lines_for_transfer = street.get_lines_for_transfer_task(max_makats_in_transfer_task)
+        get_unique_orders(lines_for_transfer,orders_to_remove)
+        lines_by_task_transfer[street]= lines_for_transfer
+        if street.number_of_unique_items < min_amount_of_unique_items:
+            streets.remove(street)
+        streets = sorted(streets, key=lambda x: x.ratio_for_fav_street)
+        max_transfer_tasks = max_transfer_tasks - 1
+        if len(streets) == 0:
+            break
+    return lines_by_task_transfer,orders_to_remove
+
+def create_streets_from_lines(lines,min_amount_of_unique_items):
+    lines_by_street_dict = create_lines_by_street(lines)
+    streets = create_streets(lines_by_street_dict, min_amount_of_unique_items=min_amount_of_unique_items)
+    return sorted(streets, key=lambda x: x.ratio_for_fav_street)
+
+def create_order_lines_dict_without_transfer(lines, order_ids_to_remove =[]):
     ans = {}
-    for item_group in item_groups:
-        item_aisle = item_group.street
-        if item_aisle not in ans.keys():
-            ans[item_aisle] = []
-        ans[item_aisle].append(item_group)
+    for line in lines:
+        order_id = line.order_id
+        if order_id not in order_ids_to_remove:
+            if order_id not in ans:
+                ans[order_id] = []
+            ans[order_id].append(line)
     return ans
 
-def get_item_groups_by_aisle(item_groups, max_groups_per_task, max_transfer_task, max_weight):
-    dict_by_aisle = get_dict_by_aisle(item_groups)
-    aisle_couples = get_aisle_couples()
-    dict_by_aisle_connection = get_dict_by_aisle_connection(dict_by_aisle, aisle_couples)
-    dict_sorted_value_by_volume = get_sorted_value_list_by_volume(dict_by_aisle_connection)
-    transfer_groups_per_aisle = get_transfer_groups_per_aisle(dict_sorted_value_by_volume, max_groups_per_task,
-                                                              max_volume)
-    transfer_groups_list = get_transfer_groups_list(transfer_groups_per_aisle)
-    transfer_groups_list_sorted = sorted(transfer_groups_list, key=lambda x: x.total_volume, reverse=True)
-
-    # --------------
-    selected_transfer_tasks = select_transfer_tasks(transfer_groups_list_sorted, max_transfer_task)
-    selected_transfer_tasks = fix_selected_transfer_tasks(selected_transfer_tasks, dict_sorted_value_by_volume,
-                                                          max_groups_per_task, max_volume)
-    return selected_transfer_tasks
-
+#
+# def get_lines_by_item(lines):
+#     dict_ = {}
+#     for line in lines:
+#         item_id = line.item_id
+#         if item_id not in dict_.keys():
+#             dict_[item_id] = []
+#         dict_[item_id].append(line)
+#     ans = []
+#     for line_list in dict_.values():
+#         ans.append(GroupOfItem(item_id=line_list[0].item_id, lines=line_list))
+#     return ans
+#
+# def get_dict_by_street(item_groups,werehouse_id):
+#     ans = {}
+#     for item_group in item_groups:
+#         item_aisle = item_group.street
+#         if item_aisle not in ans.keys():
+#             ans[item_aisle] = []
+#         ans[item_aisle].append(item_group)
+#     return ans
+#
+# def get_item_groups_by_aisle(item_groups, max_groups_per_task, max_transfer_task, max_weight):
+#     dict_by_aisle = get_dict_by_aisle(item_groups)
+#     aisle_couples = get_aisle_couples()
+#     dict_by_aisle_connection = get_dict_by_aisle_connection(dict_by_aisle, aisle_couples)
+#     dict_sorted_value_by_volume = get_sorted_value_list_by_volume(dict_by_aisle_connection)
+#     transfer_groups_per_aisle = get_transfer_groups_per_aisle(dict_sorted_value_by_volume, max_groups_per_task,
+#                                                               max_volume)
+#     transfer_groups_list = get_transfer_groups_list(transfer_groups_per_aisle)
+#     transfer_groups_list_sorted = sorted(transfer_groups_list, key=lambda x: x.total_volume, reverse=True)
+#
+#     # --------------
+#     selected_transfer_tasks = select_transfer_tasks(transfer_groups_list_sorted, max_transfer_task)
+#     selected_transfer_tasks = fix_selected_transfer_tasks(selected_transfer_tasks, dict_sorted_value_by_volume,
+#                                                           max_groups_per_task, max_volume)
+#     return selected_transfer_tasks
+#

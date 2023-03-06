@@ -33,10 +33,97 @@ class Line(object):
 
 class StreetObj:
     def __init__(self, isle_id, lines):
-        self.lines = lines
         self.isle_id = isle_id
-        self.number_of_lines = len(lines)
+        self.lines = lines
+        self.lines_breathing = lines
 
+        self.number_of_lines = len(self.lines_breathing)
+
+        ##---- for sorting between streets
+        self.number_of_unique_items = 999999
+        self.number_of_unique_orders = 0
+        self.ratio_for_fav_street = 999999
+        self.update_for_sorting_values ()
+
+
+        self.lines_for_transfer_task = []
+
+        ##---- for within the street
+
+
+
+
+
+    def create_item_id_and_lines(self,item_id_and_lines):
+        for line in self.lines_breathing :
+            item_id = line.item_id
+            if item_id not in item_id_and_lines:
+                item_id_and_lines[item_id] = []
+            item_id_and_lines[item_id].append(line)
+
+
+    def get_lines_for_transfer_task (self, amount_of_items):
+
+        item_id_and_orders = {}
+        items_sorted_by_number_orders = self.create_item_id_and_orders(item_id_and_orders)
+        item_id_and_lines = {}
+        self.create_item_id_and_lines(item_id_and_lines)
+
+
+        ans = []
+        items_to_move = []
+        for i in range(amount_of_items):
+            if i<len(items_sorted_by_number_orders):
+                item_id = items_sorted_by_number_orders[i]
+                lines_of_item = item_id_and_lines[item_id]
+                ans.extend(lines_of_item)
+            else:
+                break
+
+
+        for line in ans:
+            self.lines_breathing.remove(line)
+
+        self.update_for_sorting_values ()
+        self.lines_for_transfer_task.append(ans)
+        return ans
+
+
+
+    def create_item_id_and_orders(self,item_id_and_orders):
+        for line in self.lines_breathing :
+            item_id = line.item_id
+            if item_id not in item_id_and_orders:
+                item_id_and_orders[item_id] = []
+            item_id_and_orders[item_id].append(line.order_id)
+        return list(dict(sorted(item_id_and_orders.items(), key=lambda x: len(x[1]), reverse=True)).keys())
+
+    def update_number_of_unique_orders(self):
+        dict_ ={}
+        for line in self.lines_breathing:
+            order_id = line.order_id
+            if order_id not in dict_:
+                dict_[order_id] = []
+            dict_[order_id].append(line)
+        self.number_of_unique_orders = len(dict_)
+
+    def update_number_of_unique_items(self):
+        dict_ = {}
+        for line in self.lines_breathing:
+            item_id = line.item_id
+            if item_id not in dict_:
+                dict_[item_id] = []
+            dict_[item_id].append(line)
+        self.number_of_unique_items = len(dict_)
+
+    def update_for_sorting_values(self):
+        self.update_number_of_unique_items()
+        self.update_number_of_unique_orders()
+        self.ratio_for_fav_street = self.number_of_unique_items / self.number_of_unique_orders
+
+
+    def __str__(self):
+        return self.isle_id
 
 class Task:
     def __init__(self ):
@@ -44,7 +131,7 @@ class Task:
         self.importance = 1
 
 class TaskPick(Task):
-    def __init__(self, id_, lines):
+    def __init__(self,  id_,lines):
         Task.__init__(self)
         self.lines = lines
         self.id_ = id_
@@ -60,6 +147,19 @@ class TaskPick(Task):
             if line.item_id not in ids_:
                 ids_.append(line.item_id)
         return len(ids_)
+
+
+
+class TaskTransfer(Task):
+    def __init__(self,  street,lines):
+        Task.__init__(self)
+        self.street = street
+        self.lines = lines
+
+    def __str__(self):
+        return str(self.street)+ ", "+ str(self.total_volume)
+
+
 
 
 class GroupOfItem():
