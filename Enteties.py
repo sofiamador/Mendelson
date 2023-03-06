@@ -31,6 +31,13 @@ class Line(object):
         self.weight = weight
 
 
+class StreetObj:
+    def __init__(self, isle_id, lines):
+        self.lines = lines
+        self.isle_id = isle_id
+        self.number_of_lines = len(lines)
+
+
 class Task:
     def __init__(self ):
         self.lines = []
@@ -88,3 +95,4 @@ def calc_total_quantity(lines):
     for line in lines:
         sum_quantity = sum_quantity + line.quantity
     return sum_quantity
+

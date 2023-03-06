@@ -1,5 +1,5 @@
 import pandas as pd
-from Enteties import Line, TaskPick
+from Enteties import Line, TaskPick, StreetObj
 
 
 def read_input(file_name):
@@ -49,6 +49,17 @@ def create_lines(lines_input_):
     return lines
 
 
+def create_streets(ratio_dict,dict_amount_of_makat_per_street,dict_amount_of_makat_in_orders_per_street,lines_by_street_dict,lines):
+    streets = []
+    for k, v in lines_by_street_dict.items():
+        street = StreetObj(k, v)
+        street.ratio_val = ratio_dict[k]
+        street.makat_amount = dict_amount_of_makat_per_street[k]
+        street.order_amount = dict_amount_of_makat_in_orders_per_street[k]
+        streets.append(street)
+    return streets
+
+
 def get_lines_by_order(lines):
     dict_ = {}
     for line in lines:
@@ -63,6 +74,8 @@ def get_lines_by_order(lines):
         ans.append(TaskPick(id_=line_list[0].order_id, lines=line_list))
 
     return ans
+
+
 
 
 def remove_pick_tasks_that_are_finished(pick_tasks):
@@ -95,8 +108,21 @@ def get_task_by_id(id_to_delete, pick_tasks):
         if task.id_ == id_to_delete:
             return task
 
+
+
+def create_lines_by_street(lines):
+    lines_by_street = {}
+
+    for line in lines:
+        street = line.location.street
+        if street not in lines_by_street:
+            lines_by_street[street] = []
+        lines_by_street[street].append(line)
+    return lines_by_street
+
 def sort_streets_by_ratio_makat_per_street_amount_of_makat_in_orders_per_street(lines_input):
     lines_c1_by_street_df = lines_input.groupby('אזור_במחסן').get_group('C1').groupby('רחוב')
+
     ####---- get amount of makatim per steet----####
     dict_amount_of_makat_per_street = lines_c1_by_street_df['מק_ט'].nunique().to_dict()
     ####---- get amount of orders of makats per steet----####
@@ -108,7 +134,7 @@ def sort_streets_by_ratio_makat_per_street_amount_of_makat_in_orders_per_street(
             street]
 
     sorted_dict = dict(sorted(dict_street_ratio.items(), key=lambda item: item[1]))
-    return sorted_dict
+    return sorted_dict,dict_amount_of_makat_per_street,dict_amount_of_makat_in_orders_per_street
 
 def get_lines_by_item(lines):
     dict_ = {}

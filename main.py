@@ -1,3 +1,4 @@
+from Enteties import StreetObj
 from functions import *
 
 is_with_transfer_tasks = False
@@ -13,10 +14,17 @@ max_transfer_task = 2
 
 date ="2023-01-08"
 dir = "input_by_date/"
+
 lines_input = read_input(dir + "input_" + date + ".xlsx")
 print(lines_input.info)
 
-street_dict = sort_streets_by_ratio_makat_per_street_amount_of_makat_in_orders_per_street(lines_input)
+ratio_dict,dict_amount_of_makat_per_street,dict_amount_of_makat_in_orders_per_street = sort_streets_by_ratio_makat_per_street_amount_of_makat_in_orders_per_street(lines_input)
+
+lines = create_lines( lines_input)
+lines_by_street_dict = create_lines_by_street(lines_input)
+streets = create_streets(ratio_dict,dict_amount_of_makat_per_street,dict_amount_of_makat_in_orders_per_street,lines_by_street_dict,lines)
+
+
 
 print()
 
@@ -33,7 +41,6 @@ print()
 
 
 
-lines = create_lines( lines_input)
 pick_tasks = get_lines_by_order(lines)
 ##pick_tasks = remove_pick_tasks_that_are_finished(pick_tasks)
 
