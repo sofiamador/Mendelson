@@ -196,3 +196,14 @@ def calc_total_quantity(lines):
         sum_quantity = sum_quantity + line.quantity
     return sum_quantity
 
+
+class Employee():
+
+    def __init__(self, id_,role, abilities):
+        self.abilities = abilities
+        #self.location = location
+        #self.name = name
+        self.id_ = id_
+        self.role = role
+    def __str__(self):
+        return str(self.id_) + "  " + str(self.abilities)

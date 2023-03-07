@@ -13,6 +13,11 @@ min_amount_of_unique_items = 4
 # print(lines_input2.info)
 # create_files_by_date(lines_input2)
 
+####------------AGENTS DATA--------------------
+employees_data = read_input("employees.xlsx")
+employees = create_employees(employees_data)
+
+####------------TASKS DATA--------------------
 date ="2023-01-08"
 dir = "input_by_date/"
 

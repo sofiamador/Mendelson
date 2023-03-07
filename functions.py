@@ -1,5 +1,5 @@
 import pandas as pd
-from Enteties import Line, TaskPick, StreetObj
+from Enteties import Line, TaskPick, StreetObj,Employee
 
 
 def read_input(file_name):
@@ -177,6 +177,22 @@ def create_order_lines_dict_without_transfer(lines, order_ids_to_remove =[]):
                 ans[order_id] = []
             ans[order_id].append(line)
     return ans
+
+
+
+def create_employees(employees_data):
+    employees_ = []
+    for ind in employees_data.index:
+        employee_id = employees_data['שם מלא'][ind]
+        role = employees_data['תפקיד'][ind]
+        pick_grade = int(employees_data['ליקוט'][ind])
+        transfer_grade = int(employees_data['רענון'][ind])
+        pick_height_grade = int(employees_data['גובה'][ind])
+        abilities = {"pick": pick_grade, "transfer": transfer_grade,"pick_height":pick_height_grade}
+        employee = Employee(id_=employee_id, abilities=abilities,role=role)
+        employees_.append(employee)
+    return employees_
+
 
 #
 # def get_lines_by_item(lines):
