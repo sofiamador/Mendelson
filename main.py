@@ -29,27 +29,29 @@ print(lines_input.info)
 #ratio_dict,dict_amount_of_makat_per_street,dict_amount_of_makat_in_orders_per_street = sort_streets_by_ratio_makat_per_street_amount_of_makat_in_orders_per_street(lines_input)
 
 lines = create_lines( lines_input)
-
+lines_by_warehouse_and_order = get_lines_by_warehouse_and_order(lines)
 lines_to_remove = []
 
 
 transfer_tasks = []
 pick_tasks = []
 
+
 id_counter = 0
 if is_with_transfer_tasks:
     streets = create_streets_from_lines (lines,min_amount_of_unique_items)
-    lines_by_task_transfer,order_ids_to_remove = get_lines_by_task_transfer(max_makats_in_transfer_task,min_amount_of_unique_items,max_transfer_tasks,streets)
+    lines_by_task_transfer,order_ids_to_remove_in_c1 = get_lines_by_task_transfer(max_makats_in_transfer_task,min_amount_of_unique_items,max_transfer_tasks,streets)
     for k,v in lines_by_task_transfer.items():
         id_counter = id_counter +1
         transfer_tasks.append(TaskTransfer(k,v,id_counter))
-    order_lines_dict_without_transfer = create_order_lines_dict_without_transfer(lines,order_ids_to_remove)
+        create_order_lines_dict_without_transfer(lines_by_warehouse_and_order,order_ids_to_remove_in_c1,"C1")
 else:
     order_lines_dict_without_transfer = create_order_lines_dict_without_transfer(lines)
 
-for order_id,lines_for_order in order_lines_dict_without_transfer.items():
-    id_counter = id_counter + 1
-    pick_tasks.append(TaskPick(order_id,lines_for_order,id_counter))
+for order_id,warehouse_lines_dict in lines_by_warehouse_and_order.items():
+    for warehouse_id, lines_for_task  in warehouse_lines_dict.items():
+        id_counter = id_counter + 1
+        pick_tasks.append(TaskPick(order_id,lines_for_task,id_counter,warehouse_id))
 
 
 

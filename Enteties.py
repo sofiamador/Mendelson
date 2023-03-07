@@ -132,10 +132,11 @@ class Task:
         self.importance = 1
 
 class TaskPick(Task):
-    def __init__(self, order_id,lines_for_order,id_counter):
+    def __init__(self, order_id,lines_for_order,id_counter,warehouse_id):
         Task.__init__(self,id_counter)
         self.lines = lines_for_order
         self.order_id = order_id
+        self.warehouse_id =warehouse_id
 
 
 

@@ -170,15 +170,21 @@ def create_streets_from_lines(lines,min_amount_of_unique_items):
     streets = create_streets(lines_by_street_dict, min_amount_of_unique_items=min_amount_of_unique_items)
     return sorted(streets, key=lambda x: x.ratio_for_fav_street)
 
-def create_order_lines_dict_without_transfer(lines, order_ids_to_remove =[]):
-    ans = {}
-    for line in lines:
-        order_id = line.order_id
-        if order_id not in order_ids_to_remove:
-            if order_id not in ans:
-                ans[order_id] = []
-            ans[order_id].append(line)
-    return ans
+def create_order_lines_dict_without_transfer(lines_by_warehouse_and_order, order_ids_to_remove =[],warehouse_to_exclude = ""):
+    #ans = {}
+    for order_id,dict_warehouse_and_lines in lines_by_warehouse_and_order.items():
+        if order_id in order_ids_to_remove:
+            if warehouse_to_exclude in dict_warehouse_and_lines:
+                del dict_warehouse_and_lines[warehouse_to_exclude]
+
+        #for warehouse_id, lines in dic_.items():
+
+        #order_id = line.order_id
+        #if order_id not in order_ids_to_remove:
+         #   if order_id not in ans:
+          #      ans[order_id] = []
+          #  ans[order_id].append(line)
+    #return ans
 
 
 
@@ -224,18 +230,24 @@ def create_pandas_output(output_tasks):
     item_id_lst = []
     order_id_lst= []
     type_lst = []
+    warehouse_id_lst = []
     for task in output_tasks:
         for l in task.lines:
             item_id_lst.append(l.item_id)
             order_id_lst.append(l.order_id)
+
             if isinstance(task,TaskPick):
                 type_lst.append("ליקוט")
+                warehouse_id_lst.append(task.warehouse_id)
+
             else:
                 type_lst.append("העברה")
+                warehouse_id_lst.append("C1")
         item_id_lst.append("000")
         order_id_lst.append("000")
         type_lst.append("000")
-    d = {'מקט': item_id_lst, 'מספר הזמנה': order_id_lst,"סוג":type_lst}
+        warehouse_id_lst.append("000")
+    d = {'מקט': item_id_lst, 'מספר הזמנה': order_id_lst,"סוג":type_lst,"אזור_במחסן":warehouse_id_lst}
     df = pd.DataFrame(data=d)
     return df
 
@@ -248,6 +260,19 @@ def write_to_excel(employee_id, pd_output, first):
 
     with pd.ExcelWriter("output.xlsx",mode="a",engine="openpyxl") as writer:
         pd_output.to_excel(writer, sheet_name=employee_id,index=False)
+
+
+def get_lines_by_warehouse_and_order(lines):
+    ans = {}
+    for line in lines:
+        order_id = line.order_id
+        warehouse_id = line.location.warehouse_id
+        if order_id not in ans:
+            ans[order_id] = {}
+        if warehouse_id not in ans[order_id]:
+            ans[order_id][warehouse_id] = []
+        ans[order_id][warehouse_id].append(line)
+    return ans
 
 #
 # def get_lines_by_item(lines):
