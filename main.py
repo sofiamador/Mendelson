@@ -53,10 +53,8 @@ for order_id,warehouse_lines_dict in lines_by_warehouse_and_order.items():
         id_counter = id_counter + 1
         pick_tasks.append(TaskPick(order_id,lines_for_task,id_counter,warehouse_id))
 
-
-
-
 schedule = get_random_schedule(employees,pick_tasks, transfer_tasks)
+
 
 
 first = True
@@ -64,6 +62,8 @@ for employee,tasks in schedule.items():
     pd_output = create_pandas_output(tasks)
     write_to_excel(employee,pd_output,first)
     first = False#
+
+
 # pick_tasks = get_lines_by_order(lines)
 # ##pick_tasks = remove_pick_tasks_that_are_finished(pick_tasks)
 #
@@ -74,3 +74,5 @@ for employee,tasks in schedule.items():
 # else:
 #     transfer_tasks = []
 
+pd_output2 = create_pandas_output2(schedule)
+write_to_excel2(pd_output2)

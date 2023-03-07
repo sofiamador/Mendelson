@@ -312,3 +312,45 @@ def get_lines_by_warehouse_and_order(lines):
 #                                                           max_groups_per_task, max_volume)
 #     return selected_transfer_tasks
 #
+
+def create_pandas_output2(output_):
+    item_id_lst = []
+    from_lst = []
+    to_lst = []
+    quantity_lst = []
+    order_id_lst = []
+    type_lst = []
+    employee_id_list = []
+    for e in output_:
+        for task in output_[e]:
+            if isinstance(task, TaskPick):
+                item_id_lst.append("")
+                from_lst.append("")
+                to_lst.append("")
+                quantity_lst.append(" ")
+                order_id_lst.append(task.id_)
+                type_lst.append("ליקוט")
+                employee_id_list.append(e)
+            else:
+                for gi in task.grouped_items:
+                    item_id_lst.append(gi.item_id)
+                    from_lst.append(gi.location.loc_str)
+                    to_lst.append("xx.xx.xx.xx")
+                    quantity_lst.append(gi.total_quantity)
+                    order_id_lst.append(" ")
+                    type_lst.append("העברה")
+                    employee_id_list.append(e)
+            item_id_lst.append("000")
+            from_lst.append("000")
+            to_lst.append("000")
+            quantity_lst.append("000")
+            order_id_lst.append("000")
+            type_lst.append("000")
+            employee_id_list.append("000")
+    d = {'מקט': item_id_lst, 'מאיתור': from_lst, 'לאיתור': to_lst, "כמות": quantity_lst, 'מספר הזמנה': order_id_lst,
+         "סוג": type_lst, "עובד": employee_id_list}
+    df = pd.DataFrame(data=d)
+    return df
+
+def write_to_excel2(pd_output):
+    pd_output.to_excel("output_tasks.xlsx", index=False)

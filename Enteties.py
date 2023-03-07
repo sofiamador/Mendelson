@@ -148,10 +148,9 @@ class TaskTransfer(Task):
         self.street = street
         self.lines = lines
 
+
     def __str__(self):
-        return str(self.street)+ ", "+ str(self.total_volume)
-
-
+        return str(self.street)
 
 
 class GroupOfItem():
