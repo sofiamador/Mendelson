@@ -147,10 +147,24 @@ class TaskTransfer(Task):
         Task.__init__(self,id_)
         self.street = street
         self.lines = lines
+        self.grouped_items =[]
+        self.create_grouped_items()
+
 
 
     def __str__(self):
         return str(self.street)
+
+    def create_grouped_items(self):
+        lines_by_items = {}
+        for line in self.lines:
+            item_id = line.item_id
+            if item_id not in lines_by_items:
+                lines_by_items[item_id] = []
+            lines_by_items[item_id].append(line)
+
+        for item_id, lines in lines_by_items.items():
+            self.grouped_items.append(GroupOfItem(item_id, lines));
 
 
 class GroupOfItem():
