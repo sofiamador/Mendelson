@@ -1,3 +1,5 @@
+from random import random
+
 from Enteties import StreetObj, TaskTransfer
 from functions import *
 
@@ -33,27 +35,33 @@ lines_to_remove = []
 
 transfer_tasks = []
 pick_tasks = []
+
+id_counter = 0
 if is_with_transfer_tasks:
     streets = create_streets_from_lines (lines,min_amount_of_unique_items)
     lines_by_task_transfer,order_ids_to_remove = get_lines_by_task_transfer(max_makats_in_transfer_task,min_amount_of_unique_items,max_transfer_tasks,streets)
     for k,v in lines_by_task_transfer.items():
-        transfer_tasks.append(TaskTransfer(k,v))
+        id_counter = id_counter +1
+        transfer_tasks.append(TaskTransfer(k,v,id_counter))
     order_lines_dict_without_transfer = create_order_lines_dict_without_transfer(lines,order_ids_to_remove)
 else:
     order_lines_dict_without_transfer = create_order_lines_dict_without_transfer(lines)
 
-
-    print()
-
-
-
+for order_id,lines_for_order in order_lines_dict_without_transfer.items():
+    id_counter = id_counter + 1
+    pick_tasks.append(TaskPick(order_id,lines_for_order,id_counter))
 
 
 
 
+schedule = get_random_schedule(employees,pick_tasks, transfer_tasks)
 
 
-#
+first = True
+for employee,tasks in schedule.items():
+    pd_output = create_pandas_output(tasks)
+    write_to_excel(employee,pd_output,first)
+    first = False#
 # pick_tasks = get_lines_by_order(lines)
 # ##pick_tasks = remove_pick_tasks_that_are_finished(pick_tasks)
 #

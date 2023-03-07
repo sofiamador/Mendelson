@@ -1,3 +1,5 @@
+import random
+
 import pandas as pd
 from Enteties import Line, TaskPick, StreetObj,Employee
 
@@ -188,11 +190,64 @@ def create_employees(employees_data):
         pick_grade = int(employees_data['ליקוט'][ind])
         transfer_grade = int(employees_data['רענון'][ind])
         pick_height_grade = int(employees_data['גובה'][ind])
-        abilities = {"pick": pick_grade, "transfer": transfer_grade,"pick_height":pick_height_grade}
+        abilities = {}
+        if pick_grade!=0:
+            abilities["pick"] = pick_grade
+        if transfer_grade!=0:
+            abilities["transfer"] = transfer_grade
+        if pick_height_grade!=0:
+            abilities["pick_height"] = pick_height_grade
         employee = Employee(id_=employee_id, abilities=abilities,role=role)
         employees_.append(employee)
     return employees_
 
+
+def get_random_schedule(employees,pick_tasks, transfer_tasks):
+    schedule = {}
+    for employee in employees:
+        name = employee.id_
+        schedule[name] = []
+
+    for transfer_task in transfer_tasks:
+        rnd_emp = random.choice(employees)
+        schedule[rnd_emp.id_].append(transfer_task)
+
+    for pick_task in pick_tasks:
+        rnd_emp = random.choice(employees)
+        schedule[rnd_emp.id_].append(pick_task)
+
+    return schedule
+
+
+
+def create_pandas_output(output_tasks):
+    item_id_lst = []
+    order_id_lst= []
+    type_lst = []
+    for task in output_tasks:
+        for l in task.lines:
+            item_id_lst.append(l.item_id)
+            order_id_lst.append(l.order_id)
+            if isinstance(task,TaskPick):
+                type_lst.append("ליקוט")
+            else:
+                type_lst.append("העברה")
+        item_id_lst.append("000")
+        order_id_lst.append("000")
+        type_lst.append("000")
+    d = {'מקט': item_id_lst, 'מספר הזמנה': order_id_lst,"סוג":type_lst}
+    df = pd.DataFrame(data=d)
+    return df
+
+
+def write_to_excel(employee_id, pd_output, first):
+    if first:
+        pd_output.to_excel("output.xlsx",
+                     sheet_name=employee_id, index=False)
+        return
+
+    with pd.ExcelWriter("output.xlsx",mode="a",engine="openpyxl") as writer:
+        pd_output.to_excel(writer, sheet_name=employee_id,index=False)
 
 #
 # def get_lines_by_item(lines):

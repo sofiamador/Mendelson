@@ -126,33 +126,24 @@ class StreetObj:
         return self.isle_id
 
 class Task:
-    def __init__(self ):
+    def __init__(self, id_):
+        self.id_ = id_
         self.lines = []
         self.importance = 1
 
 class TaskPick(Task):
-    def __init__(self,  id_,lines):
-        Task.__init__(self)
-        self.lines = lines
-        self.id_ = id_
-        self.importance = lines[0].importance
-        self.total_weight = calc_total_weight(lines)
-        self.number_of_lines = len(lines)
-        self.is_in_transfer= False
-        self.numberOfIds = self.getNumberOfIds();
+    def __init__(self, order_id,lines_for_order,id_counter):
+        Task.__init__(self,id_counter)
+        self.lines = lines_for_order
+        self.order_id = order_id
 
-    def getNumberOfIds(self):
-        ids_ = []
-        for line in self.lines:
-            if line.item_id not in ids_:
-                ids_.append(line.item_id)
-        return len(ids_)
+
 
 
 
 class TaskTransfer(Task):
-    def __init__(self,  street,lines):
-        Task.__init__(self)
+    def __init__(self,  street,lines,id_):
+        Task.__init__(self,id_)
         self.street = street
         self.lines = lines
 
