@@ -184,7 +184,7 @@ class TaskTransfer(Task):
         Task.__init__(self, id_)
         self.item_id = item_id
         self.location = location
-        self.quantity = 0 #TODO BEN
+        self.quantity = 0
         self.lines = [] #TODO BEN
         # self.grouped_items =[]
         # self.create_grouped_items()
