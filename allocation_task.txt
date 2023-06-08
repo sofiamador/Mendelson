@@ -1,0 +1,498 @@
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903053')
+{"DOERLOGIN": "abdallah"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902935')
+{"DOERLOGIN": "abdallah"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902912')
+{"DOERLOGIN": "abdallah"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901788')
+{"DOERLOGIN": "abdallah"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903135')
+{"DOERLOGIN": "abdallah"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903128')
+{"DOERLOGIN": "abdallah"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902762')
+{"DOERLOGIN": "abdallah"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902750')
+{"DOERLOGIN": "abdallah"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902747')
+{"DOERLOGIN": "abdallah"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903154')
+{"DOERLOGIN": "abdallah"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903133')
+{"DOERLOGIN": "abdallah"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903028')
+{"DOERLOGIN": "abdallah"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902913')
+{"DOERLOGIN": "yonib"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902746')
+{"DOERLOGIN": "yonib"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902715')
+{"DOERLOGIN": "yonib"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903017')
+{"DOERLOGIN": "yonib"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902930')
+{"DOERLOGIN": "yonib"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902916')
+{"DOERLOGIN": "yonib"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902764')
+{"DOERLOGIN": "yonib"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903149')
+{"DOERLOGIN": "yonib"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902926')
+{"DOERLOGIN": "yonib"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902790')
+{"DOERLOGIN": "yonib"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902778')
+{"DOERLOGIN": "yonib"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902738')
+{"DOERLOGIN": "yonib"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902724')
+{"DOERLOGIN": "yonib"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902228')
+{"DOERLOGIN": "oshri"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903012')
+{"DOERLOGIN": "oshri"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902997')
+{"DOERLOGIN": "oshri"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902784')
+{"DOERLOGIN": "oshri"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902775')
+{"DOERLOGIN": "oshri"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902727')
+{"DOERLOGIN": "oshri"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903040')
+{"DOERLOGIN": "oshri"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903018')
+{"DOERLOGIN": "oshri"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902785')
+{"DOERLOGIN": "oshri"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903126')
+{"DOERLOGIN": "oshri"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902925')
+{"DOERLOGIN": "oshri"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901648')
+{"DOERLOGIN": "nadavm"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902999')
+{"DOERLOGIN": "nadavm"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902992')
+{"DOERLOGIN": "nadavm"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902914')
+{"DOERLOGIN": "nadavm"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902777')
+{"DOERLOGIN": "nadavm"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902728')
+{"DOERLOGIN": "nadavm"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902718')
+{"DOERLOGIN": "nadavm"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902936')
+{"DOERLOGIN": "nadavm"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902776')
+{"DOERLOGIN": "nadavm"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902765')
+{"DOERLOGIN": "nadavm"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903052')
+{"DOERLOGIN": "nadavm"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903099')
+{"DOERLOGIN": "aviw"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902761')
+{"DOERLOGIN": "aviw"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902613')
+{"DOERLOGIN": "aviw"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902610')
+{"DOERLOGIN": "aviw"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903132')
+{"DOERLOGIN": "aviw"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903129')
+{"DOERLOGIN": "aviw"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903098')
+{"DOERLOGIN": "aviw"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902791')
+{"DOERLOGIN": "aviw"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902767')
+{"DOERLOGIN": "aviw"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901194')
+{"DOERLOGIN": "aviw"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903136')
+{"DOERLOGIN": "aviw"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903006')
+{"DOERLOGIN": "aviw"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902932')
+{"DOERLOGIN": "aviw"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902782')
+{"DOERLOGIN": "aviw"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902720')
+{"DOERLOGIN": "aviw"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903142')
+{"DOERLOGIN": "muhamda"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903035')
+{"DOERLOGIN": "muhamda"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902918')
+{"DOERLOGIN": "muhamda"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902751')
+{"DOERLOGIN": "muhamda"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902721')
+{"DOERLOGIN": "muhamda"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903033')
+{"DOERLOGIN": "muhamda"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903007')
+{"DOERLOGIN": "muhamda"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902996')
+{"DOERLOGIN": "muhamda"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902766')
+{"DOERLOGIN": "muhamda"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902736')
+{"DOERLOGIN": "muhamda"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903029')
+{"DOERLOGIN": "muhamda"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902731')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901027')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901008')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901000')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902583')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900993')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900971')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899671')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901012')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900990')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900989')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900974')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899679')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899668')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899662')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1895887')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902934')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902585')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901028')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901004')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899666')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902789')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902589')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902587')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902563')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900977')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902788')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901193')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901190')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901024')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900994')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902770')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900984')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900975')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899680')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899659')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902562')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901184')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901183')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901025')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1884971')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901182')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901005')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900996')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900981')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899688')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901018')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901015')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900992')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900985')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899686')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902719')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901179')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901011')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901001')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900978')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899660')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902572')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901007')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899670')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899661')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1895888')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893188')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902569')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901181')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901180')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899711')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899709')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899669')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893189')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901010')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901009')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900995')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899695')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899672')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899667')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899663')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903034')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902939')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900983')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902592')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900979')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1884963')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902573')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902567')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902561')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903031')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903021')
+{"DOERLOGIN": "idanb"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903022')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902590')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902588')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902582')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900976')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899710')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899705')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899684')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902915')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902716')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901186')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901185')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901019')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900991')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899692')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1883715')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902792')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902566')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900997')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899715')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899691')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899690')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899685')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899664')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902783')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902743')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902586')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902568')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901026')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901020')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900980')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899687')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903106')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902959')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902593')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902564')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900988')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900986')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899677')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1884973')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1884965')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903003')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901909')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900972')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899708')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899703')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899689')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899676')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899665')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1884970')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903160')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903157')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902570')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901177')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901017')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901014')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901013')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901006')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900998')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899694')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902581')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902580')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902578')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901021')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900987')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900973')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899713')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899712')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899681')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1884966')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902835')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902591')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902579')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902577')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902576')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901192')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901191')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901187')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901178')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901003')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1900999')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893187')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902584')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901189')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901188')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902571')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902565')
+{"DOERLOGIN": "mhamada"}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1899683')
+{"DOERLOGIN": "mhamada"}

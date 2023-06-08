@@ -4,7 +4,7 @@ class Location():
         self.loc_lst = loc_str.split(".")
         self.warehouse_id = warehouse_id
         self.street = self.loc_lst[0]
-        self.pallet=pallet
+        self.pallet = pallet
         if len(self.loc_lst) > 1:
             self.column = self.loc_lst[1]
         if len(self.loc_lst) > 2:
@@ -54,7 +54,8 @@ class LineNoLocation(object):
 
 class Line(object):
 
-    def __init__(self, item_id, order_id, quantity, warehouse_id, location_string,priority =0,importance=1, weight=0):
+    def __init__(self, item_id, order_id, quantity, warehouse_id, location_string, line_number=1, priority=0,
+                 importance=1, weight=0, ):
         """
 
         :param order_id: order_id that the line belongs to
@@ -65,14 +66,15 @@ class Line(object):
         :param weight: the weight of the products in this line
         """
         self.location = location_string
-        if location_string!="":
+        if location_string != "":
             self.location = Location(loc_str=location_string, warehouse_id=warehouse_id, quantity=None)
         self.item_id = item_id
         self.order_id = order_id
         self.quantity = quantity
         self.importance = importance
         self.weight = weight
-        self.priority =int(priority)
+        self.priority = int(priority)
+        self.line_number = line_number
 
 
 class StreetObj:
@@ -159,10 +161,8 @@ class StreetObj:
         return self.isle_id
 
 
-
-
 class Task:
-    def __init__(self, id_,importance=0):
+    def __init__(self, id_, importance=0):
         self.id_ = id_
         self.lines = []
         self.importance = importance
@@ -170,8 +170,8 @@ class Task:
 
 
 class TaskPick(Task):
-    def __init__(self, order_id, status,employee, importance,warehouse_id="",lines_for_order=[]):
-        Task.__init__(self, order_id,importance)
+    def __init__(self, order_id, status, employee, importance, warehouse_id="", lines_for_order=[]):
+        Task.__init__(self, order_id, importance)
         self.lines = lines_for_order
         self.warehouse_id = warehouse_id
         self.amount_of_lines = len(lines_for_order)
@@ -184,10 +184,10 @@ class TaskTransfer(Task):
         Task.__init__(self, id_)
         self.item_id = item_id
         self.location = location
-        # self.grouped_items =[] #TODO BEN
+        self.quantity = 0 #TODO BEN
+        self.lines = [] #TODO BEN
+        # self.grouped_items =[]
         # self.create_grouped_items()
-        self.quanity = 1 #TODO BEN
-        self.pallet = 0 #TODO BEN
 
     def __str__(self):
         return str(self.item_id, self.location)
@@ -252,7 +252,7 @@ class GroupOfItem():
 
     def update_the_measure(self):
         self.the_measure = (
-                                       1 - self.weight_on_orders_reps) * self.normalized_location_c1 + self.weight_on_orders_reps * self.normalized_number_of_lines
+                                   1 - self.weight_on_orders_reps) * self.normalized_location_c1 + self.weight_on_orders_reps * self.normalized_number_of_lines
 
     def update_normalized_location_c1(self, location_c1_manhattan_max):
         self.normalized_location_c1 = self.location_c1.manhattan / location_c1_manhattan_max
@@ -288,7 +288,7 @@ class Order(Task):
         self.order_id = order_id
         self.ability = ability
         self.lines = lines
-        self.priority = max(self.lines,key=lambda x:x.priority).priority
+        self.priority = max(self.lines, key=lambda x: x.priority).priority
         self.amount_of_lines = len(self.lines)
         self.cumulative_value = None
 

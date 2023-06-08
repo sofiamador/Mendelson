@@ -78,6 +78,26 @@ def create_inventory_dict(lines_input_, center_street):
     return ans
 
 
+def create_inventory_dict_from_json(lines_input_, center_street):
+    ans = {}
+    locations_list = []
+    for line in lines_input_:
+
+        pallet = line["ACTNAME"]
+        item_id = line["PARTNAME"]
+        warehouse_id = line["STZONECODE"]
+        quantity = line["BALANCE"]
+        location = Location(loc_str=line["LOCNAME"], warehouse_id=warehouse_id, quantity=quantity,
+                            x=center_street, pallet=pallet)
+        locations_list.append(location)
+        if item_id not in ans:
+            ans[item_id] = []
+        ans[item_id].append(location)
+
+    # fix_normalized_manhattan(locations_list,ans)
+    return ans
+
+
 def create_lines_before_gal(lines_input_):
     lines = []
     for ind in lines_input_.index:
@@ -101,6 +121,23 @@ def create_lines_from_gal_output(lines_input_):
         priority = lines_input_['עדיפות'][ind]
 
         line = Line(item_id, order_id, quantity, warehouse_id, location_string, priority)
+        lines.append(line)
+    return lines
+
+
+def create_lines_from_json_after_gal(lines_input_):
+    lines = []
+    for task in lines_input_:
+        order_id = task["WTASKNUM"]
+        warehouse_id = task["STZONECODE"]
+        priority = task["PRIO"]
+        for item in task["WTASKITEMS_SUBFORM"]:
+            item_id = item["PARTNAME"]
+            quantity = float(item["PTQUANT"])
+            location_string = item["LOCNAME"]
+            line_number = item["KLINE"]
+
+        line = Line(item_id, order_id, quantity, warehouse_id, location_string, line_number, priority)
         lines.append(line)
     return lines
 
@@ -604,7 +641,6 @@ def create_transfer_tasks(lines, inventory_dict, max_transfer_tasks):
     # create_histogram(group_of_items_list, "the_measure")
     group_of_items_for_tasks_list = get_group_of_items_for_tasks_list(group_of_items_list,
                                                                       min(len(group_of_items_list), max_transfer_tasks))
-
     item_ids_in_transfer = []
     counter = 0
     locations_in_tasks = []
