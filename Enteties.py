@@ -5,12 +5,17 @@ class Location():
         self.warehouse_id = warehouse_id
         self.street = self.loc_lst[0]
         self.pallet = pallet
+
+
         if len(self.loc_lst) > 1:
             self.column = self.loc_lst[1]
+
         if len(self.loc_lst) > 2:
             self.row = self.loc_lst[2]
+
         if len(self.loc_lst) > 3:
             self.cell = self.loc_lst[3]
+
         if quantity is not None:
             self.quantity = float(quantity)
         try:
@@ -26,6 +31,26 @@ class Location():
         norm_quantity = int(self.quantity) / int(quantity_max)
         self.measure_for_group_of_items = norm_quantity / norm_distance
 
+    def __hash__(self):
+        street = int(self.street)* 1
+        try: column = int(self.column) *100
+        except : column =0
+
+        try: row = int(self.row)*10000
+        except:row =0
+
+        try:cell = int(self.cell)*1000000
+        except:cell =0
+
+        try:warehouse_id = ord(self.warehouse_id[0])*10000000 + int(self.warehouse_id[1])*10000000
+        except: warehouse_id = 0
+        return street+column+row+cell+warehouse_id
+
+
+    def __eq__(self, other):
+        if other.loc_str == self.loc_str:
+            return True
+        return False
     # def update_normalized_manhattan(self,max_manhattan):
     #     self.normalized_manhattan = self.manhattan/max_manhattan
     #
@@ -180,12 +205,12 @@ class TaskPick(Task):
 
 
 class TaskTransfer(Task):
-    def __init__(self, item_id, location, id_):
-        Task.__init__(self, id_)
+    def __init__(self, item_id, selected_locations,lines, counter):
+        Task.__init__(self, item_id)
         self.item_id = item_id
-        self.location = location
+        self.selected_locations = selected_locations
         self.quantity = 0
-        self.lines = [] #TODO BEN
+        self.lines = lines
         # self.grouped_items =[]
         # self.create_grouped_items()
 
@@ -205,7 +230,7 @@ class TaskTransfer(Task):
 
 
 class GroupOfItem():
-    def __init__(self, item_id, lines, locations):
+    def __init__(self, item_id, lines, locations_lines_dict):
         self.lines = lines
         self.item_id = item_id
         self.total_quantity_required = calc_total_quantity(lines)
@@ -216,40 +241,43 @@ class GroupOfItem():
         # self.total_quantity_not_c1 = self.total_quantity - self.total_quantity_c1
 
         self.number_of_lines = len(lines)  # number of distinct orders\
-        self.locations = locations
+        self.locations = locations_lines_dict.keys()
         self.locations_no_c1 = []
         self.is_in_c1 = False
-        counter = 0
+        #counter = 0
         locations_c1 = []
-        for location in locations:
+        for location in self.locations:
             warehouse_id = location.warehouse_id
-
             if warehouse_id == "C1":
                 self.is_in_c1 = True
                 locations_c1.append(location)
-                # self.location_c1 = location
-                # self.total_quantity_available_at_c1 = location.quantity
-                counter = counter + 1
-            else:
-                self.locations_no_c1.append(location)
-        if counter > 1:
-            pass
+
+        #        counter = counter + 1
+        #    else:
+        #        self.locations_no_c1.append(location)
+        #if counter > 1:
+        #    pass
             # raise Exception("we have something in invetory with more them 1 c1 location, what to do?")
-        total_quantity_c1 = 0
+        #total_quantity_c1 = 0
         for location_c1 in locations_c1:
-            total_quantity_c1 = total_quantity_c1 + location_c1.quantity
+            #total_quantity_c1 = total_quantity_c1 + location_c1.quantity
             self.location_c1 = min(locations_c1, key=lambda x: x.manhattan)
 
-        try:
-            self.total_quantity_required_from_w = self.total_quantity_required - total_quantity_c1
-        except:
-            self.total_quantity_required_from_w = self.total_quantity_required
+        #try:
+        #    self.total_quantity_required_from_w = self.total_quantity_required - total_quantity_c1
+        #except:
+        #    self.total_quantity_required_from_w = self.total_quantity_required
 
         self.normalized_location_c1 = None
         self.normalized_number_of_lines = None
 
         self.the_measure = None
 
+        self.location_lines_dict = locations_lines_dict
+
+    def get_lines_per_location(self,location):
+        print(self.location_lines_dict)
+        return self.location_lines_dict[location]
     def update_the_measure(self):
         self.the_measure = (
                                    1 - self.weight_on_orders_reps) * self.normalized_location_c1 + self.weight_on_orders_reps * self.normalized_number_of_lines
@@ -261,7 +289,7 @@ class GroupOfItem():
         self.normalized_number_of_lines = self.number_of_lines / number_of_lines_max
 
     def __str__(self):
-        return str(self.item_id) + "  " + str(self.the_measure)
+        return str(self.item_id) + "  " + str(self.number_of_lines)
 
     def __hash__(self):
         return self.item_id
@@ -281,6 +309,11 @@ class GroupOfItem():
         if lb < street < ub:
             return False
         return True
+
+    def get_location_lines_dict(self):
+        for location in self.locations:
+            for line in self.lines:
+                break
 
 
 class Order(Task):

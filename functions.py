@@ -171,22 +171,38 @@ def update_the_measure(groupsOfItems):
         goi.update_the_measure()
 
 
+def get_locations_lines_dict(lines_of_item):
+    ans = {}
+    for line in lines_of_item:
+        if line.location not in ans.keys():
+            ans[line.location] = []
+        ans[line.location].append(line)
+    return ans
+
+
+def get_is_W_in_inventory(locations):
+    # TODO GROUP OF ITEMS THAT HAVE NO LOCATION IN W1 W2 ARE NOT IN TRANSFER
+    if locations is None:
+        return False
+    for location in locations:
+        if location.warehouse_id!="C1":
+            return True
+    return False
+
+
+
 def create_group_by_items(lines, inventory_dict):
     groupsOfItems = []
     item_ids_not_in_inventory = []
     lines_by_item = get_lines_by_items(lines)
-    for item_id, lines in lines_by_item.items():
-        locations = None
-        try:
-            locations = inventory_dict[item_id]
-        except:
-            item_ids_not_in_inventory.append(item_id)
-            print(item_id, "is not in inventory")
-        if locations is not None:
-            goi = GroupOfItem(item_id, lines, locations)
-            if goi.is_in_c1 and goi.total_quantity_required_from_w > 0:
-                # if goi.is_c1_location_within_range(lb, ub) and len(goi.locations) > 1:
-                groupsOfItems.append(goi)
+    for item_id, lines_of_item in lines_by_item.items():
+        locations_lines_dict = get_locations_lines_dict(lines_of_item)
+        goi = GroupOfItem(item_id, lines_of_item,locations_lines_dict)
+
+        is_W_in_inventory = get_is_W_in_inventory (inventory_dict.get(item_id,None))
+        if goi.is_in_c1 and goi.number_of_lines>1 and is_W_in_inventory :
+            groupsOfItems.append(goi)
+
     fix_normalized_c1_location(groupsOfItems)
 
     fix_normalized_number_of_lines(groupsOfItems)
@@ -620,6 +636,7 @@ def get_locations_to_cover_quantities(goi):
 
     locations_w1 = sorted(locations_by_warehouse_id["W1"], key=lambda x: x.quantity, reverse=True)
     for location in locations_w1:
+        goi.get_lines_per_location(location)
         quantity_required = quantity_required - location.quantity
         ans.append(location)
         if quantity_required <= 0:
@@ -635,22 +652,33 @@ def get_locations_to_cover_quantities(goi):
     return ans
 
 
+
 def create_transfer_tasks(lines, inventory_dict, max_transfer_tasks):
     transfer_tasks = []
     group_of_items_list, item_ids_not_in_inventory = create_group_by_items(lines, inventory_dict)
     # create_histogram(group_of_items_list, "the_measure")
-    group_of_items_for_tasks_list = get_group_of_items_for_tasks_list(group_of_items_list,
-                                                                      min(len(group_of_items_list), max_transfer_tasks))
+    number_of_transfer_tasks = min(len(group_of_items_list), max_transfer_tasks)
+    group_of_items_for_tasks_list = get_group_of_items_for_tasks_list(group_of_items_list,number_of_transfer_tasks)
     item_ids_in_transfer = []
     counter = 0
     locations_in_tasks = []
+
     for goi in group_of_items_for_tasks_list:
         item_ids_in_transfer.append(goi.item_id)
         item_id = goi.item_id
-        locations = get_locations_to_cover_quantities(goi)
+        total_quantity = 0
+        for line in goi.lines:
+            total_quantity += line.quantity
+        locations = inventory_dict.get(item_id,None)
+        locations = sorted(locations,key = lambda x: x.quantity,reverse=True)
+
+        selected_locations = []
         for location in locations:
-            counter = counter + 1
-            transfer_tasks.append(TaskTransfer(item_id, location, counter))
+            selected_locations.append(location)
+            total_quantity = total_quantity-location.quantity
+            if total_quantity<=0:
+                break
+        transfer_tasks.append(TaskTransfer(item_id, selected_locations,goi.lines, counter))
     return transfer_tasks, item_ids_in_transfer
 
 
