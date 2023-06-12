@@ -1,0 +1,4 @@
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893180')
+{"WTASKITEMS_SUBFORM": [{"KLINE": 1, "LOCNAME": "RL.01"}]}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1889181')
+{"WTASKITEMS_SUBFORM": [{"KLINE": 1, "LOCNAME": "RL.01"}]}

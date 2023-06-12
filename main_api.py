@@ -8,13 +8,11 @@ amount_to_not_remove = 3
 max_transfer_tasks = 4
 center_street = 35
 
-
 #create_orders
 amount_of_one_line_in_street = 3
 pick_employee_grade_cut_off = 8
 pick_height_employee_grade_cut_off = 8
 tail_percantage_to_reallocate = 0.10
-
 
 ###input
 # read employees
@@ -25,12 +23,12 @@ employees_height_transfer, employees_pick = get_employees_by_skill(employees)
 schedule = init_schedule(employees)
 
 # get stock - create
-inventory = get_stock2()
+inventory = get_stock()
 inventory_dict = create_inventory_dict_from_json(inventory["value"],center_street)
 
 # get wtasks
-lines_input = get_wtasks2()
-lines = create_lines_from_json_after_gal(lines_input)
+lines_input = get_wtasks()
+lines, transfer_ids = create_lines_from_json_after_gal(lines_input["value"]) #TODO BEN
 
 # create transfer tasks
 transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_dict, max_transfer_tasks)
@@ -68,6 +66,6 @@ for e,tasks in schedule_height_pick.items():
     schedule[e] = sorted(tasks,key=lambda x:x.priority,reverse=True)
 
 patch_update_allocation(schedule)
-
+print("end")
 # patch -  allocate tasks to employees
 

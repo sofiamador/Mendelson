@@ -127,19 +127,25 @@ def create_lines_from_gal_output(lines_input_):
 
 def create_lines_from_json_after_gal(lines_input_):
     lines = []
+    ids_in_move = []
     for task in lines_input_:
-        order_id = task["WTASKNUM"]
-        warehouse_id = task["STZONECODE"]
-        priority = task["PRIO"]
-        for item in task["WTASKITEMS_SUBFORM"]:
-            item_id = item["PARTNAME"]
-            quantity = float(item["PTQUANT"])
-            location_string = item["LOCNAME"]
-            line_number = item["KLINE"]
+        if task["WTASKTYPECODE"]=="PIK":
+            order_id = task["WTASKNUM"]
+            warehouse_id = task["STZONECODE"]
+            priority = task["PRIO"]
+            for item in task["WTASKITEMS_SUBFORM"]:
+                item_id = item["PARTNAME"]
+                quantity = float(item["PTQUANT"])
+                location_string = item["LOCNAME"]
+                line_number = item["KLINE"]
 
-        line = Line(item_id, order_id, quantity, warehouse_id, location_string, line_number, priority)
-        lines.append(line)
-    return lines
+            line = Line(item_id, order_id, quantity, warehouse_id, location_string, line_number, priority)
+            lines.append(line)
+        elif task["WTASKTYPECODE"]=="RPI" or task["WTASKTYPECODE"]=="PIK":
+            for item in task["WTASKITEMS_SUBFORM"]:
+                ids_in_move.append(item["PARTNAME"])
+
+    return lines,ids_in_move
 
 
 def get_lines_by_items(lines):
