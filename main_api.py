@@ -23,12 +23,12 @@ employees_height_transfer, employees_pick = get_employees_by_skill(employees)
 schedule = init_schedule(employees)
 
 # get stock - create
-inventory = get_stock()
+inventory = get_stock2()
 inventory_dict = create_inventory_dict_from_json(inventory["value"],center_street)
 
 # get wtasks
-lines_input = get_wtasks()
-lines, transfer_ids = create_lines_from_json_after_gal(lines_input["value"]) #TODO BEN
+lines_input = get_wtasks2()
+lines, transfer_ids = create_lines_from_json_after_gal(lines_input) #TODO BEN
 
 # create transfer tasks
 transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_dict, max_transfer_tasks)

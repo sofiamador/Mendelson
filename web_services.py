@@ -40,7 +40,7 @@ def get_wtasks():
     }
 
     response = requests.request("GET", url, headers=headers, data=payload)
-    return json.loads(response.text)
+    return json.loads(response.text)["value"]
 
 
 def get_wtasks2():
@@ -75,7 +75,7 @@ def post_transfer_tasks(schedule):
                         "PARTNAME": t.item_id,
                         "PALLETNAME": l.pallet,
                         "TOLOCNAME": "RL.01",
-                        "PTQUANT": l.quantity  # TODO BEN
+                        "PTQUANT": l.quantity
                     })
                 payload_json = json.dumps(payload)
                 headers = {
@@ -87,8 +87,8 @@ def post_transfer_tasks(schedule):
                 f.write(url + "\n")
                 f.write(str(payload_json) + "\n")
 
-                response = requests.request("POST", url, headers=headers, data=payload_json)
-                print(response.text)
+                #response = requests.request("POST", url, headers=headers, data=payload_json)
+                #print(response.text)
 
 
     f.close()
@@ -97,12 +97,15 @@ def post_transfer_tasks(schedule):
 def patch_update_allocation(schedule):
     f = open("allocation_task.txt", "w")
     for k, tasks in schedule.items():
+        prio = 1
         for t in tasks:
             if isinstance(t,GroupOfOrders):
                 for order in t.orders:
                     url = host+"WTASKS('" + order.order_id + "')"
                     payload = json.dumps({
-                        "DOERLOGIN": k
+                        "MEND_PRIO2": order.priority,
+                        "DOERLOGIN" : k,
+                        "PRIO":prio
                     })
                     headers = {
                         'X-App-Id': 'APPSS04',
@@ -112,13 +115,18 @@ def patch_update_allocation(schedule):
                     }
                     f.write(url + "\n")
                     f.write(str(payload) + "\n")
-                    response = requests.request("PATCH", url, headers=headers, data=payload)
-                    print(response.text)
+                    #response = requests.request("PATCH", url, headers=headers, data=payload)
+                    #print(response.text)
+                prio += 1
             else:
                 url = host+"WTASKS('" + t.order_id + "')"
                 payload = json.dumps({
-                    "DOERLOGIN": k
+                    "MEND_PRIO2": t.priority,
+                    "DOERLOGIN" : k,
+                    "PRIO":prio
+
                 })
+                prio += 1
                 headers = {
                     'X-App-Id': 'APPSS04',
                     'X-App-Key': '18B75A16244B4664BF5A3C5AD58BCAEA',
@@ -127,8 +135,8 @@ def patch_update_allocation(schedule):
                 }
                 f.write(url +"\n")
                 f.write(str(payload) + "\n")
-                response = requests.request("PATCH", url, headers=headers, data=payload)
-                print(response.text)
+                #response = requests.request("PATCH", url, headers=headers, data=payload)
+                #print(response.text)
 
         # response = requests.request("PATCH", url, headers=headers, data=payload)
 
@@ -159,8 +167,8 @@ def patch_upadate_location_for_items(schedule):
                     'Authorization': auth
                 }
 
-                response = requests.request("PATCH", url, headers=headers, data=payload)
-                print(response.text)
+                #response = requests.request("PATCH", url, headers=headers, data=payload)
+                #print(response.text)
                 f.write(url + "\n")
                 f.write(str(payload) + "\n")
     f.close()
