@@ -24,7 +24,7 @@ schedule = init_schedule(employees)
 
 # get stock - create
 inventory = get_stock2()
-inventory_dict = create_inventory_dict_from_json(inventory["value"],center_street)
+inventory_dict = create_inventory_dict_from_json(inventory,center_street)
 
 # get wtasks
 lines_input = get_wtasks2()

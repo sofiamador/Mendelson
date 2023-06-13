@@ -20,14 +20,14 @@ def get_stock():
 
     response = requests.request("GET", url, headers=headers, data=payload)
 
-    return json.loads(response.text)
+    return json.loads(response.text)["value"]
 
 
 def get_stock2():
     f = open("AvailableStock", "r")
     text = f.read()
     f.close()
-    return json.loads(text)
+    return json.loads(text)["value"]
 
 
 def get_wtasks():
