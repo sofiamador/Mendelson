@@ -141,7 +141,7 @@ def create_lines_from_json_after_gal(lines_input_):
 
             line = Line(item_id, order_id, quantity, warehouse_id, location_string, line_number, priority)
             lines.append(line)
-        elif task["WTASKTYPECODE"]=="RPI" or task["WTASKTYPECODE"]=="PIK":
+        elif task["WTASKTYPECODE"]=="RPI" or task["WTASKTYPECODE"]=="RPL":
             for item in task["WTASKITEMS_SUBFORM"]:
                 ids_in_move.append(item["PARTNAME"])
 
@@ -197,7 +197,7 @@ def get_is_W_in_inventory(locations):
 
 
 
-def create_group_by_items(lines, inventory_dict):
+def create_group_by_items(lines, inventory_dict,refresh_ids):
     groupsOfItems = []
     item_ids_not_in_inventory = []
     lines_by_item = get_lines_by_items(lines)
@@ -206,8 +206,9 @@ def create_group_by_items(lines, inventory_dict):
         goi = GroupOfItem(item_id, lines_of_item,locations_lines_dict)
 
         is_W_in_inventory = get_is_W_in_inventory (inventory_dict.get(item_id,None))
-        if goi.is_in_c1 and goi.number_of_lines>1 and is_W_in_inventory :
-            groupsOfItems.append(goi)
+        if goi.item_id not in refresh_ids:
+            if goi.is_in_c1 and goi.number_of_lines>1 and is_W_in_inventory :
+                groupsOfItems.append(goi)
 
     fix_normalized_c1_location(groupsOfItems)
 
@@ -659,9 +660,9 @@ def get_locations_to_cover_quantities(goi):
 
 
 
-def create_transfer_tasks(lines, inventory_dict, max_transfer_tasks):
+def create_transfer_tasks(lines, inventory_dict, max_transfer_tasks,refresh_ids):
     transfer_tasks = []
-    group_of_items_list, item_ids_not_in_inventory = create_group_by_items(lines, inventory_dict)
+    group_of_items_list, item_ids_not_in_inventory = create_group_by_items(lines, inventory_dict,refresh_ids)
     # create_histogram(group_of_items_list, "the_measure")
     number_of_transfer_tasks = min(len(group_of_items_list), max_transfer_tasks)
     group_of_items_for_tasks_list = get_group_of_items_for_tasks_list(group_of_items_list,number_of_transfer_tasks)

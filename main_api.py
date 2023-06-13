@@ -28,10 +28,10 @@ inventory_dict = create_inventory_dict_from_json(inventory,center_street)
 
 # get wtasks
 lines_input = get_wtasks2()
-lines, transfer_ids = create_lines_from_json_after_gal(lines_input) #TODO BEN
+lines, refresh_ids = create_lines_from_json_after_gal(lines_input) #TODO BEN
 
 # create transfer tasks
-transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_dict, max_transfer_tasks)
+transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_dict, max_transfer_tasks,refresh_ids)
 allocate_tasks_to_employees(transfer_tasks, schedule, employees_height_transfer, "transfer")
 
 # post - transfer tasks (api)
