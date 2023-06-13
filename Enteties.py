@@ -321,7 +321,7 @@ class Order(Task):
         self.order_id = order_id
         self.ability = ability
         self.lines = lines
-        self.priority = max(self.lines, key=lambda x: x.priority).priority
+        self.priority = min(self.lines, key=lambda x: x.priority).priority
         self.amount_of_lines = len(self.lines)
         self.cumulative_value = None
 

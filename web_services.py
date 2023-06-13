@@ -99,6 +99,8 @@ def patch_update_allocation(schedule):
     for k, tasks in schedule.items():
         prio = 1
         for t in tasks:
+            if prio==5:
+                break
             if isinstance(t,GroupOfOrders):
                 for order in t.orders:
                     url = host+"WTASKS('" + order.order_id + "')"

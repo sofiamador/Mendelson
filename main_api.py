@@ -60,10 +60,10 @@ allocate_pick_height_orders(all_pick_height_orders, schedule_height_pick, employ
 
 
 for e,tasks in schedule_pick.items():
-    schedule[e] = sorted(tasks,key=lambda x:x.priority,reverse=True)
+    schedule[e] = sorted(tasks,key=lambda x:x.priority)
 
 for e,tasks in schedule_height_pick.items():
-    schedule[e] = sorted(tasks,key=lambda x:x.priority,reverse=True)
+    schedule[e] = sorted(tasks,key=lambda x:x.priority)
 
 patch_update_allocation(schedule)
 print("end")

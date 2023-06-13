@@ -1,123 +1,101 @@
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903099')
-{"MEND_PRIO2": 4, "DOERLOGIN": "abdallah", "PRIO": 1}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902761')
-{"MEND_PRIO2": 4, "DOERLOGIN": "abdallah", "PRIO": 1}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902613')
-{"MEND_PRIO2": 5, "DOERLOGIN": "abdallah", "PRIO": 1}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902610')
-{"MEND_PRIO2": 5, "DOERLOGIN": "abdallah", "PRIO": 1}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903136')
-{"MEND_PRIO2": 3, "DOERLOGIN": "abdallah", "PRIO": 2}
+{"MEND_PRIO2": 3, "DOERLOGIN": "abdallah", "PRIO": 1}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903006')
-{"MEND_PRIO2": 4, "DOERLOGIN": "abdallah", "PRIO": 2}
+{"MEND_PRIO2": 4, "DOERLOGIN": "abdallah", "PRIO": 1}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902932')
-{"MEND_PRIO2": 4, "DOERLOGIN": "abdallah", "PRIO": 2}
+{"MEND_PRIO2": 4, "DOERLOGIN": "abdallah", "PRIO": 1}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902782')
-{"MEND_PRIO2": 4, "DOERLOGIN": "abdallah", "PRIO": 2}
+{"MEND_PRIO2": 4, "DOERLOGIN": "abdallah", "PRIO": 1}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902720')
+{"MEND_PRIO2": 4, "DOERLOGIN": "abdallah", "PRIO": 1}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903099')
 {"MEND_PRIO2": 4, "DOERLOGIN": "abdallah", "PRIO": 2}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902761')
+{"MEND_PRIO2": 4, "DOERLOGIN": "abdallah", "PRIO": 2}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902613')
+{"MEND_PRIO2": 5, "DOERLOGIN": "abdallah", "PRIO": 2}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902610')
+{"MEND_PRIO2": 5, "DOERLOGIN": "abdallah", "PRIO": 2}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903154')
 {"MEND_PRIO2": 4, "DOERLOGIN": "abdallah", "PRIO": 3}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903133')
 {"MEND_PRIO2": 4, "DOERLOGIN": "abdallah", "PRIO": 4}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903028')
-{"MEND_PRIO2": 4, "DOERLOGIN": "abdallah", "PRIO": 5}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902936')
-{"MEND_PRIO2": 4, "DOERLOGIN": "yonib", "PRIO": 1}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902776')
-{"MEND_PRIO2": 4, "DOERLOGIN": "yonib", "PRIO": 1}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902765')
-{"MEND_PRIO2": 4, "DOERLOGIN": "yonib", "PRIO": 1}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903035')
-{"MEND_PRIO2": 4, "DOERLOGIN": "yonib", "PRIO": 2}
+{"MEND_PRIO2": 4, "DOERLOGIN": "yonib", "PRIO": 1}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902918')
-{"MEND_PRIO2": 4, "DOERLOGIN": "yonib", "PRIO": 2}
+{"MEND_PRIO2": 4, "DOERLOGIN": "yonib", "PRIO": 1}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902751')
-{"MEND_PRIO2": 3, "DOERLOGIN": "yonib", "PRIO": 2}
+{"MEND_PRIO2": 3, "DOERLOGIN": "yonib", "PRIO": 1}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902721')
-{"MEND_PRIO2": 4, "DOERLOGIN": "yonib", "PRIO": 2}
+{"MEND_PRIO2": 4, "DOERLOGIN": "yonib", "PRIO": 1}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903149')
-{"MEND_PRIO2": 4, "DOERLOGIN": "yonib", "PRIO": 3}
+{"MEND_PRIO2": 4, "DOERLOGIN": "yonib", "PRIO": 2}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902926')
-{"MEND_PRIO2": 3, "DOERLOGIN": "yonib", "PRIO": 3}
+{"MEND_PRIO2": 3, "DOERLOGIN": "yonib", "PRIO": 2}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902790')
-{"MEND_PRIO2": 4, "DOERLOGIN": "yonib", "PRIO": 3}
+{"MEND_PRIO2": 4, "DOERLOGIN": "yonib", "PRIO": 2}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902778')
-{"MEND_PRIO2": 4, "DOERLOGIN": "yonib", "PRIO": 3}
+{"MEND_PRIO2": 4, "DOERLOGIN": "yonib", "PRIO": 2}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902738')
-{"MEND_PRIO2": 3, "DOERLOGIN": "yonib", "PRIO": 3}
+{"MEND_PRIO2": 3, "DOERLOGIN": "yonib", "PRIO": 2}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902724')
+{"MEND_PRIO2": 4, "DOERLOGIN": "yonib", "PRIO": 2}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902936')
 {"MEND_PRIO2": 4, "DOERLOGIN": "yonib", "PRIO": 3}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902228')
-{"MEND_PRIO2": 5, "DOERLOGIN": "oshri", "PRIO": 1}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903012')
-{"MEND_PRIO2": 4, "DOERLOGIN": "oshri", "PRIO": 2}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902997')
-{"MEND_PRIO2": 4, "DOERLOGIN": "oshri", "PRIO": 3}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902784')
-{"MEND_PRIO2": 4, "DOERLOGIN": "oshri", "PRIO": 4}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902775')
-{"MEND_PRIO2": 4, "DOERLOGIN": "oshri", "PRIO": 5}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902727')
-{"MEND_PRIO2": 4, "DOERLOGIN": "oshri", "PRIO": 6}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903126')
-{"MEND_PRIO2": 4, "DOERLOGIN": "oshri", "PRIO": 7}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902776')
+{"MEND_PRIO2": 4, "DOERLOGIN": "yonib", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902765')
+{"MEND_PRIO2": 4, "DOERLOGIN": "yonib", "PRIO": 3}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902925')
-{"MEND_PRIO2": 3, "DOERLOGIN": "oshri", "PRIO": 8}
+{"MEND_PRIO2": 3, "DOERLOGIN": "oshri", "PRIO": 1}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903135')
-{"MEND_PRIO2": 3, "DOERLOGIN": "oshri", "PRIO": 9}
+{"MEND_PRIO2": 3, "DOERLOGIN": "oshri", "PRIO": 2}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902750')
-{"MEND_PRIO2": 3, "DOERLOGIN": "oshri", "PRIO": 9}
+{"MEND_PRIO2": 3, "DOERLOGIN": "oshri", "PRIO": 2}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902747')
-{"MEND_PRIO2": 3, "DOERLOGIN": "oshri", "PRIO": 9}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901648')
-{"MEND_PRIO2": 5, "DOERLOGIN": "nadavm", "PRIO": 1}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902999')
-{"MEND_PRIO2": 4, "DOERLOGIN": "nadavm", "PRIO": 2}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902992')
-{"MEND_PRIO2": 4, "DOERLOGIN": "nadavm", "PRIO": 3}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902914')
-{"MEND_PRIO2": 4, "DOERLOGIN": "nadavm", "PRIO": 4}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902777')
-{"MEND_PRIO2": 4, "DOERLOGIN": "nadavm", "PRIO": 5}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902728')
-{"MEND_PRIO2": 4, "DOERLOGIN": "nadavm", "PRIO": 6}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902718')
-{"MEND_PRIO2": 4, "DOERLOGIN": "nadavm", "PRIO": 7}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903040')
-{"MEND_PRIO2": 4, "DOERLOGIN": "nadavm", "PRIO": 8}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903018')
-{"MEND_PRIO2": 3, "DOERLOGIN": "nadavm", "PRIO": 8}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902785')
-{"MEND_PRIO2": 4, "DOERLOGIN": "nadavm", "PRIO": 8}
+{"MEND_PRIO2": 3, "DOERLOGIN": "oshri", "PRIO": 2}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903012')
+{"MEND_PRIO2": 4, "DOERLOGIN": "oshri", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902997')
+{"MEND_PRIO2": 4, "DOERLOGIN": "oshri", "PRIO": 4}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903052')
-{"MEND_PRIO2": 2, "DOERLOGIN": "nadavm", "PRIO": 9}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903132')
-{"MEND_PRIO2": 4, "DOERLOGIN": "aviw", "PRIO": 1}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903129')
-{"MEND_PRIO2": 4, "DOERLOGIN": "aviw", "PRIO": 1}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903098')
-{"MEND_PRIO2": 4, "DOERLOGIN": "aviw", "PRIO": 1}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902791')
-{"MEND_PRIO2": 4, "DOERLOGIN": "aviw", "PRIO": 1}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902767')
-{"MEND_PRIO2": 4, "DOERLOGIN": "aviw", "PRIO": 1}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901194')
-{"MEND_PRIO2": 5, "DOERLOGIN": "aviw", "PRIO": 1}
+{"MEND_PRIO2": 2, "DOERLOGIN": "nadavm", "PRIO": 1}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903040')
+{"MEND_PRIO2": 4, "DOERLOGIN": "nadavm", "PRIO": 2}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903018')
+{"MEND_PRIO2": 3, "DOERLOGIN": "nadavm", "PRIO": 2}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902785')
+{"MEND_PRIO2": 4, "DOERLOGIN": "nadavm", "PRIO": 2}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902999')
+{"MEND_PRIO2": 4, "DOERLOGIN": "nadavm", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902992')
+{"MEND_PRIO2": 4, "DOERLOGIN": "nadavm", "PRIO": 4}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902913')
-{"MEND_PRIO2": 4, "DOERLOGIN": "aviw", "PRIO": 2}
+{"MEND_PRIO2": 4, "DOERLOGIN": "aviw", "PRIO": 1}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902746')
-{"MEND_PRIO2": 3, "DOERLOGIN": "aviw", "PRIO": 2}
+{"MEND_PRIO2": 3, "DOERLOGIN": "aviw", "PRIO": 1}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902715')
-{"MEND_PRIO2": 4, "DOERLOGIN": "aviw", "PRIO": 2}
+{"MEND_PRIO2": 4, "DOERLOGIN": "aviw", "PRIO": 1}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903017')
-{"MEND_PRIO2": 3, "DOERLOGIN": "aviw", "PRIO": 3}
+{"MEND_PRIO2": 3, "DOERLOGIN": "aviw", "PRIO": 2}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902930')
-{"MEND_PRIO2": 3, "DOERLOGIN": "aviw", "PRIO": 3}
+{"MEND_PRIO2": 3, "DOERLOGIN": "aviw", "PRIO": 2}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902916')
-{"MEND_PRIO2": 4, "DOERLOGIN": "aviw", "PRIO": 3}
+{"MEND_PRIO2": 4, "DOERLOGIN": "aviw", "PRIO": 2}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902764')
+{"MEND_PRIO2": 4, "DOERLOGIN": "aviw", "PRIO": 2}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903132')
 {"MEND_PRIO2": 4, "DOERLOGIN": "aviw", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903129')
+{"MEND_PRIO2": 4, "DOERLOGIN": "aviw", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903098')
+{"MEND_PRIO2": 4, "DOERLOGIN": "aviw", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902791')
+{"MEND_PRIO2": 4, "DOERLOGIN": "aviw", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902767')
+{"MEND_PRIO2": 4, "DOERLOGIN": "aviw", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901194')
+{"MEND_PRIO2": 5, "DOERLOGIN": "aviw", "PRIO": 3}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903053')
 {"MEND_PRIO2": 2, "DOERLOGIN": "muhamda", "PRIO": 1}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902935')
@@ -126,63 +104,33 @@ https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK190
 {"MEND_PRIO2": 4, "DOERLOGIN": "muhamda", "PRIO": 1}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901788')
 {"MEND_PRIO2": 5, "DOERLOGIN": "muhamda", "PRIO": 1}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903142')
-{"MEND_PRIO2": 5, "DOERLOGIN": "muhamda", "PRIO": 2}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903033')
-{"MEND_PRIO2": 4, "DOERLOGIN": "muhamda", "PRIO": 3}
+{"MEND_PRIO2": 4, "DOERLOGIN": "muhamda", "PRIO": 2}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903007')
-{"MEND_PRIO2": 4, "DOERLOGIN": "muhamda", "PRIO": 3}
+{"MEND_PRIO2": 4, "DOERLOGIN": "muhamda", "PRIO": 2}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902996')
-{"MEND_PRIO2": 4, "DOERLOGIN": "muhamda", "PRIO": 3}
+{"MEND_PRIO2": 4, "DOERLOGIN": "muhamda", "PRIO": 2}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902766')
-{"MEND_PRIO2": 4, "DOERLOGIN": "muhamda", "PRIO": 3}
+{"MEND_PRIO2": 4, "DOERLOGIN": "muhamda", "PRIO": 2}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902736')
-{"MEND_PRIO2": 3, "DOERLOGIN": "muhamda", "PRIO": 3}
+{"MEND_PRIO2": 3, "DOERLOGIN": "muhamda", "PRIO": 2}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903029')
-{"MEND_PRIO2": 4, "DOERLOGIN": "muhamda", "PRIO": 4}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903034')
-{"MEND_PRIO2": 4, "DOERLOGIN": "idanb", "PRIO": 1}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903031')
-{"MEND_PRIO2": 4, "DOERLOGIN": "idanb", "PRIO": 2}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903003')
-{"MEND_PRIO2": 4, "DOERLOGIN": "idanb", "PRIO": 3}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902939')
-{"MEND_PRIO2": 4, "DOERLOGIN": "idanb", "PRIO": 4}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902934')
-{"MEND_PRIO2": 4, "DOERLOGIN": "idanb", "PRIO": 5}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902915')
-{"MEND_PRIO2": 4, "DOERLOGIN": "idanb", "PRIO": 6}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903157')
-{"MEND_PRIO2": 4, "DOERLOGIN": "idanb", "PRIO": 7}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903022')
-{"MEND_PRIO2": 3, "DOERLOGIN": "idanb", "PRIO": 8}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903021')
-{"MEND_PRIO2": 3, "DOERLOGIN": "idanb", "PRIO": 9}
+{"MEND_PRIO2": 4, "DOERLOGIN": "muhamda", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903142')
+{"MEND_PRIO2": 5, "DOERLOGIN": "muhamda", "PRIO": 4}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903106')
-{"MEND_PRIO2": 2, "DOERLOGIN": "idanb", "PRIO": 10}
+{"MEND_PRIO2": 2, "DOERLOGIN": "idanb", "PRIO": 1}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902959')
-{"MEND_PRIO2": 2, "DOERLOGIN": "idanb", "PRIO": 11}
+{"MEND_PRIO2": 2, "DOERLOGIN": "idanb", "PRIO": 2}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903160')
-{"MEND_PRIO2": 2, "DOERLOGIN": "idanb", "PRIO": 12}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1901909')
-{"MEND_PRIO2": 5, "DOERLOGIN": "mhamada", "PRIO": 1}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902792')
-{"MEND_PRIO2": 4, "DOERLOGIN": "mhamada", "PRIO": 2}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902789')
-{"MEND_PRIO2": 4, "DOERLOGIN": "mhamada", "PRIO": 3}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902788')
-{"MEND_PRIO2": 4, "DOERLOGIN": "mhamada", "PRIO": 4}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902783')
-{"MEND_PRIO2": 4, "DOERLOGIN": "mhamada", "PRIO": 5}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902770')
-{"MEND_PRIO2": 4, "DOERLOGIN": "mhamada", "PRIO": 6}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902731')
-{"MEND_PRIO2": 4, "DOERLOGIN": "mhamada", "PRIO": 7}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902719')
-{"MEND_PRIO2": 4, "DOERLOGIN": "mhamada", "PRIO": 8}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902716')
-{"MEND_PRIO2": 4, "DOERLOGIN": "mhamada", "PRIO": 9}
-https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902743')
-{"MEND_PRIO2": 3, "DOERLOGIN": "mhamada", "PRIO": 10}
+{"MEND_PRIO2": 2, "DOERLOGIN": "idanb", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1903022')
+{"MEND_PRIO2": 3, "DOERLOGIN": "idanb", "PRIO": 4}
 https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902835')
-{"MEND_PRIO2": 2, "DOERLOGIN": "mhamada", "PRIO": 11}
+{"MEND_PRIO2": 2, "DOERLOGIN": "mhamada", "PRIO": 1}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902743')
+{"MEND_PRIO2": 3, "DOERLOGIN": "mhamada", "PRIO": 2}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902792')
+{"MEND_PRIO2": 4, "DOERLOGIN": "mhamada", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1902789')
+{"MEND_PRIO2": 4, "DOERLOGIN": "mhamada", "PRIO": 4}
