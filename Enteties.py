@@ -31,26 +31,6 @@ class Location():
         norm_quantity = int(self.quantity) / int(quantity_max)
         self.measure_for_group_of_items = norm_quantity / norm_distance
 
-    def __hash__(self):
-        street = int(self.street)* 1
-        try: column = int(self.column) *100
-        except : column =0
-
-        try: row = int(self.row)*10000
-        except:row =0
-
-        try:cell = int(self.cell)*1000000
-        except:cell =0
-
-        try:warehouse_id = ord(self.warehouse_id[0])*10000000 + int(self.warehouse_id[1])*10000000
-        except: warehouse_id = 0
-        return street+column+row+cell+warehouse_id
-
-
-    def __eq__(self, other):
-        if other.loc_str == self.loc_str:
-            return True
-        return False
     # def update_normalized_manhattan(self,max_manhattan):
     #     self.normalized_manhattan = self.manhattan/max_manhattan
     #

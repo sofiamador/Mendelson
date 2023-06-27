@@ -97,6 +97,13 @@ def create_inventory_dict_from_json(lines_input_, center_street):
     # fix_normalized_manhattan(locations_list,ans)
     return ans
 
+def create_employees_lines_dic(old_task_data):
+    employee_line = {}
+    for task in old_task_data:
+        name = task['DOERLOGIN']
+        count_of_lines = task['LINES']
+        employee_line[name]=employee_line.get(name,0)+count_of_lines
+    return employee_line
 
 def create_lines_before_gal(lines_input_):
     lines = []
@@ -139,9 +146,9 @@ def create_lines_from_json_after_gal(lines_input_):
                 location_string = item["LOCNAME"]
                 line_number = item["KLINE"]
 
-            line = Line(item_id, order_id, quantity, warehouse_id, location_string, line_number, priority)
-            lines.append(line)
-        elif task["WTASKTYPECODE"]=="RPI" or task["WTASKTYPECODE"]=="RPL":
+                line = Line(item_id, order_id, quantity, warehouse_id, location_string, line_number, priority)
+                lines.append(line)
+        elif task["WTASKTYPECODE"]=="RPI" or task["WTASKTYPECODE"]=="RPL" or task["WTASKTYPECODE"]=="MOV":
             for item in task["WTASKITEMS_SUBFORM"]:
                 ids_in_move.append(item["PARTNAME"])
 
@@ -209,14 +216,14 @@ def create_group_by_items(lines, inventory_dict,refresh_ids):
         if goi.item_id not in refresh_ids:
             if goi.is_in_c1 and goi.number_of_lines>1 and is_W_in_inventory :
                 groupsOfItems.append(goi)
+    if len(groupsOfItems)!=0:
+        fix_normalized_c1_location(groupsOfItems)
 
-    fix_normalized_c1_location(groupsOfItems)
+        fix_normalized_number_of_lines(groupsOfItems)
 
-    fix_normalized_number_of_lines(groupsOfItems)
+        update_the_measure(groupsOfItems)
 
-    update_the_measure(groupsOfItems)
-
-    groupsOfItems = sorted(groupsOfItems, key=lambda x: x.the_measure, reverse=True)
+        groupsOfItems = sorted(groupsOfItems, key=lambda x: x.the_measure, reverse=True)
 
     return groupsOfItems, item_ids_not_in_inventory
 

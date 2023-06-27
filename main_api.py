@@ -4,6 +4,7 @@ from web_services import *
 
 #remove_tasks
 amount_to_not_remove = 3
+
 #create_transfer
 max_transfer_tasks = 4
 center_street = 35
@@ -14,20 +15,24 @@ pick_employee_grade_cut_off = 8
 pick_height_employee_grade_cut_off = 8
 tail_percantage_to_reallocate = 0.10
 
-###input
-# read employees
 
+###input
+# get old tasks
+old_task_data = get_old_tasks()
+lines_per_employee = create_employees_lines_dic(old_task_data)
+
+# read employees
 employees_data = read_input("employees.xlsx")
 employees = create_employees(employees_data)
 employees_height_transfer, employees_pick = get_employees_by_skill(employees)
 schedule = init_schedule(employees)
 
 # get stock - create
-inventory = get_stock2()
+inventory = get_stock()
 inventory_dict = create_inventory_dict_from_json(inventory,center_street)
 
 # get wtasks
-lines_input = get_wtasks2()
+lines_input = get_wtasks()
 lines, refresh_ids = create_lines_from_json_after_gal(lines_input) #TODO BEN
 
 # create transfer tasks
@@ -64,8 +69,8 @@ for e,tasks in schedule_pick.items():
 
 for e,tasks in schedule_height_pick.items():
     schedule[e] = sorted(tasks,key=lambda x:x.priority)
-
+# patch -  allocate tasks to employees
 patch_update_allocation(schedule)
 print("end")
-# patch -  allocate tasks to employees
+
 
