@@ -1,5 +1,5 @@
 import csv
-import random
+import random,datetime
 
 import pandas as pd
 from Enteties import Line, TaskPick, StreetObj, Employee, Location, LineNoLocation, GroupOfItem, TaskTransfer, Order, \
@@ -383,14 +383,19 @@ def create_order_lines_dict_without_transfer(lines_by_order, order_ids_to_remove
             del lines_by_order[order_id]
 
 
-def create_employees(employees_data):
+def create_employees(employees_data,old_tasks):
     employees_ = []
+    HOUR = datetime.datetime.now().hour  # the current hour
+    MINUTE = datetime.datetime.now().minute  # the current minute
+    tnow = HOUR + (MINUTE/60)
     for ind in employees_data.index:
         employee_id = employees_data['שם מלא'][ind]
         role = employees_data['תפקיד'][ind]
         pick_grade = int(employees_data['ליקוט'][ind])
         transfer_grade = int(employees_data['רענון'][ind])
         pick_height_grade = int(employees_data['גובה'][ind])
+        start_time = float(employees_data['שעת_התחלה'][ind])
+        amount_of_lines = old_tasks.get(employee_id,0)
         abilities = {}
         if pick_grade != 0:
             abilities["pick"] = pick_grade
@@ -398,7 +403,8 @@ def create_employees(employees_data):
             abilities["transfer"] = transfer_grade
         if pick_height_grade != 0:
             abilities["pick_height"] = pick_height_grade
-        employee = Employee(id_=employee_id, abilities=abilities, role=role)
+        employee = Employee(id_=employee_id, abilities=abilities, role=role,start_time=start_time,amount_of_lines=amount_of_lines)
+        employee.update_amount_of_lines_in_shift_per_hour(tnow)
         employees_.append(employee)
     return employees_
 

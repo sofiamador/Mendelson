@@ -23,7 +23,7 @@ lines_per_employee = create_employees_lines_dic(old_task_data)
 
 # read employees
 employees_data = read_input("employees.xlsx")
-employees = create_employees(employees_data)
+employees = create_employees(employees_data,lines_per_employee)
 employees_height_transfer, employees_pick = get_employees_by_skill(employees)
 schedule = init_schedule(employees)
 
