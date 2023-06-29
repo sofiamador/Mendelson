@@ -1,5 +1,6 @@
 import csv
 import random,datetime
+import statistics
 
 import pandas as pd
 from Enteties import Line, TaskPick, StreetObj, Employee, Location, LineNoLocation, GroupOfItem, TaskTransfer, Order, \
@@ -383,11 +384,37 @@ def create_order_lines_dict_without_transfer(lines_by_order, order_ids_to_remove
             del lines_by_order[order_id]
 
 
-def create_employees(employees_data,old_tasks):
+def calculate_average_lines_per_hour(employees):
+    # Extract the amount_of_lines_in_shift_per_hour values from employees
+
+    ability_dict = {'pick':[],'pick_height':[]}
+    for employee in employees:
+        if 'pick' in employee.abilities:
+            ability_dict['pick'].append(employee)
+        if 'pick_height' in employee.abilities:
+            ability_dict['pick_height'].append(employee)
+
+    ans = {'pick':0,'pick_height':0}
+    for ability, employees_with_ability in ability_dict.items():
+        if len(employees_with_ability)!=0:
+            lines_per_hour = [employee.amount_of_lines_in_shift_per_hour for employee in employees_with_ability]
+            average_lines_per_hour = statistics.mean(lines_per_hour)
+            ans[ability] = average_lines_per_hour
+    # Calculate the average using the statistics module
+
+    return ans
+
+def create_employees(employees_data,old_tasks, max_hour_to_ignore_noon):
     employees_ = []
     HOUR = datetime.datetime.now().hour  # the current hour
     MINUTE = datetime.datetime.now().minute  # the current minute
     tnow = HOUR + (MINUTE/60)
+
+    #HOUR = 11
+    #MINUTE = 30
+    #tnow = HOUR + (MINUTE/60)
+
+    start_time_dict = {}
     for ind in employees_data.index:
         employee_id = employees_data['שם מלא'][ind]
         role = employees_data['תפקיד'][ind]
@@ -395,6 +422,8 @@ def create_employees(employees_data,old_tasks):
         transfer_grade = int(employees_data['רענון'][ind])
         pick_height_grade = int(employees_data['גובה'][ind])
         start_time = float(employees_data['שעת_התחלה'][ind])
+
+        end_shift_time = float(employees_data['שעת_סיום'][ind])
         amount_of_lines = old_tasks.get(employee_id,0)
         abilities = {}
         if pick_grade != 0:
@@ -403,9 +432,32 @@ def create_employees(employees_data,old_tasks):
             abilities["transfer"] = transfer_grade
         if pick_height_grade != 0:
             abilities["pick_height"] = pick_height_grade
-        employee = Employee(id_=employee_id, abilities=abilities, role=role,start_time=start_time,amount_of_lines=amount_of_lines)
-        employee.update_amount_of_lines_in_shift_per_hour(tnow)
-        employees_.append(employee)
+
+        if start_time<tnow<end_shift_time:
+            employee = Employee(id_=employee_id, abilities=abilities, role=role,start_time=start_time,end_shift_time = end_shift_time,amount_of_lines=amount_of_lines)
+            employee.update_amount_of_lines_in_shift_per_hour(tnow)
+            employees_.append(employee)
+
+            if start_time not in start_time_dict.keys():
+                start_time_dict[start_time] = []
+            start_time_dict[start_time].append(employee)
+
+    if 12<=HOUR<=max_hour_to_ignore_noon:
+        min_start_time = min(start_time_dict.keys())
+        max_start_time = max(start_time_dict.keys())
+
+        employees_min = start_time_dict[min_start_time]
+        dict_ability_avg = calculate_average_lines_per_hour(employees_min)
+
+        employees_max = start_time_dict[max_start_time]
+        for employee in employees_max:
+            if 'pick' in  employee.abilities.keys():
+                employee.amount_of_lines_in_shift_per_hour = dict_ability_avg['pick']
+            elif "pick_height" in  employee.abilities.keys():
+                employee.amount_of_lines_in_shift_per_hour = dict_ability_avg["pick_height"]
+            else:
+                raise Exception("something is wrong with abilities")
+
     return employees_
 
 
@@ -744,6 +796,7 @@ def get_attribute_list(objects, attribute):
     return attribute_list
 
 
+
 def allocate_tasks_to_employees(transfer_tasks, schedule, employees_height_transfer, ability_str):
     ids_ = get_attribute_list(employees_height_transfer, "id_")
     employees_tasks_amount = {}
@@ -762,6 +815,32 @@ def allocate_tasks_to_employees(transfer_tasks, schedule, employees_height_trans
             schedule[employee_selected.id_].append(task)
             employees_tasks_amount[employee_selected.id_] = employees_tasks_amount[employee_selected.id_] + 1
 
+
+def get_employee_object(employees,employee_id):
+    for employee in employees:
+        if employee.id_ ==employee_id:
+            return employee
+    raise Exception("did not find employee with relevant id")
+
+
+def allocate_tasks_to_employees_v2(tasks, schedule, employees, ability_str):
+    ids_ = get_attribute_list(employees, "id_")
+    employees_lines_amount = {}
+    for employee_id in schedule.keys():
+        if employee_id in ids_:
+            employee = get_employee_object(employees,employee_id)
+            employees_lines_amount[employee_id] = employee.amount_of_lines_in_shift_per_hour  # len(schedule[employee_id])
+
+    for task in tasks:
+        if (len(employees_lines_amount) > 0):  # TODO @BEN
+            min_amount_of_tasks = min(employees_lines_amount.values())
+            employees_with_min_tasks = []
+            for employee in employees:
+                if employees_lines_amount[employee.id_] == min_amount_of_tasks:
+                    employees_with_min_tasks.append(employee)
+            employee_selected = max(employees_with_min_tasks, key=lambda x: x.abilities[ability_str])
+            schedule[employee_selected.id_].append(task)
+            employees_lines_amount[employee_selected.id_] = employees_lines_amount[employee_selected.id_] + task.amount_of_lines
 
 def init_schedule(employees):
     schedule = {}
@@ -886,8 +965,11 @@ def allocate_pick_orders(pick_orders, schedule, employees_pick, pick_employee_gr
     # else:
     #    large_amount_line_orders,other_amount_line_orders = get_orders_by_cut_off(pick_orders,pick_percentage_cut_off)
 
-    allocate_tasks_to_employees(orders_for_skilled, schedule, skilled_employees, "pick")
-    allocate_tasks_to_employees(orders_for_other, schedule, other_employees, "pick")
+    allocate_tasks_to_employees_v2(tasks=orders_for_skilled, schedule=schedule, employees=skilled_employees, ability_str ="pick" )
+    allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees, "pick")
+
+    #allocate_tasks_to_employees(orders_for_skilled, schedule, skilled_employees, "pick")
+    #allocate_tasks_to_employees(orders_for_other, schedule, other_employees, "pick")
     use_list_of_order_to_fix_for_balance(schedule, orders_to_fix)
 
 
@@ -904,8 +986,8 @@ def allocate_pick_height_orders(pick_height_orders, schedule, employees_height_t
                                                                               tail_percantage_to_reallocate)
     # else:
     #    large_amount_line_orders,other_amount_line_orders = get_orders_by_cut_off(pick_height_orders,pick_height_percentage_cut_off)
-    allocate_tasks_to_employees(orders_for_skilled, schedule, skilled_employees, "pick_height")
-    allocate_tasks_to_employees(orders_for_other, schedule, other_employees, "pick_height")
+    allocate_tasks_to_employees_v2(orders_for_skilled, schedule, skilled_employees, "pick_height")
+    allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees, "pick_height")
     use_list_of_order_to_fix_for_balance(schedule, orders_to_fix)
 
 

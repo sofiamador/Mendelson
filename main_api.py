@@ -14,7 +14,7 @@ amount_of_one_line_in_street = 3
 pick_employee_grade_cut_off = 8
 pick_height_employee_grade_cut_off = 8
 tail_percantage_to_reallocate = 0.10
-
+max_hour_to_ignore_noon = 13
 
 ###input
 # get old tasks
@@ -23,7 +23,9 @@ lines_per_employee = create_employees_lines_dic(old_task_data)
 
 # read employees
 employees_data = read_input("employees.xlsx")
-employees = create_employees(employees_data,lines_per_employee)
+employees = create_employees(employees_data,lines_per_employee , max_hour_to_ignore_noon=max_hour_to_ignore_noon)
+
+
 employees_height_transfer, employees_pick = get_employees_by_skill(employees)
 schedule = init_schedule(employees)
 
@@ -33,7 +35,7 @@ inventory_dict = create_inventory_dict_from_json(inventory,center_street)
 
 # get wtasks
 lines_input = get_wtasks()
-lines, refresh_ids = create_lines_from_json_after_gal(lines_input) #TODO BEN
+lines, refresh_ids = create_lines_from_json_after_gal(lines_input)
 
 # create transfer tasks
 transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_dict, max_transfer_tasks,refresh_ids)
