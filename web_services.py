@@ -2,7 +2,7 @@ import requests
 import json
 
 from Enteties import GroupOfOrders
-number_of_allocation_per_employee = 5
+number_of_allocation_per_employee = 4
 #host = "https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/"
 host = "https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/"
 with open('auth.txt', 'rb') as f:
@@ -32,7 +32,7 @@ def get_stock2():
 
 
 def get_wtasks():
-    #url = host +"WTASKS?$select=STZONECODE,WTASKNUM,PRIO,DOERLOGIN,STATDES,ADCSTARTED,WTASKTYPECODE,MEND_PRIO2,ADCSUDATE&$filter=WARHSNAME eq '500' and(STZONECODE eq 'C1' or STZONECODE eq 'W1' or STZONECODE eq 'W2') and DOERLOGIN ne 'dimitri' and (STATDES eq 'לביצוע' or STATDES eq 'מושהה') and (WTASKTYPECODE eq 'PIK' or WTASKTYPECODE eq 'RPI' or WTASKTYPECODE eq 'RPL' or WTASKTYPECODE eq 'MOV' or WTASKTYPECODE eq 'PUT')&$expand=WTASKITEMS_SUBFORM($select=PARTNAME, LOCNAME, PTQUANT,KLINE)"
+    # url = host +"WTASKS?$select=STZONECODE,WTASKNUM,PRIO,DOERLOGIN,STATDES,ADCSTARTED,WTASKTYPECODE,MEND_PRIO2,ADCSUDATE&$filter=WARHSNAME eq '500' and(STZONECODE eq 'C1' or STZONECODE eq 'W1' or STZONECODE eq 'W2') and DOERLOGIN ne 'dimitri' and (STATDES eq 'לביצוע' or STATDES eq 'מושהה') and (WTASKTYPECODE eq 'PIK' or WTASKTYPECODE eq 'RPI' or WTASKTYPECODE eq 'RPL' or WTASKTYPECODE eq 'MOV' or WTASKTYPECODE eq 'PUT')&$expand=WTASKITEMS_SUBFORM($select=PARTNAME, LOCNAME, PTQUANT,KLINE)"
     url = host +"WTASKS?$select=STZONECODE,WTASKNUM,PRIO,DOERLOGIN,STATDES,ADCSTARTED,WTASKTYPECODE,MEND_PRIO2,ADCSUDATE&$filter=WARHSNAME eq '500' and CDES ne 'סניף*' and(STZONECODE eq 'C1' or STZONECODE eq 'W1' or STZONECODE eq 'W2') and DOERLOGIN ne 'dimitri' and (STATDES eq 'לביצוע' or STATDES eq 'מושהה') and (WTASKTYPECODE eq 'PIK' or WTASKTYPECODE eq 'RPI' or WTASKTYPECODE eq 'RPL' or WTASKTYPECODE eq 'MOV' or WTASKTYPECODE eq 'PUT') and ADCSTARTED ne 'Y'&$expand=WTASKITEMS_SUBFORM($select=PARTNAME, LOCNAME, PTQUANT,KLINE)"
     payload = {}
     headers = {
@@ -53,7 +53,7 @@ def get_wtasks2():
 
 
 def get_old_tasks():
-    url = host + "WTASKS?$select=STZONECODE,WTASKNUM,PRIO,DOERLOGIN,STATDES,ADCSTARTED,WTASKTYPECODE,MEND_PRIO2,ADCSUSERLOGIN,ADCSUDATE,LINES&$filter=ADCSUDATE ge 2023-07-12T00:00:00%2B03:00 and (STATDES eq 'הושלמה' or STATDES eq 'לביצוע' ) and WTASKTYPECODE eq 'PIK' and(STZONECODE eq 'C1' or STZONECODE eq 'W1' or STZONECODE eq 'W2') and ADCSTARTED eq 'Y'&$expand="
+    url = host + "WTASKS?$select=STZONECODE,WTASKNUM,PRIO,DOERLOGIN,STATDES,ADCSTARTED,WTASKTYPECODE,MEND_PRIO2,ADCSUSERLOGIN,ADCSUDATE,LINES&$filter=ADCSUDATE ge 2023-07-13T00:00:00%2B03:00 and (STATDES eq 'הושלמה' or STATDES eq 'לביצוע' ) and WTASKTYPECODE eq 'PIK' and(STZONECODE eq 'C1' or STZONECODE eq 'W1' or STZONECODE eq 'W2') and ADCSTARTED eq 'Y'&$expand="
     payload = {}
     headers = {
         'X-App-Id': 'APPSS04',
@@ -154,7 +154,7 @@ def patch_update_allocation(schedule):
                 response = requests.request("PATCH", url, headers=headers, data=payload)
                 print(response.text)
 
-        response = requests.request("PATCH", url, headers=headers, data=payload)
+        #response = requests.request("PATCH", url, headers=headers, data=payload)
 
     f.close()
 

@@ -863,11 +863,12 @@ def get_employees_by_cut_off(employees_pick, pick_employee_grade_cut_off, abilit
     other_employees = []
 
     for e in employees_pick:
-        pick_grade = e.abilities[ability_str]
-        if pick_grade < pick_employee_grade_cut_off:
-            other_employees.append(e)
-        else:
-            skilled_employees.append(e)
+        if ability_str in e.abilities: # BEN
+            pick_grade = e.abilities[ability_str]
+            if pick_grade < pick_employee_grade_cut_off:
+                other_employees.append(e)
+            else:
+                skilled_employees.append(e)
 
     return skilled_employees, other_employees
 
