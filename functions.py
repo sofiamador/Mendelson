@@ -1012,8 +1012,10 @@ def allocate_pick_height_orders(pick_height_orders, schedule, employees_height_t
                                                                               tail_percantage_to_reallocate)
     # else:
     #    large_amount_line_orders,other_amount_line_orders = get_orders_by_cut_off(pick_height_orders,pick_height_percentage_cut_off)
-    allocate_tasks_to_employees_v2(orders_for_skilled, schedule, skilled_employees, "pick_height")
-    allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees, "pick_height")
+    if len(skilled_employees)!=0:
+        allocate_tasks_to_employees_v2(orders_for_skilled, schedule, skilled_employees, "pick_height")
+    if len(other_employees) != 0:
+        allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees, "pick_height")
     use_list_of_order_to_fix_for_balance(schedule, orders_to_fix)
 
 
