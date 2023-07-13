@@ -140,7 +140,10 @@ def create_lines_from_json_after_gal(lines_input_):
         if task["WTASKTYPECODE"]=="PIK":
             order_id = task["WTASKNUM"]
             warehouse_id = task["STZONECODE"]
-            priority = task["PRIO"]
+            if( task["MEND_PRIO2"]>0):
+                priority = task["MEND_PRIO2"]
+            else:
+                priority = task["PRIO"]
             for item in task["WTASKITEMS_SUBFORM"]:
                 item_id = item["PARTNAME"]
                 quantity = float(item["PTQUANT"])

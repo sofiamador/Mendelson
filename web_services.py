@@ -117,13 +117,17 @@ def patch_update_allocation(schedule):
         for t in tasks:
             if prio == number_of_allocation_per_employee:
                 break
+
+
             if isinstance(t, GroupOfOrders):
+
                 for order in t.orders:
+                    prio2 = prio
                     url = host + "WTASKS('" + order.order_id + "')"
                     payload = json.dumps({
                         "MEND_PRIO2": order.priority,
                         "DOERLOGIN": k,
-                        "PRIO": prio
+                        "PRIO": prio2
                     })
                     headers = {
                         'X-App-Id': 'APPSS04',
@@ -137,11 +141,14 @@ def patch_update_allocation(schedule):
                     print(response.text)
                 prio += 1
             else:
+                prio2 = prio
+                if t.priority > 5:
+                    prio2 = t.priority
                 url = host + "WTASKS('" + t.order_id + "')"
                 payload = json.dumps({
                     "MEND_PRIO2": t.priority,
                     "DOERLOGIN": k,
-                    "PRIO": prio
+                    "PRIO": prio2
 
                 })
                 prio += 1

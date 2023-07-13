@@ -1,7 +1,7 @@
 from Enteties import StreetObj, TaskTransfer
 from functions import *
 from web_services import *
-
+import time
 
 #create_transfer
 max_transfer_tasks = 4
@@ -71,7 +71,7 @@ for e,tasks in schedule_pick.items():
 for e,tasks in schedule_height_pick.items():
     schedule[e] = sorted(tasks,key=lambda x:x.priority)
 # patch -  allocate tasks to employees
-#patch_update_allocation(schedule)
+patch_update_allocation(schedule)
 print("end")
 
 
