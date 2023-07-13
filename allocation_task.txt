@@ -1,0 +1,90 @@
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1892391')
+{"MEND_PRIO2": 1, "DOERLOGIN": "abdallah", "PRIO": 1}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893130')
+{"MEND_PRIO2": 3, "DOERLOGIN": "abdallah", "PRIO": 2}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1894447')
+{"MEND_PRIO2": 4, "DOERLOGIN": "abdallah", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1887283')
+{"MEND_PRIO2": 5, "DOERLOGIN": "abdallah", "PRIO": 4}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893261')
+{"MEND_PRIO2": 1, "DOERLOGIN": "yonib", "PRIO": 1}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893602')
+{"MEND_PRIO2": 3, "DOERLOGIN": "yonib", "PRIO": 2}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1894442')
+{"MEND_PRIO2": 3, "DOERLOGIN": "yonib", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1894410')
+{"MEND_PRIO2": 3, "DOERLOGIN": "yonib", "PRIO": 4}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893182')
+{"MEND_PRIO2": 2, "DOERLOGIN": "oshri", "PRIO": 1}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1894427')
+{"MEND_PRIO2": 3, "DOERLOGIN": "oshri", "PRIO": 2}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1894299')
+{"MEND_PRIO2": 3, "DOERLOGIN": "oshri", "PRIO": 2}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893067')
+{"MEND_PRIO2": 3, "DOERLOGIN": "oshri", "PRIO": 2}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1894074')
+{"MEND_PRIO2": 3, "DOERLOGIN": "oshri", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893165')
+{"MEND_PRIO2": 3, "DOERLOGIN": "oshri", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1892879')
+{"MEND_PRIO2": 3, "DOERLOGIN": "oshri", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1892878')
+{"MEND_PRIO2": 3, "DOERLOGIN": "oshri", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1892876')
+{"MEND_PRIO2": 3, "DOERLOGIN": "oshri", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1894450')
+{"MEND_PRIO2": 4, "DOERLOGIN": "oshri", "PRIO": 4}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893180')
+{"MEND_PRIO2": 1, "DOERLOGIN": "nadavm", "PRIO": 1}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1892874')
+{"MEND_PRIO2": 1, "DOERLOGIN": "nadavm", "PRIO": 1}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1892253')
+{"MEND_PRIO2": 1, "DOERLOGIN": "nadavm", "PRIO": 1}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1892875')
+{"MEND_PRIO2": 1, "DOERLOGIN": "nadavm", "PRIO": 2}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1891960')
+{"MEND_PRIO2": 2, "DOERLOGIN": "nadavm", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893183')
+{"MEND_PRIO2": 3, "DOERLOGIN": "nadavm", "PRIO": 4}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893136')
+{"MEND_PRIO2": 1, "DOERLOGIN": "aviw", "PRIO": 1}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1892155')
+{"MEND_PRIO2": 2, "DOERLOGIN": "aviw", "PRIO": 2}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893181')
+{"MEND_PRIO2": 2, "DOERLOGIN": "aviw", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1892508')
+{"MEND_PRIO2": 3, "DOERLOGIN": "aviw", "PRIO": 4}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1894305')
+{"MEND_PRIO2": 2, "DOERLOGIN": "muhamda", "PRIO": 1}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1894142')
+{"MEND_PRIO2": 2, "DOERLOGIN": "muhamda", "PRIO": 1}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893724')
+{"MEND_PRIO2": 2, "DOERLOGIN": "muhamda", "PRIO": 1}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893671')
+{"MEND_PRIO2": 2, "DOERLOGIN": "muhamda", "PRIO": 1}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893139')
+{"MEND_PRIO2": 2, "DOERLOGIN": "muhamda", "PRIO": 1}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1891897')
+{"MEND_PRIO2": 2, "DOERLOGIN": "muhamda", "PRIO": 1}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893103')
+{"MEND_PRIO2": 2, "DOERLOGIN": "muhamda", "PRIO": 2}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893694')
+{"MEND_PRIO2": 4, "DOERLOGIN": "muhamda", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893447')
+{"MEND_PRIO2": 9, "DOERLOGIN": "muhamda", "PRIO": 4}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1892392')
+{"MEND_PRIO2": 1, "DOERLOGIN": "idanb", "PRIO": 1}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1893264')
+{"MEND_PRIO2": 2, "DOERLOGIN": "idanb", "PRIO": 2}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1894443')
+{"MEND_PRIO2": 3, "DOERLOGIN": "idanb", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1888483')
+{"MEND_PRIO2": 4, "DOERLOGIN": "idanb", "PRIO": 4}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1894408')
+{"MEND_PRIO2": 1, "DOERLOGIN": "mhamada", "PRIO": 1}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1892175')
+{"MEND_PRIO2": 2, "DOERLOGIN": "mhamada", "PRIO": 2}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1892158')
+{"MEND_PRIO2": 4, "DOERLOGIN": "mhamada", "PRIO": 3}
+https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1894100')
+{"MEND_PRIO2": 8, "DOERLOGIN": "mhamada", "PRIO": 4}

@@ -2,8 +2,6 @@ from Enteties import StreetObj, TaskTransfer
 from functions import *
 from web_services import *
 
-#remove_tasks
-amount_to_not_remove = 3
 
 #create_transfer
 max_transfer_tasks = 4
@@ -15,6 +13,7 @@ pick_employee_grade_cut_off = 8
 pick_height_employee_grade_cut_off = 8
 tail_percantage_to_reallocate = 0.10
 max_hour_to_ignore_noon = 13
+min_number_of_lines_for_transfer = 2
 
 ###input
 # get old tasks
@@ -38,7 +37,7 @@ lines_input = get_wtasks()
 lines, refresh_ids = create_lines_from_json_after_gal(lines_input)
 
 # create transfer tasks
-transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_dict, max_transfer_tasks,refresh_ids)
+transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_dict, max_transfer_tasks,refresh_ids,min_number_of_lines_for_transfer)
 allocate_tasks_to_employees(transfer_tasks, schedule, employees_height_transfer, "transfer")
 
 # post - transfer tasks (api)

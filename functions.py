@@ -205,7 +205,7 @@ def get_is_W_in_inventory(locations):
 
 
 
-def create_group_by_items(lines, inventory_dict,refresh_ids):
+def create_group_by_items(lines, inventory_dict,refresh_ids,min_number_of_lines_for_transfer):
     groupsOfItems = []
     item_ids_not_in_inventory = []
     lines_by_item = get_lines_by_items(lines)
@@ -215,7 +215,7 @@ def create_group_by_items(lines, inventory_dict,refresh_ids):
 
         is_W_in_inventory = get_is_W_in_inventory (inventory_dict.get(item_id,None))
         if goi.item_id not in refresh_ids:
-            if goi.is_in_c1 and goi.number_of_lines>1 and is_W_in_inventory :
+            if goi.is_in_c1 and goi.number_of_lines>min_number_of_lines_for_transfer and is_W_in_inventory :
                 groupsOfItems.append(goi)
     if len(groupsOfItems)!=0:
         fix_normalized_c1_location(groupsOfItems)
@@ -725,9 +725,9 @@ def get_locations_to_cover_quantities(goi):
 
 
 
-def create_transfer_tasks(lines, inventory_dict, max_transfer_tasks,refresh_ids):
+def create_transfer_tasks(lines, inventory_dict, max_transfer_tasks,refresh_ids,min_number_of_lines_for_transfer):
     transfer_tasks = []
-    group_of_items_list, item_ids_not_in_inventory = create_group_by_items(lines, inventory_dict,refresh_ids)
+    group_of_items_list, item_ids_not_in_inventory = create_group_by_items(lines, inventory_dict,refresh_ids,min_number_of_lines_for_transfer)
     # create_histogram(group_of_items_list, "the_measure")
     number_of_transfer_tasks = min(len(group_of_items_list), max_transfer_tasks)
     group_of_items_for_tasks_list = get_group_of_items_for_tasks_list(group_of_items_list,number_of_transfer_tasks)

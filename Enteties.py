@@ -263,6 +263,8 @@ class GroupOfItem():
                                    1 - self.weight_on_orders_reps) * self.normalized_location_c1 + self.weight_on_orders_reps * self.normalized_number_of_lines
 
     def update_normalized_location_c1(self, location_c1_manhattan_max):
+        if location_c1_manhattan_max==0:
+            location_c1_manhattan_max=1
         self.normalized_location_c1 = self.location_c1.manhattan / location_c1_manhattan_max
 
     def update_normalized_number_of_lines(self, number_of_lines_max):
