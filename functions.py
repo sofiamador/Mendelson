@@ -825,22 +825,43 @@ def get_employee_object(employees,employee_id):
 
 def allocate_tasks_to_employees_v2(tasks, schedule, employees, ability_str):
     ids_ = get_attribute_list(employees, "id_")
-    employees_lines_amount = {}
+    employees_lines_amount_up_to_now_normalized = {}
+    amount_of_lines_in_schedule_per_emp = {}
+
     for employee_id in schedule.keys():
         if employee_id in ids_:
             employee = get_employee_object(employees,employee_id)
-            employees_lines_amount[employee_id] = employee.amount_of_lines_in_shift_per_hour  # len(schedule[employee_id])
+            employees_lines_amount_up_to_now_normalized[employee_id] = employee.amount_of_lines_in_shift_per_hour  # len(schedule[employee_id])
+            amount_of_lines_in_schedule_per_emp[employee_id] = 0
+
+    grade_to_distribute = {}
+
+    max_amount_of_lines =  max(employees_lines_amount_up_to_now_normalized.values())
+    for employee_id in employees_lines_amount_up_to_now_normalized.keys():
+        employees_lines_amount_up_to_now_normalized[employee_id] = employee.amount_of_lines_in_shift_per_hour/max_amount_of_lines  # len(schedule[employee_id])
+        grade_to_distribute[employee_id] = employees_lines_amount_up_to_now_normalized[employee_id] * amount_of_lines_in_schedule_per_emp[employee_id]
+
+    max_lines_distribute_in_schedule = None
 
     for task in tasks:
-        if (len(employees_lines_amount) > 0):  # TODO @BEN
-            min_amount_of_tasks = min(employees_lines_amount.values())
+        if (len(employees_lines_amount_up_to_now_normalized) > 0):  # TODO @BEN
+
+            min_amount_of_tasks = min(grade_to_distribute.values())
             employees_with_min_tasks = []
             for employee in employees:
-                if employees_lines_amount[employee.id_] == min_amount_of_tasks:
+                if grade_to_distribute[employee.id_] == min_amount_of_tasks:
                     employees_with_min_tasks.append(employee)
+
+
             employee_selected = max(employees_with_min_tasks, key=lambda x: x.abilities[ability_str])
             schedule[employee_selected.id_].append(task)
-            employees_lines_amount[employee_selected.id_] = employees_lines_amount[employee_selected.id_] + task.amount_of_lines
+            amount_of_lines_in_schedule_per_emp[employee_selected.id_] =  amount_of_lines_in_schedule_per_emp[employee_selected.id_] + task.amount_of_lines
+            max_lines_distribute_in_schedule = max(amount_of_lines_in_schedule_per_emp)
+            for employee in employees:
+                id_ = employee.id_
+                grade_to_distribute[id_]  = employees_lines_amount_up_to_now_normalized[id_]+(amount_of_lines_in_schedule_per_emp[employee_selected.id_]/max_lines_distribute_in_schedule)
+
+            employees_lines_amount_up_to_now_normalized[employee_selected.id_] = employees_lines_amount_up_to_now_normalized[employee_selected.id_] + task.amount_of_lines
 
 def init_schedule(employees):
     schedule = {}

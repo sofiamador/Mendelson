@@ -71,7 +71,7 @@ for e,tasks in schedule_pick.items():
 for e,tasks in schedule_height_pick.items():
     schedule[e] = sorted(tasks,key=lambda x:x.priority)
 # patch -  allocate tasks to employees
-patch_update_allocation(schedule)
+#patch_update_allocation(schedule)
 print("end")
 
 
