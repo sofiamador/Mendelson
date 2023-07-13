@@ -114,9 +114,10 @@ def patch_update_allocation(schedule):
     f = open("allocation_task.txt", "w")
     for k, tasks in schedule.items():
         prio = 1
+        name = k
         for t in tasks:
             if prio == number_of_allocation_per_employee:
-                break
+                name = "בודק3"
 
 
             if isinstance(t, GroupOfOrders):
@@ -126,7 +127,7 @@ def patch_update_allocation(schedule):
                     url = host + "WTASKS('" + order.order_id + "')"
                     payload = json.dumps({
                         "MEND_PRIO2": order.priority,
-                        "DOERLOGIN": k,
+                        "DOERLOGIN": name,
                         "PRIO": prio2
                     })
                     headers = {
@@ -147,7 +148,7 @@ def patch_update_allocation(schedule):
                 url = host + "WTASKS('" + t.order_id + "')"
                 payload = json.dumps({
                     "MEND_PRIO2": t.priority,
-                    "DOERLOGIN": k,
+                    "DOERLOGIN": name,
                     "PRIO": prio2
 
                 })
