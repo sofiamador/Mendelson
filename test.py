@@ -1,5 +1,5 @@
 from functions import *
 from web_services import *
 
-inventory = עק()
+inventory = get_wtasks()
 print(inventory)
