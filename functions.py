@@ -949,7 +949,7 @@ def cut_orders_by_skill(orders, skilled_employees, other_employees, tail_percant
     sum_ = 0
     for order in orders:
         sum_ = sum_ + order.amount_of_lines
-        if sum_ < amount_of_lines_for_other_employees:
+        if sum_ < amount_of_lines_for_other_employees or order.priority>5:
             orders_for_others.append(order)
         else:
             orders_for_skilled.append(order)
