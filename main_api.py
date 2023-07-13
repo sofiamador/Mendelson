@@ -39,6 +39,8 @@ lines, refresh_ids = create_lines_from_json_after_gal(lines_input)
 # create transfer tasks
 transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_dict, max_transfer_tasks,refresh_ids,min_number_of_lines_for_transfer)
 allocate_tasks_to_employees(transfer_tasks, schedule, employees_height_transfer, "transfer")
+# ben todo!!!!! to take emp with only רענון
+
 
 # post - transfer tasks (api)
 #post_transfer_tasks(schedule)

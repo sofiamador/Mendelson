@@ -390,14 +390,15 @@ def create_order_lines_dict_without_transfer(lines_by_order, order_ids_to_remove
 def calculate_average_lines_per_hour(employees):
     # Extract the amount_of_lines_in_shift_per_hour values from employees
 
-    ability_dict = {'pick':[],'pick_height':[]}
+    ability_dict = {'pick':[],'pick_height':[],'transfer':[]}
     for employee in employees:
         if 'pick' in employee.abilities:
             ability_dict['pick'].append(employee)
         if 'pick_height' in employee.abilities:
             ability_dict['pick_height'].append(employee)
-
-    ans = {'pick':0,'pick_height':0}
+        if 'pick_height' in employee.abilities:
+            ability_dict['transfer'].append(employee)
+    ans = {'pick':0,'pick_height':0,"transfer":0}
     for ability, employees_with_ability in ability_dict.items():
         if len(employees_with_ability)!=0:
             lines_per_hour = [employee.amount_of_lines_in_shift_per_hour for employee in employees_with_ability]
@@ -459,7 +460,10 @@ def create_employees(employees_data,old_tasks, max_hour_to_ignore_noon):
             elif "pick_height" in  employee.abilities.keys():
                 employee.amount_of_lines_in_shift_per_hour = dict_ability_avg["pick_height"]
             else:
-                raise Exception("something is wrong with abilities")
+                employee.amount_of_lines_in_shift_per_hour = dict_ability_avg["transfer"]
+
+            #else:
+            #    raise Exception("something is wrong with abilities")
 
     return employees_
 
