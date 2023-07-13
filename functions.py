@@ -838,7 +838,10 @@ def allocate_tasks_to_employees_v2(tasks, schedule, employees, ability_str):
 
     max_amount_of_lines =  max(employees_lines_amount_up_to_now_normalized.values())
     for employee_id in employees_lines_amount_up_to_now_normalized.keys():
-        employees_lines_amount_up_to_now_normalized[employee_id] = employee.amount_of_lines_in_shift_per_hour/max_amount_of_lines  # len(schedule[employee_id])
+        if max_amount_of_lines ==0:
+            employees_lines_amount_up_to_now_normalized[employee_id] = 0  # len(schedule[employee_id])
+        else:
+            employees_lines_amount_up_to_now_normalized[employee_id] = employee.amount_of_lines_in_shift_per_hour/max_amount_of_lines  # len(schedule[employee_id])
         grade_to_distribute[employee_id] = employees_lines_amount_up_to_now_normalized[employee_id] * amount_of_lines_in_schedule_per_emp[employee_id]
 
     max_lines_distribute_in_schedule = None
@@ -856,12 +859,13 @@ def allocate_tasks_to_employees_v2(tasks, schedule, employees, ability_str):
             employee_selected = max(employees_with_min_tasks, key=lambda x: x.abilities[ability_str])
             schedule[employee_selected.id_].append(task)
             amount_of_lines_in_schedule_per_emp[employee_selected.id_] =  amount_of_lines_in_schedule_per_emp[employee_selected.id_] + task.amount_of_lines
-            max_lines_distribute_in_schedule = max(amount_of_lines_in_schedule_per_emp)
+            max_lines_distribute_in_schedule = max(amount_of_lines_in_schedule_per_emp.values())
             for employee in employees:
                 id_ = employee.id_
-                grade_to_distribute[id_]  = employees_lines_amount_up_to_now_normalized[id_]+(amount_of_lines_in_schedule_per_emp[employee_selected.id_]/max_lines_distribute_in_schedule)
+                if max_lines_distribute_in_schedule!=0:
+                    grade_to_distribute[id_]  = employees_lines_amount_up_to_now_normalized[id_]+(amount_of_lines_in_schedule_per_emp[employee_selected.id_]/max_lines_distribute_in_schedule)
 
-            employees_lines_amount_up_to_now_normalized[employee_selected.id_] = employees_lines_amount_up_to_now_normalized[employee_selected.id_] + task.amount_of_lines
+            #employees_lines_amount_up_to_now_normalized[employee_selected.id_] = employees_lines_amount_up_to_now_normalized[employee_selected.id_] + task.amount_of_lines
 
 def init_schedule(employees):
     schedule = {}

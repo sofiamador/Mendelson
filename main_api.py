@@ -41,10 +41,10 @@ transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_di
 allocate_tasks_to_employees(transfer_tasks, schedule, employees_height_transfer, "transfer")
 
 # post - transfer tasks (api)
-post_transfer_tasks(schedule)
+#post_transfer_tasks(schedule)
 
 # patch -  new location for items in transfers (api)
-patch_upadate_location_for_items(schedule)
+#patch_upadate_location_for_items(schedule)
 
 # create  allocation
 for k in schedule:
