@@ -151,12 +151,12 @@ def create_lines_from_json_after_gal(lines_input_):
                 line_number = item["KLINE"]
 
                 line = Line(item_id, order_id, quantity, warehouse_id, location_string, line_number, priority)
-                if line.location.warehouse_id== "C1" and line.location.street.isdigit() and line.location.row.isdigit():
-                    street_number = int(line.location.street)
-                    row_number = int(line.location.row)
+                #if line.location.warehouse_id== "C1" and line.location.street.isdigit() and line.location.row.isdigit():
+                #    street_number = int(line.location.street)
+                #    row_number = int(line.location.row)
 
-                    if row_number == 1 or (23<=street_number<=28 and row_number<=4):
-                        line.warehouse_id="D"
+                #    if row_number == 1 or (23<=street_number<=28 and row_number<=4):
+                #        line.warehouse_id="D"
                 lines.append(line)
 
 
@@ -398,7 +398,7 @@ def create_order_lines_dict_without_transfer(lines_by_order, order_ids_to_remove
 def calculate_average_lines_per_hour(employees):
     # Extract the amount_of_lines_in_shift_per_hour values from employees
 
-    ability_dict = {'pick':[],'pick_height':[],'transfer':[]}
+    ability_dict = {'pick':[],'pick_height':[],'transfer':[],'jack':[]}
     for employee in employees:
         if 'pick' in employee.abilities:
             ability_dict['pick'].append(employee)
@@ -406,7 +406,9 @@ def calculate_average_lines_per_hour(employees):
             ability_dict['pick_height'].append(employee)
         if 'pick_height' in employee.abilities:
             ability_dict['transfer'].append(employee)
-    ans = {'pick':0,'pick_height':0,"transfer":0}
+        if 'jack' in employee.abilities:
+            ability_dict['jack'].append(employee)
+    ans = {'pick':0,'pick_height':0,"transfer":0,"jack":0}
     for ability, employees_with_ability in ability_dict.items():
         if len(employees_with_ability)!=0:
             lines_per_hour = [employee.amount_of_lines_in_shift_per_hour for employee in employees_with_ability]
@@ -433,9 +435,11 @@ def create_employees(employees_data,old_tasks, max_hour_to_ignore_noon):
         pick_grade = int(employees_data['ליקוט'][ind])
         transfer_grade = int(employees_data['רענון'][ind])
         pick_height_grade = int(employees_data['גובה'][ind])
-        start_time = float(employees_data['שעת_התחלה'][ind])
+        jack_grade = int(employees_data['גק'][ind])
 
-        end_shift_time = float(employees_data['שעת_סיום'][ind])
+        start_time = 0#float(employees_data['שעת_התחלה'][ind])@sofi TODO
+
+        end_shift_time = 0#float(employees_data['שעת_סיום'][ind]) @sofi TODO
         amount_of_lines = old_tasks.get(employee_id,0)
         abilities = {}
         if pick_grade != 0:
@@ -444,6 +448,8 @@ def create_employees(employees_data,old_tasks, max_hour_to_ignore_noon):
             abilities["transfer"] = transfer_grade
         if pick_height_grade != 0:
             abilities["pick_height"] = pick_height_grade
+        if jack_grade!=0:
+            abilities["jack"] = pick_height_grade
 
         if start_time<tnow<end_shift_time:
             employee = Employee(id_=employee_id, abilities=abilities, role=role,start_time=start_time,end_shift_time = end_shift_time,amount_of_lines=amount_of_lines)
@@ -769,6 +775,13 @@ def create_transfer_tasks(lines, inventory_dict, max_transfer_tasks,refresh_ids,
     return transfer_tasks, item_ids_in_transfer
 
 
+def are_all_lines_D(lines):
+    for line in lines:
+        if line.location.warehouse_id != "D":
+            return False
+    return True
+
+
 def get_order_by_ability(lines_after_gal_by_order):
     pick_orders = []
     pick_height_orders = []
@@ -777,41 +790,47 @@ def get_order_by_ability(lines_after_gal_by_order):
         order_pick_lines = []
         order_pick_height_lines = []
         order_pick_jack_lines = []
-        flag = False
-        for line in lines:
-            warehouse_id = line.location.warehouse_id
+        if are_all_lines_D(lines):
+            order_pick_jack_lines.extend(lines)
+        else:
+            for line in lines:
+                warehouse_id = line.location.warehouse_id
+                if warehouse_id == "C1":
+                    order_pick_lines.append(line)
+                else:
+                    order_pick_height_lines.append(line)
 
-            if warehouse_id == "C1":
-                flag = True
-                order_pick_lines.append(line)
-                order_pick_lines.extend(order_pick_jack_lines)
-                order_pick_jack_lines = []
-            if warehouse_id == "D" and not flag:
-                order_pick_jack_lines.append(line)
-            else:
-                order_pick_height_lines.append(line)
 
-        if len(order_pick_jack_lines) != 0:
-            pick_jack_order.append((Order(order, 'pick', order_pick_jack_lines)))
         if len(order_pick_lines) != 0:
             pick_orders.append(Order(order, 'pick', order_pick_lines))
 
         if len(order_pick_height_lines) != 0:
             pick_height_orders.append(Order(order, 'pick_height', order_pick_height_lines))
 
+        if len(order_pick_height_lines) != 0:
+            pick_jack_order.append(Order(order, 'jack', order_pick_height_lines))
+
     return pick_orders, pick_height_orders,order_pick_jack_lines
 
 
 def get_employees_by_skill(employees):
-    employees_height_transfer = []
+
+    employees_pick_height = []
     employees_pick = []
+    employees_transfer = []
+    employees_jack = []
+
     for employee in employees:
         if "pick" in employee.abilities:
             employees_pick.append(employee)
-        else:
-            employees_height_transfer.append(employee)
-    return employees_height_transfer, employees_pick
+        if "transfer" in employee.abilities:
+            employees_transfer.append(employee)
+        if "pick_height" in employee.abilities:
+            employees_pick_height.append(employee)
+        if "jack" in employee.abilities:
+            employees_jack.append(employee)
 
+    return employees_pick_height,employees_pick,employees_transfer, employees_jack
 
 def get_attribute_list(objects, attribute):
     attribute_list = []
@@ -1007,21 +1026,15 @@ def use_list_of_order_to_fix_for_balance(schedule, orders_to_fix):
 def allocate_pick_orders(pick_orders, schedule, employees_pick, pick_employee_grade_cut_off,
                          tail_percantage_to_reallocate):
     cumulative_distribution_function(pick_orders)
-    # create_histogram(pick_orders, "amount_of_lines", filename="hist_pick_amount_of_lines")
-    # create_histogram(pick_orders, "cumulative_value", filename="hist_pick_cumulative_value")
+
     skilled_employees, other_employees = get_employees_by_cut_off(employees_pick, pick_employee_grade_cut_off, "pick")
-    # if is_calculate_percentage_cut_off:
     orders_for_skilled, orders_for_other, orders_to_fix = cut_orders_by_skill(pick_orders, skilled_employees,
                                                                               other_employees,
                                                                               tail_percantage_to_reallocate)
-    # else:
-    #    large_amount_line_orders,other_amount_line_orders = get_orders_by_cut_off(pick_orders,pick_percentage_cut_off)
 
     allocate_tasks_to_employees_v2(tasks=orders_for_skilled, schedule=schedule, employees=skilled_employees, ability_str ="pick" )
     allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees, "pick")
 
-    #allocate_tasks_to_employees(orders_for_skilled, schedule, skilled_employees, "pick")
-    #allocate_tasks_to_employees(orders_for_other, schedule, other_employees, "pick")
     use_list_of_order_to_fix_for_balance(schedule, orders_to_fix)
 
 
@@ -1071,15 +1084,29 @@ def create_bar_from_dict(schedule, title_):
     plt.show()
 
 
-def get_schedule_by_skill(schedule, employees_height_transfer):
-    schedule_height_pick = {}
+def get_schedule_by_skill(schedule, employees_pick_height,employees_pick,employees_jack):
     schedule_pick = {}
+
+    schedule_pick_height = {}
+    schedule_jack = {}
+
     for id_, tasks in schedule.items():
-        if id_ in get_attribute_list(employees_height_transfer, "id_"):
-            schedule_height_pick[id_] = tasks
-        else:
+
+        flag = False
+        if id_ in get_attribute_list(employees_pick_height, "id_"):
+            schedule_pick_height[id_] = tasks
+            flag=True
+        if id_ in get_attribute_list(employees_pick, "id_"):
             schedule_pick[id_] = tasks
-    return schedule_pick, schedule_height_pick
+            flag=True
+
+        if id_ in get_attribute_list(schedule_jack, "id_"):
+            schedule_jack[id_] = tasks
+            flag=True
+
+        if not flag:
+            raise Exception("employee not suppose to be in pick")
+    return schedule_pick, schedule_pick_height,schedule_jack
 
 
 def get_orders_with_one_line(orders):
