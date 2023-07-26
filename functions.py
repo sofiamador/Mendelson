@@ -151,7 +151,15 @@ def create_lines_from_json_after_gal(lines_input_):
                 line_number = item["KLINE"]
 
                 line = Line(item_id, order_id, quantity, warehouse_id, location_string, line_number, priority)
+                if line.location.warehouse_id== "C1" and line.location.street.isdigit() and line.location.row.isdigit():
+                    street_number = int(line.location.street)
+                    row_number = int(line.location.row)
+
+                    if row_number == 1 or (23<=street_number<=28 and row_number<=4):
+                        line.warehouse_id="D"
                 lines.append(line)
+
+
         elif task["WTASKTYPECODE"]=="RPI" or task["WTASKTYPECODE"]=="RPL" or task["WTASKTYPECODE"]=="MOV":
             for item in task["WTASKITEMS_SUBFORM"]:
                 ids_in_move.append(item["PARTNAME"])
@@ -764,23 +772,34 @@ def create_transfer_tasks(lines, inventory_dict, max_transfer_tasks,refresh_ids,
 def get_order_by_ability(lines_after_gal_by_order):
     pick_orders = []
     pick_height_orders = []
+    pick_jack_order = []
     for order, lines in lines_after_gal_by_order.items():
         order_pick_lines = []
         order_pick_height_lines = []
+        order_pick_jack_lines = []
+        flag = False
         for line in lines:
             warehouse_id = line.location.warehouse_id
+
             if warehouse_id == "C1":
+                flag = True
                 order_pick_lines.append(line)
+                order_pick_lines.extend(order_pick_jack_lines)
+                order_pick_jack_lines = []
+            if warehouse_id == "D" and not flag:
+                order_pick_jack_lines.append(line)
             else:
                 order_pick_height_lines.append(line)
 
+        if len(order_pick_jack_lines) != 0:
+            pick_jack_order.append((Order(order, 'pick', order_pick_jack_lines)))
         if len(order_pick_lines) != 0:
             pick_orders.append(Order(order, 'pick', order_pick_lines))
 
         if len(order_pick_height_lines) != 0:
             pick_height_orders.append(Order(order, 'pick_height', order_pick_height_lines))
 
-    return pick_orders, pick_height_orders
+    return pick_orders, pick_height_orders,order_pick_jack_lines
 
 
 def get_employees_by_skill(employees):

@@ -36,17 +36,17 @@ inventory_dict = create_inventory_dict_from_json(inventory,center_street)
 lines_input = get_wtasks()
 lines, refresh_ids = create_lines_from_json_after_gal(lines_input)
 
+item_ids_in_transfer=[]
 # create transfer tasks
-transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_dict, max_transfer_tasks,refresh_ids,min_number_of_lines_for_transfer)
-allocate_tasks_to_employees(transfer_tasks, schedule, employees_height_transfer, "transfer")
-# ben todo!!!!! to take emp with only רענון
+#transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_dict, max_transfer_tasks,refresh_ids,min_number_of_lines_for_transfer)
+#allocate_tasks_to_employees(transfer_tasks, schedule, employees_height_transfer, "transfer")
 
 
 # post - transfer tasks (api)
-post_transfer_tasks(schedule)
+#post_transfer_tasks(schedule)
 
 # patch -  new location for items in transfers (api)
-patch_upadate_location_for_items(schedule)
+#patch_upadate_location_for_items(schedule)
 
 # create  allocation
 for k in schedule:
@@ -54,7 +54,9 @@ for k in schedule:
 lines_after_gal_by_order = get_lines_by_order_v2(lines)
 lines_after_gal_by_order = filter_orders_that_have_lines_with_items_from_list(lines_after_gal_by_order,item_ids_in_transfer)
 # todo remove lines of orders that have those ids
-pick_orders,pick_height_orders = get_order_by_ability(lines_after_gal_by_order)
+pick_orders,pick_height_orders,order_pick_jack_lines = get_order_by_ability(lines_after_gal_by_order)
+
+# todo break for jack
 pick_orders_one_line = break_orders_one_line(pick_orders, amount_of_one_line_in_street)
 all_pick_orders = pick_orders_one_line+pick_orders
 
