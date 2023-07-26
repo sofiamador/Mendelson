@@ -2,7 +2,7 @@ import requests
 import json
 
 from Enteties import GroupOfOrders
-number_of_allocation_per_employee = 4
+number_of_allocation_per_employee = 6
 #host = "https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/"
 host = "https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/"
 with open('auth.txt', 'rb') as f:
@@ -105,7 +105,7 @@ def post_transfer_tasks(schedule):
                 f.write(str(payload_json) + "\n")
 
                 response = requests.request("POST", url, headers=headers, data=payload_json)
-                print(response.text)
+                #print(response.text)
 
     f.close()
 
@@ -139,7 +139,7 @@ def patch_update_allocation(schedule):
                     f.write(url + "\n")
                     f.write(str(payload) + "\n")
                     response = requests.request("PATCH", url, headers=headers, data=payload)
-                    print(response.text)
+                    #print(response.text)
                 prio += 1
             else:
                 prio2 = prio
@@ -162,7 +162,7 @@ def patch_update_allocation(schedule):
                 f.write(url + "\n")
                 f.write(str(payload) + "\n")
                 response = requests.request("PATCH", url, headers=headers, data=payload)
-                print(response.text)
+                #print(response.text)
 
         #response = requests.request("PATCH", url, headers=headers, data=payload)
 
@@ -194,7 +194,7 @@ def patch_upadate_location_for_items(schedule):
                 }
 
                 response = requests.request("PATCH", url, headers=headers, data=payload)
-                print(response.text)
+                #print(response.text)
                 f.write(url + "\n")
                 f.write(str(payload) + "\n")
     f.close()

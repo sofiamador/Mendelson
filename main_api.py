@@ -13,7 +13,7 @@ pick_employee_grade_cut_off = 8
 pick_height_employee_grade_cut_off = 8
 tail_percantage_to_reallocate = 0.10
 max_hour_to_ignore_noon = 13
-min_number_of_lines_for_transfer = 2
+min_number_of_lines_for_transfer = 4
 
 ###input
 # get old tasks
@@ -37,16 +37,17 @@ lines_input = get_wtasks()
 lines, refresh_ids = create_lines_from_json_after_gal(lines_input)
 
 # create transfer tasks
-transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_dict, max_transfer_tasks,refresh_ids,min_number_of_lines_for_transfer)
-allocate_tasks_to_employees(transfer_tasks, schedule, employees_height_transfer, "transfer")
+#transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_dict, max_transfer_tasks,refresh_ids,min_number_of_lines_for_transfer)
+#allocate_tasks_to_employees(transfer_tasks, schedule, employees_height_transfer, "transfer")
+item_ids_in_transfer = []
 # ben todo!!!!! to take emp with only רענון
 
 
 # post - transfer tasks (api)
-post_transfer_tasks(schedule)
+#post_transfer_tasks(schedule)
 
 # patch -  new location for items in transfers (api)
-patch_upadate_location_for_items(schedule)
+#patch_upadate_location_for_items(schedule)
 
 # create  allocation
 for k in schedule:
