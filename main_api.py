@@ -18,13 +18,10 @@ min_number_of_lines_for_transfer = 4
 ###input
 # get old tasks
 old_task_data = get_old_tasks()
-lines_per_employee = create_employees_lines_dic(old_task_data)
 
-# read employees
+# read emloyees input and create employees
 employees_data = read_input("employees.xlsx")
-employees = create_employees(employees_data,lines_per_employee , max_hour_to_ignore_noon=max_hour_to_ignore_noon)
-
-
+employees = create_employees(employees_data,old_task_data , max_hour_to_ignore_noon=max_hour_to_ignore_noon)
 employees_pick_height,employees_pick,employees_transfer, employees_jack = get_employees_by_skill(employees)
 schedule = init_schedule(employees)
 
