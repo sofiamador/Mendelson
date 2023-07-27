@@ -360,14 +360,13 @@ def calc_total_quantity(lines):
 
 class Employee():
 
-    def __init__(self, id_, role, start_time, end_shift_time, abilities,amount_of_lines):
+    def __init__(self, id_, role, first_pick, amount_of_lines, abilities={}):
         self.abilities = abilities
         # self.location = location
         # self.name = name
         self.id_ = id_
         self.role = role
-        self.shift_start_time = start_time
-        self.end_shift_time = end_shift_time
+        self.first_pick_time = first_pick
         self.amount_of_lines_in_shift = amount_of_lines
         self.amount_of_lines_in_shift_per_hour = 0
 
@@ -375,6 +374,6 @@ class Employee():
         return str(self.id_) + "  " + str(self.abilities)
 
     def update_amount_of_lines_in_shift_per_hour(self,tnow):
-        diff = tnow - self.shift_start_time
+        diff = tnow - self.first_pick_time
 
         self.amount_of_lines_in_shift_per_hour = self.amount_of_lines_in_shift/diff
