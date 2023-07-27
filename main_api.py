@@ -6,6 +6,8 @@ import time
 #create_transfer
 max_transfer_tasks = 4
 center_street = 35
+min_number_of_lines_for_transfer = 5
+percentage_of_pallet = 0.5
 
 #create_orders
 amount_of_one_line_in_street = 3
@@ -13,8 +15,6 @@ pick_employee_grade_cut_off = 8
 pick_height_employee_grade_cut_off = 8
 tail_percantage_to_reallocate = 0.10
 max_hour_to_ignore_noon = 13
-min_number_of_lines_for_transfer = 4
-
 ###input
 # get old tasks
 old_task_data = get_old_tasks()
@@ -34,7 +34,7 @@ lines_input = get_wtasks()
 lines, refresh_ids = create_lines_from_json_after_gal(lines_input)
 
 # create transfer tasks
-transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_dict, max_transfer_tasks,refresh_ids,min_number_of_lines_for_transfer)
+transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_dict, max_transfer_tasks,refresh_ids,min_number_of_lines_for_transfer,percentage_of_pallet)
 #TODO what are the options: transfer no pick height? pick height no transfer? employees_pick_height,employees_pick,employees_transfer, employees_jack
 allocate_tasks_to_employees(transfer_tasks, schedule, employees_transfer, "transfer")
 item_ids_in_transfer = []

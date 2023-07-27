@@ -185,11 +185,11 @@ class TaskPick(Task):
 
 
 class TaskTransfer(Task):
-    def __init__(self, item_id, selected_locations,lines, counter):
+    def __init__(self, item_id, selected_locations,lines, goi):
         Task.__init__(self, item_id)
         self.item_id = item_id
         self.selected_locations = selected_locations
-        self.quantity = 0
+        self.goi = goi #group of items
         self.lines = lines
         # self.grouped_items =[]
         # self.create_grouped_items()

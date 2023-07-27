@@ -253,13 +253,13 @@ def get_locations_lines_dict(lines_of_item):
 
 
 def get_is_W_in_inventory(locations):
-    # TODO GROUP OF ITEMS THAT HAVE NO LOCATION IN W1 W2 ARE NOT IN TRANSFER
     if locations is None:
         return False
     for location in locations:
         if location.warehouse_id != "C1":
             return True
     return False
+
 
 
 def create_group_by_items(lines, inventory_dict, refresh_ids, min_number_of_lines_for_transfer):
@@ -271,6 +271,9 @@ def create_group_by_items(lines, inventory_dict, refresh_ids, min_number_of_line
         goi = GroupOfItem(item_id, lines_of_item, locations_lines_dict)
 
         is_W_in_inventory = get_is_W_in_inventory(inventory_dict.get(item_id, None))
+
+
+
         if goi.item_id not in refresh_ids:
             if goi.is_in_c1 and goi.number_of_lines > min_number_of_lines_for_transfer and is_W_in_inventory:
                 groupsOfItems.append(goi)
@@ -728,13 +731,14 @@ def write_to_excel2(pd_output, file_name):
     pd_output.to_excel(file_name, index=False)
 
 
-def get_group_of_items_for_tasks_list(group_of_items_list, max_transfer_tasks):
-    groups_for_transfer = []
+def get_group_of_items_for_tasks_list(transfer_tasks, max_transfer_tasks):
+    ans = []
     for i in range(max_transfer_tasks):
-        max_group_of_items = max(group_of_items_list, key=lambda x: x.the_measure)
-        groups_for_transfer.append(max_group_of_items)
-        group_of_items_list.remove(max_group_of_items)
-    return groups_for_transfer
+
+        max_group_of_items = max(transfer_tasks, key=lambda x: x.goi.the_measure)
+        ans.append(max_group_of_items)
+        transfer_tasks.remove(max_group_of_items)
+    return ans
 
 
 #
@@ -794,19 +798,30 @@ def get_locations_to_cover_quantities(goi):
     return ans
 
 
-def create_transfer_tasks(lines, inventory_dict, max_transfer_tasks, refresh_ids, min_number_of_lines_for_transfer):
+def get_transfer_tasks_with_percent_pallet_constraint(transfer_tasks,percentage_of_pallet):
+    ans = []
+    for transfer_task in transfer_tasks:
+        field_to_sum_values = [obj.quantity for obj in transfer_task.lines]
+        quantity_required = sum(field_to_sum_values)
+        max_location = max(transfer_task.selected_locations, key=lambda x: x.quantity)
+        percent_pallet_required = quantity_required / max_location.quantity
+        if percentage_of_pallet <= percent_pallet_required:
+            ans.append(transfer_task)
+    return ans
+
+
+def create_transfer_tasks(lines, inventory_dict, max_transfer_tasks, refresh_ids, min_number_of_lines_for_transfer,percentage_of_pallet):
     transfer_tasks = []
     group_of_items_list, item_ids_not_in_inventory = create_group_by_items(lines, inventory_dict, refresh_ids,
                                                                            min_number_of_lines_for_transfer)
     # create_histogram(group_of_items_list, "the_measure")
-    number_of_transfer_tasks = min(len(group_of_items_list), max_transfer_tasks)
-    group_of_items_for_tasks_list = get_group_of_items_for_tasks_list(group_of_items_list, number_of_transfer_tasks)
+
     item_ids_in_transfer = []
     counter = 0
     locations_in_tasks = []
 
-    for goi in group_of_items_for_tasks_list:
-        item_ids_in_transfer.append(goi.item_id)
+    for goi in group_of_items_list:
+
         item_id = goi.item_id
         total_quantity = 0
         for line in goi.lines:
@@ -820,7 +835,19 @@ def create_transfer_tasks(lines, inventory_dict, max_transfer_tasks, refresh_ids
             total_quantity = total_quantity - location.quantity
             if total_quantity <= 0:
                 break
-        transfer_tasks.append(TaskTransfer(item_id, selected_locations, goi.lines, counter))
+        transfer_tasks.append(TaskTransfer(item_id, selected_locations, goi.lines,goi))
+
+
+    transfer_tasks = get_transfer_tasks_with_percent_pallet_constraint(transfer_tasks,percentage_of_pallet)
+
+    number_of_transfer_tasks = min(len(group_of_items_list), max_transfer_tasks)
+    transfer_tasks = get_group_of_items_for_tasks_list(transfer_tasks, number_of_transfer_tasks)
+
+    for transfer_task in  transfer_tasks:
+        item_ids_in_transfer.append(transfer_task.goi.item_id)
+
+
+
     return transfer_tasks, item_ids_in_transfer
 
 
