@@ -491,14 +491,14 @@ def create_employees(employees_data, old_tasks_data, max_hour_to_ignore_noon):
         start_time = int(start_time[0])+int(start_time[1])/60
         amount_of_lines = lines_per_employee.get(employee_id, 0)
         abilities = {}
-        if pick_grade != 0:
+        if pick_grade != 0 and role=="pick":
             abilities["pick"] = pick_grade
-        if transfer_grade != 0:
+        if transfer_grade != 0 and role=="transfer":
             abilities["transfer"] = transfer_grade
-        if pick_height_grade != 0:
+        if pick_height_grade != 0 and role=="pick_height":
             abilities["pick_height"] = pick_height_grade
-        if jack_grade != 0:
-            abilities["jack"] = pick_height_grade
+        if jack_grade != 0 and role=="jack":
+            abilities["jack"] = jack_grade
 
         employee = Employee(id_=employee_id, abilities=abilities, role=role, first_pick=start_time,
                             amount_of_lines=amount_of_lines)
