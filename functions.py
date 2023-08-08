@@ -942,36 +942,47 @@ def get_employee_object(employees, employee_id):
     raise Exception("did not find employee with relevant id")
 
 
-def allocate_tasks_to_employees_v2(tasks, schedule, employees, ability_str):
+def init_amount_of_lines_in_schedule_per_emp(schedule,employees):
+    ans = {}
     ids_ = get_attribute_list(employees, "id_")
-    employees_lines_amount_up_to_now_normalized = {}
-    amount_of_lines_in_schedule_per_emp = {}
 
     for employee_id in schedule.keys():
         if employee_id in ids_:
             employee = get_employee_object(employees, employee_id)
-            employees_lines_amount_up_to_now_normalized[
-                employee_id] = employee.amount_of_lines_in_shift_per_hour  # len(schedule[employee_id])
-            amount_of_lines_in_schedule_per_emp[employee_id] = 0
+            ans[employee_id] = employee.amount_of_lines_in_shift_per_hour
 
-    grade_to_distribute = {}
+    return ans
 
-    max_amount_of_lines = max(employees_lines_amount_up_to_now_normalized.values())
-    for employee_id in employees_lines_amount_up_to_now_normalized.keys():
-        if max_amount_of_lines == 0:
-            employees_lines_amount_up_to_now_normalized[employee_id] = 0  # len(schedule[employee_id])
-        else:
-            employees_lines_amount_up_to_now_normalized[
-                employee_id] = employee.amount_of_lines_in_shift_per_hour / max_amount_of_lines  # len(schedule[employee_id])
-        grade_to_distribute[employee_id] = employees_lines_amount_up_to_now_normalized[employee_id] * \
-                                           amount_of_lines_in_schedule_per_emp[employee_id]
+def allocate_tasks_to_employees_v2(tasks, schedule, employees, ability_str):
+    amount_of_lines_in_schedule_per_emp = init_amount_of_lines_in_schedule_per_emp(schedule,employees)
 
-    max_lines_distribute_in_schedule = None
 
+    #4. בתוך כל קבוצה (חזקים וחלשים) למשקל את העובדים לפי נתוני העבר וכמות השורות שקיבלו-למיין מהקטן לגדול. כלומר מי שלא קיבל עדיין הקצאה יהיה לו משקל נמוך יותר ומי שקיבל שורות בהקצאה הנוכחית הציון שלו עולה -  הוגנות מול יעילות
+
+
+    amount_of_lines_given_now = {}
+
+    for employee in employees:
+        amount_of_lines_given_now[employee.id_] = 0
+
+
+    stop here, need t
     for task in tasks:
+        for employee in employees:
+            employee.distribution_grade = (1-alpha) * + (1-alpha)
+
+        get min employee
+
+        give task
+
+        update amount_of_lines_given_now
+
+
+        min_amount_of_tasks = min(grade_to_distribute.values())
+        for employee in employees
+
         if (len(employees_lines_amount_up_to_now_normalized) > 0):  # TODO @BEN
 
-            min_amount_of_tasks = min(grade_to_distribute.values())
             employees_with_min_tasks = []
             for employee in employees:
                 if grade_to_distribute[employee.id_] == min_amount_of_tasks:
@@ -999,13 +1010,13 @@ def init_schedule(employees):
     return schedule
 
 
-def cumulative_distribution_function(pick_orders):
-    sum_of_all_lines = sum(getattr(obj, "amount_of_lines") for obj in pick_orders)
-    pick_orders_sorted = sorted(pick_orders, key=lambda x: x.amount_of_lines)
-    sum_of_lines = 0
-    for pick_order in pick_orders_sorted:
-        sum_of_lines = sum_of_lines + pick_order.amount_of_lines
-        pick_order.update_cumulative_distribution(sum_of_lines, sum_of_all_lines)
+
+
+def cumulative_distribution_function(orders):
+    sorted_orders = sorted(orders, key=lambda order: (-order.priority, order.amount_of_lines))
+    for i in len(sorted_orders):
+        order = sorted_orders[i]
+        order.update_cumulative_distribution(i)
 
 
 def get_employees_by_cut_off(employees_pick, pick_employee_grade_cut_off, ability_str):
@@ -1105,6 +1116,7 @@ def use_list_of_order_to_fix_for_balance(schedule, orders_to_fix):
 
 def allocate_pick_orders(pick_orders, schedule, employees_pick, pick_employee_grade_cut_off,
                          tail_percantage_to_reallocate):
+
     cumulative_distribution_function(pick_orders)
 
     skilled_employees, other_employees = get_employees_by_cut_off(employees_pick, pick_employee_grade_cut_off, "pick")
@@ -1121,6 +1133,7 @@ def allocate_pick_orders(pick_orders, schedule, employees_pick, pick_employee_gr
 
 def allocate_pick_height_orders(pick_height_orders, schedule, employees_height_transfer,
                                 pick_height_employee_grade_cut_off, tail_percantage_to_reallocate):
+    complete
     cumulative_distribution_function(pick_height_orders)
     # create_histogram(pick_height_orders, "amount_of_lines", filename="hist_pick_height_amount_of_lines")
     # create_histogram(pick_height_orders, "cumulative_value",filename="hist_pick_height_cumulative_value")

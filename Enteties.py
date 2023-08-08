@@ -307,8 +307,8 @@ class Order(Task):
         self.amount_of_lines = len(self.lines)
         self.cumulative_value = None
 
-    def update_cumulative_distribution(self, sum_of_lines, sum_of_all_lines):
-        self.cumulative_value = sum_of_lines / sum_of_all_lines
+    def update_cumulative_distribution(self, sorted_val):
+        self.cumulative_value = sorted_val
 
 
 class GroupOfOrders(Order):
