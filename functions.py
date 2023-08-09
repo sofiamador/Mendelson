@@ -953,52 +953,54 @@ def init_amount_of_lines_in_schedule_per_emp(schedule,employees):
 
     return ans
 
-def allocate_tasks_to_employees_v2(tasks, schedule, employees, ability_str):
-    amount_of_lines_in_schedule_per_emp = init_amount_of_lines_in_schedule_per_emp(schedule,employees)
+def allocate_tasks_to_employees_v2(tasks, schedule, employees,alpha):
+    amount_of_lines_in_shift_per_hour = init_amount_of_lines_in_schedule_per_emp(schedule,employees)
 
 
     #4. בתוך כל קבוצה (חזקים וחלשים) למשקל את העובדים לפי נתוני העבר וכמות השורות שקיבלו-למיין מהקטן לגדול. כלומר מי שלא קיבל עדיין הקצאה יהיה לו משקל נמוך יותר ומי שקיבל שורות בהקצאה הנוכחית הציון שלו עולה -  הוגנות מול יעילות
 
 
-    amount_of_lines_given_now = {}
+    present = {}
 
     for employee in employees:
-        amount_of_lines_given_now[employee.id_] = 0
+        present[employee.id_] = 0
 
 
-    stop here, need t
     for task in tasks:
         for employee in employees:
-            employee.distribution_grade = (1-alpha) * + (1-alpha)
 
-        get min employee
+            past = amount_of_lines_in_shift_per_hour[employee.id_]
+            employee.distribution_grade = (1-alpha) * past   + (alpha) * present
 
-        give task
+        min_emp = min(employees,key = lambda x:x.distribution_grade)
+        schedule[min_emp.id_].append(task)
+        present[min_emp.id_] = present[min_emp.id_]+ task.amount_of_lines
 
-        update amount_of_lines_given_now
 
 
-        min_amount_of_tasks = min(grade_to_distribute.values())
-        for employee in employees
 
-        if (len(employees_lines_amount_up_to_now_normalized) > 0):  # TODO @BEN
 
-            employees_with_min_tasks = []
-            for employee in employees:
-                if grade_to_distribute[employee.id_] == min_amount_of_tasks:
-                    employees_with_min_tasks.append(employee)
-
-            employee_selected = max(employees_with_min_tasks, key=lambda x: x.abilities[ability_str])
-            schedule[employee_selected.id_].append(task)
-            amount_of_lines_in_schedule_per_emp[employee_selected.id_] = amount_of_lines_in_schedule_per_emp[
-                                                                             employee_selected.id_] + task.amount_of_lines
-            max_lines_distribute_in_schedule = max(amount_of_lines_in_schedule_per_emp.values())
-            for employee in employees:
-                id_ = employee.id_
-                if max_lines_distribute_in_schedule != 0:
-                    grade_to_distribute[id_] = employees_lines_amount_up_to_now_normalized[id_] + (
-                                amount_of_lines_in_schedule_per_emp[
-                                    employee_selected.id_] / max_lines_distribute_in_schedule)
+        # min_amount_of_tasks = min(grade_to_distribute.values())
+        # for employee in employees
+        #
+        # if (len(employees_lines_amount_up_to_now_normalized) > 0):  # TODO @BEN
+        #
+        #     employees_with_min_tasks = []
+        #     for employee in employees:
+        #         if grade_to_distribute[employee.id_] == min_amount_of_tasks:
+        #             employees_with_min_tasks.append(employee)
+        #
+        #     employee_selected = max(employees_with_min_tasks, key=lambda x: x.abilities[ability_str])
+        #     schedule[employee_selected.id_].append(task)
+        #     amount_of_lines_in_schedule_per_emp[employee_selected.id_] = amount_of_lines_in_schedule_per_emp[
+        #                                                                      employee_selected.id_] + task.amount_of_lines
+        #     max_lines_distribute_in_schedule = max(amount_of_lines_in_schedule_per_emp.values())
+        #     for employee in employees:
+        #         id_ = employee.id_
+        #         if max_lines_distribute_in_schedule != 0:
+        #             grade_to_distribute[id_] = employees_lines_amount_up_to_now_normalized[id_] + (
+        #                         amount_of_lines_in_schedule_per_emp[
+        #                             employee_selected.id_] / max_lines_distribute_in_schedule)
 
             # employees_lines_amount_up_to_now_normalized[employee_selected.id_] = employees_lines_amount_up_to_now_normalized[employee_selected.id_] + task.amount_of_lines
 
@@ -1115,7 +1117,7 @@ def use_list_of_order_to_fix_for_balance(schedule, orders_to_fix):
 
 
 def allocate_pick_orders(pick_orders, schedule, employees_pick, pick_employee_grade_cut_off,
-                         tail_percantage_to_reallocate):
+                         tail_percantage_to_reallocate,alpha):
 
     cumulative_distribution_function(pick_orders)
 
@@ -1125,18 +1127,16 @@ def allocate_pick_orders(pick_orders, schedule, employees_pick, pick_employee_gr
                                                                               tail_percantage_to_reallocate)
 
     allocate_tasks_to_employees_v2(tasks=orders_for_skilled, schedule=schedule, employees=skilled_employees,
-                                   ability_str="pick")
-    allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees, "pick")
+                                   alpha = alpha)
+    allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees, alpha = alpha)
 
     use_list_of_order_to_fix_for_balance(schedule, orders_to_fix)
 
 
 def allocate_pick_height_orders(pick_height_orders, schedule, employees_height_transfer,
-                                pick_height_employee_grade_cut_off, tail_percantage_to_reallocate):
-    complete
+                                pick_height_employee_grade_cut_off, tail_percantage_to_reallocate,alpha):
+
     cumulative_distribution_function(pick_height_orders)
-    # create_histogram(pick_height_orders, "amount_of_lines", filename="hist_pick_height_amount_of_lines")
-    # create_histogram(pick_height_orders, "cumulative_value",filename="hist_pick_height_cumulative_value")
     skilled_employees, other_employees = get_employees_by_cut_off(employees_height_transfer,
                                                                   pick_height_employee_grade_cut_off, "pick_height")
     # if is_calculate_percentage_cut_off:
@@ -1146,10 +1146,27 @@ def allocate_pick_height_orders(pick_height_orders, schedule, employees_height_t
     # else:
     #    large_amount_line_orders,other_amount_line_orders = get_orders_by_cut_off(pick_height_orders,pick_height_percentage_cut_off)
     if len(skilled_employees) != 0:
-        allocate_tasks_to_employees_v2(orders_for_skilled, schedule, skilled_employees, "pick_height")
+        allocate_tasks_to_employees_v2(orders_for_skilled, schedule, skilled_employees,alpha = alpha)
     if len(other_employees) != 0:
-        allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees, "pick_height")
+        allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees, alpha = alpha)
     use_list_of_order_to_fix_for_balance(schedule, orders_to_fix)
+
+def allocate_pick_jack_orders(jack_orders, schedule, employees_jack,
+                                jack_employee_grade_cut_off, tail_percantage_to_reallocate, alpha):
+
+    cumulative_distribution_function(jack_orders)
+    skilled_employees, other_employees = get_employees_by_cut_off(employees_jack,
+                                                                   jack_employee_grade_cut_off, "jack")
+    orders_for_skilled, orders_for_other, orders_to_fix = cut_orders_by_skill(jack_orders, skilled_employees,
+                                                                              other_employees,
+                                                                               tail_percantage_to_reallocate)
+
+    if len(skilled_employees) != 0:
+        allocate_tasks_to_employees_v2(orders_for_skilled, schedule, skilled_employees, alpha=alpha)
+    if len(other_employees) != 0:
+         allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees, alpha=alpha)
+    use_list_of_order_to_fix_for_balance(schedule, orders_to_fix)
+
 
 
 def create_data_dict(schedule):

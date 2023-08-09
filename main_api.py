@@ -3,6 +3,9 @@ from functions import *
 from web_services import *
 import time
 
+
+#prioraty
+alpha = 0.9 #weight for current amount of line distributed
 #create_transfer
 max_transfer_tasks = 4
 center_street = 35
@@ -13,6 +16,7 @@ percentage_of_pallet = 0.5
 amount_of_one_line_in_street = 3
 pick_employee_grade_cut_off = 8
 pick_height_employee_grade_cut_off = 8
+jack_employee_grade_cut_off = 8
 tail_percantage_to_reallocate = 0.10
 max_hour_to_ignore_noon = 13
 ###input
@@ -69,9 +73,9 @@ all_pick_jack_orders = pick_jack_one_line+pick_jack_orders
 #employees_pick_height,employees_pick,employees_jack
 schedule_pick, schedule_pick_height, schedule_jack = get_schedule_by_skill(schedule,employees_pick_height,employees_pick,employees_jack)
 
-allocate_pick_orders(all_pick_orders, schedule_pick, employees_pick,pick_employee_grade_cut_off,tail_percantage_to_reallocate)
-allocate_pick_height_orders(all_pick_height_orders, schedule_pick_height, employees_pick_height,pick_height_employee_grade_cut_off,tail_percantage_to_reallocate)
-allocate_pick_jack_orders(all_pick_height_orders, schedule_pick_height, employees_pick_height,pick_height_employee_grade_cut_off,tail_percantage_to_reallocate)
+allocate_pick_orders(all_pick_orders, schedule_pick, employees_pick,pick_employee_grade_cut_off,tail_percantage_to_reallocate,alpha)
+allocate_pick_height_orders(all_pick_height_orders, schedule_pick_height, employees_pick_height,pick_height_employee_grade_cut_off,tail_percantage_to_reallocate,alpha)
+allocate_pick_jack_orders(all_pick_jack_orders, schedule_jack, employees_jack,jack_employee_grade_cut_off,tail_percantage_to_reallocate,alpha)
 
 for e,tasks in schedule_pick.items():
     schedule[e] = sorted(tasks,key=lambda x:x.priority)
