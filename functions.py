@@ -1,10 +1,11 @@
 import csv
 import random, datetime
 import statistics
-
 import pandas as pd
 from Enteties import Line, TaskPick, StreetObj, Employee, Location, LineNoLocation, GroupOfItem, TaskTransfer, Order, \
     GroupOfOrders
+from Globals import *
+
 import matplotlib.pyplot as plt
 
 
@@ -79,7 +80,7 @@ def create_inventory_dict(lines_input_, center_street):
     return ans
 
 
-def create_inventory_dict_from_json(lines_input_, center_street):
+def create_inventory_dict_from_json(lines_input_):
     ans = {}
     locations_list = []
     for line in lines_input_:
@@ -262,7 +263,7 @@ def get_is_W_in_inventory(locations):
 
 
 
-def create_group_by_items(lines, inventory_dict, refresh_ids, min_number_of_lines_for_transfer):
+def create_group_by_items(lines, inventory_dict, refresh_ids):
     groupsOfItems = []
     item_ids_not_in_inventory = []
     lines_by_item = get_lines_by_items(lines)
@@ -468,7 +469,7 @@ def calculate_average_lines_per_hour(employees):
     return ans
 
 
-def create_employees(employees_data, old_tasks_data, max_hour_to_ignore_noon):
+def create_employees(employees_data, old_tasks_data):
     lines_per_employee, times_per_employee,role_per_employee = create_employees_lines_dic(old_tasks_data)
     employees_ = []
     HOUR = datetime.datetime.now().hour  # the current hour
@@ -800,7 +801,7 @@ def get_locations_to_cover_quantities(goi):
     return ans
 
 
-def get_transfer_tasks_with_percent_pallet_constraint(transfer_tasks,percentage_of_pallet):
+def get_transfer_tasks_with_percent_pallet_constraint(transfer_tasks):
     ans = []
     for transfer_task in transfer_tasks:
         field_to_sum_values = [obj.quantity for obj in transfer_task.lines]
@@ -812,10 +813,9 @@ def get_transfer_tasks_with_percent_pallet_constraint(transfer_tasks,percentage_
     return ans
 
 
-def create_transfer_tasks(lines, inventory_dict, max_transfer_tasks, refresh_ids, min_number_of_lines_for_transfer,percentage_of_pallet):
+def create_transfer_tasks(lines, inventory_dict, refresh_ids):
     transfer_tasks = []
-    group_of_items_list, item_ids_not_in_inventory = create_group_by_items(lines, inventory_dict, refresh_ids,
-                                                                           min_number_of_lines_for_transfer)
+    group_of_items_list, item_ids_not_in_inventory = create_group_by_items(lines, inventory_dict, refresh_ids)
     # create_histogram(group_of_items_list, "the_measure")
 
     item_ids_in_transfer = []
@@ -840,7 +840,7 @@ def create_transfer_tasks(lines, inventory_dict, max_transfer_tasks, refresh_ids
         transfer_tasks.append(TaskTransfer(item_id, selected_locations, goi.lines,goi))
 
 
-    transfer_tasks = get_transfer_tasks_with_percent_pallet_constraint(transfer_tasks,percentage_of_pallet)
+    transfer_tasks = get_transfer_tasks_with_percent_pallet_constraint(transfer_tasks)
 
     number_of_transfer_tasks = min(len(group_of_items_list), max_transfer_tasks)
     transfer_tasks = get_group_of_items_for_tasks_list(transfer_tasks, number_of_transfer_tasks)
@@ -955,28 +955,25 @@ def init_amount_of_lines_in_schedule_per_emp(schedule,employees):
 
     return ans
 
-def allocate_tasks_to_employees_v2(tasks, schedule, employees,alpha):
-    amount_of_lines_in_shift_per_hour = init_amount_of_lines_in_schedule_per_emp(schedule,employees)
-
+def allocate_tasks_to_employees_v2(tasks, schedule, employees):
+    pasts = init_amount_of_lines_in_schedule_per_emp(schedule,employees)
 
     #4. בתוך כל קבוצה (חזקים וחלשים) למשקל את העובדים לפי נתוני העבר וכמות השורות שקיבלו-למיין מהקטן לגדול. כלומר מי שלא קיבל עדיין הקצאה יהיה לו משקל נמוך יותר ומי שקיבל שורות בהקצאה הנוכחית הציון שלו עולה -  הוגנות מול יעילות
 
 
-    present = {}
+    presents = {}
 
     for employee in employees:
-        present[employee.id_] = 0
+        presents[employee.id_] = 0
 
 
     for task in tasks:
         for employee in employees:
-
-            past = amount_of_lines_in_shift_per_hour[employee.id_]
-            employee.distribution_grade = (1-alpha) * past   + (alpha) * present
+            employee.distribution_grade = (1-alpha) * pasts[employee.id_]   + (alpha) * presents[employee.id_]
 
         min_emp = min(employees,key = lambda x:x.distribution_grade)
         schedule[min_emp.id_].append(task)
-        present[min_emp.id_] = present[min_emp.id_]+ task.amount_of_lines
+        presents[min_emp.id_] = presents[min_emp.id_]+ task.amount_of_lines
 
 
 
@@ -1079,20 +1076,23 @@ def filter_list_by_attribute(lst, attribute, value):
     return larger_values, smaller_values
 
 
-def cut_orders_by_skill(orders, skilled_employees, other_employees, tail_percantage_to_reallocate):
-    we need to think about the case that we don thave equal amount of emp in good an bad groups....
+def cut_orders_by_skill(orders, skilled_employees, other_employees):
+    #we need to think about the case that we don thave equal amount of emp in good an bad groups....
     orders, orders_to_fix = filter_list_by_attribute(orders, "cumulative_value", tail_percantage_to_reallocate)
     total_amount_of_lines = sum_attribute(orders, "amount_of_lines")
     lines_per_employee = total_amount_of_lines / (len(skilled_employees) + len(other_employees))
 
-    orders = sorted(orders, key=lambda x: x.amount_of_lines)
+    orders = sorted(orders, key=lambda order: (-order.priority, order.amount_of_lines))
+
+    #orders = sorted(orders, key=lambda x: x.amount_of_lines)
+
     amount_of_lines_for_other_employees = len(other_employees) * lines_per_employee
     orders_for_others = []
     orders_for_skilled = []
     sum_ = 0
     for order in orders:
         sum_ = sum_ + order.amount_of_lines
-        if sum_ < amount_of_lines_for_other_employees or order.priority > 5:
+        if sum_ < amount_of_lines_for_other_employees:
             orders_for_others.append(order)
         else:
             orders_for_skilled.append(order)
@@ -1121,19 +1121,17 @@ def use_list_of_order_to_fix_for_balance(schedule, orders_to_fix):
         schedule[min_key].append(order)
 
 
-def allocate_pick_orders(pick_orders, schedule, employees_pick, pick_employee_grade_cut_off,
-                         tail_percantage_to_reallocate,alpha):
+def allocate_pick_orders(pick_orders, schedule, employees_pick):
 
     cumulative_distribution_function(pick_orders)
 
     skilled_employees, other_employees = get_employees_by_cut_off(employees_pick, pick_employee_grade_cut_off, "pick")
     orders_for_skilled, orders_for_other, orders_to_fix = cut_orders_by_skill(pick_orders, skilled_employees,
-                                                                              other_employees,
-                                                                              tail_percantage_to_reallocate)
+                                                                              other_employees
+                                                                              )
 
-    allocate_tasks_to_employees_v2(tasks=orders_for_skilled, schedule=schedule, employees=skilled_employees,
-                                   alpha = alpha)
-    allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees, alpha = alpha)
+    allocate_tasks_to_employees_v2(tasks=orders_for_skilled, schedule=schedule, employees=skilled_employees)
+    allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees)
 
     use_list_of_order_to_fix_for_balance(schedule, orders_to_fix)
 
@@ -1151,9 +1149,9 @@ def allocate_pick_height_orders(pick_height_orders, schedule, employees_height_t
     # else:
     #    large_amount_line_orders,other_amount_line_orders = get_orders_by_cut_off(pick_height_orders,pick_height_percentage_cut_off)
     if len(skilled_employees) != 0:
-        allocate_tasks_to_employees_v2(orders_for_skilled, schedule, skilled_employees,alpha = alpha)
+        allocate_tasks_to_employees_v2(orders_for_skilled, schedule, skilled_employees)
     if len(other_employees) != 0:
-        allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees, alpha = alpha)
+        allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees)
     use_list_of_order_to_fix_for_balance(schedule, orders_to_fix)
 
 def allocate_pick_jack_orders(jack_orders, schedule, employees_jack,
@@ -1167,9 +1165,9 @@ def allocate_pick_jack_orders(jack_orders, schedule, employees_jack,
                                                                                tail_percantage_to_reallocate)
 
     if len(skilled_employees) != 0:
-        allocate_tasks_to_employees_v2(orders_for_skilled, schedule, skilled_employees, alpha=alpha)
+        allocate_tasks_to_employees_v2(orders_for_skilled, schedule, skilled_employees)
     if len(other_employees) != 0:
-         allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees, alpha=alpha)
+         allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees)
     use_list_of_order_to_fix_for_balance(schedule, orders_to_fix)
 
 
@@ -1245,7 +1243,7 @@ def get_orders_by_street(orders_one_line):
     return ans
 
 
-def break_orders_one_line(orders_input, amount_of_one_line_in_street):
+def break_orders_one_line(orders_input):
     orders_one_line = get_orders_with_one_line(orders_input)
     orders_by_street = get_orders_by_street(orders_one_line)
     sorted_dict = {k: orders_by_street[k] for k in
