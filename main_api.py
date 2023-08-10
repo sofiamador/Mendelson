@@ -19,11 +19,12 @@ pick_height_employee_grade_cut_off = 8
 jack_employee_grade_cut_off = 8
 tail_percantage_to_reallocate = 0.10
 max_hour_to_ignore_noon = 13
-###input
+
+
 # get old tasks
 old_task_data = get_old_tasks()
 
-# read emloyees input and create employees
+# read employees input and create employees
 employees_data = read_input("employees.xlsx")
 employees = create_employees(employees_data,old_task_data , max_hour_to_ignore_noon=max_hour_to_ignore_noon)
 employees_pick_height,employees_pick,employees_transfer, employees_jack = get_employees_by_skill(employees)
@@ -67,6 +68,8 @@ all_pick_height_orders = pick_height_orders_one_line+pick_height_orders
 
 pick_jack_one_line = break_orders_one_line(pick_jack_orders, amount_of_one_line_in_street)
 all_pick_jack_orders = pick_jack_one_line+pick_jack_orders
+
+
 #TODO ask Mangasha if to unit jack order to of one lines
 
 #################### create unit one line orders ####################
@@ -85,8 +88,9 @@ for e,tasks in schedule_pick_height.items():
 
 for e, tasks in schedule_jack.items():
     schedule[e] = sorted(tasks, key=lambda x: x.priority)
+
 # patch -  allocate tasks to employees
-#patch_update_allocation(schedule)
+# patch_update_allocation(schedule)
 print("end")
 
 

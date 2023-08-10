@@ -62,7 +62,7 @@ def get_wtasks2():
 
 def get_old_tasks():
     url = host + "WTASKS?$select=STZONECODE,WTASKNUM,PRIO,DOERLOGIN,STATDES,ADCSTARTED,WTASKTYPECODE,MEND_PRIO2,ADCSUSERLOGIN,ADCSUDATE,ADCFUDATE,LINES" \
-                 "&$filter=ADCSUDATE ge "+date+"T00:00:00%2B03:00 and (STATDES eq 'הושלמה' or STATDES eq 'לביצוע' ) " \
+                 "&$filter=ADCSUDATE ge "+date+"T00:00:00%2B03:00 " \
                  "and(WTASKTYPECODE eq 'PIK' or WTASKTYPECODE eq 'RPI' or WTASKTYPECODE eq 'RPL' or WTASKTYPECODE eq 'MOV' or WTASKTYPECODE eq 'PUT') " \
                 "and(STZONECODE eq 'C1' or STZONECODE eq 'W1' or STZONECODE eq 'W2' or STZONECODE eq 'A2') and ADCSTARTED eq 'Y'&$expand="
     payload = {}

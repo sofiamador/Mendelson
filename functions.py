@@ -866,7 +866,7 @@ def get_order_by_ability(lines_after_gal_by_order):
         order_pick_lines = []
         order_pick_height_lines = []
         order_pick_jack_lines = []
-        if are_all_lines_D(lines):
+        if are_all_lines_D(lines) or lines[0].location.warehouse_id == "A2":
             order_pick_jack_lines.extend(lines)
         else:
             for line in lines:
@@ -882,10 +882,10 @@ def get_order_by_ability(lines_after_gal_by_order):
         if len(order_pick_height_lines) != 0:
             pick_height_orders.append(Order(order, 'pick_height', order_pick_height_lines))
 
-        if len(order_pick_height_lines) != 0:
-            pick_jack_order.append(Order(order, 'jack', order_pick_height_lines))
+        if len(order_pick_jack_lines) != 0:
+            pick_jack_order.append(Order(order, 'jack', order_pick_jack_lines))
 
-    return pick_orders, pick_height_orders, order_pick_jack_lines
+    return pick_orders, pick_height_orders, pick_jack_order
 
 
 def get_employees_by_skill(employees):
@@ -1211,7 +1211,7 @@ def get_schedule_by_skill(schedule, employees_pick_height, employees_pick, emplo
             schedule_pick[id_] = tasks
             flag = True
 
-        if id_ in get_attribute_list(schedule_jack, "id_"):
+        if id_ in get_attribute_list(employees_jack, "id_"):
             schedule_jack[id_] = tasks
             flag = True
 
