@@ -100,7 +100,7 @@ def create_inventory_dict_from_json(lines_input_, center_street):
 
 
 def check_role(type_task, zone):
-    if zone == "A1":
+    if zone == "A2":
         return "jack"
     elif zone in ["W1","W2"]:
         if type_task in ["RPI","RPL"]:
