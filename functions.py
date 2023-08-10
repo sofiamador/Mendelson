@@ -733,7 +733,9 @@ def write_to_excel2(pd_output, file_name):
 
 def get_group_of_items_for_tasks_list(transfer_tasks, max_transfer_tasks):
     ans = []
-    for i in range(max_transfer_tasks):
+
+    actual_amount = min(max_transfer_tasks,len(transfer_tasks))
+    for i in range(actual_amount):
 
         max_group_of_items = max(transfer_tasks, key=lambda x: x.goi.the_measure)
         ans.append(max_group_of_items)
@@ -1016,9 +1018,11 @@ def init_schedule(employees):
 
 def cumulative_distribution_function(orders):
     sorted_orders = sorted(orders, key=lambda order: (-order.priority, order.amount_of_lines))
-    for i in len(sorted_orders):
-        order = sorted_orders[i]
-        order.update_cumulative_distribution(i)
+
+    for i in range(1,len(sorted_orders)+1):
+        order = sorted_orders[i-1]
+        cum_val = i/len(sorted_orders)
+        order.update_cumulative_distribution(cum_val)
 
 
 def get_employees_by_cut_off(employees_pick, pick_employee_grade_cut_off, ability_str):
@@ -1076,6 +1080,7 @@ def filter_list_by_attribute(lst, attribute, value):
 
 
 def cut_orders_by_skill(orders, skilled_employees, other_employees, tail_percantage_to_reallocate):
+    we need to think about the case that we don thave equal amount of emp in good an bad groups....
     orders, orders_to_fix = filter_list_by_attribute(orders, "cumulative_value", tail_percantage_to_reallocate)
     total_amount_of_lines = sum_attribute(orders, "amount_of_lines")
     lines_per_employee = total_amount_of_lines / (len(skilled_employees) + len(other_employees))
@@ -1207,6 +1212,7 @@ def get_schedule_by_skill(schedule, employees_pick_height, employees_pick, emplo
         if id_ in get_attribute_list(employees_pick_height, "id_"):
             schedule_pick_height[id_] = tasks
             flag = True
+
         if id_ in get_attribute_list(employees_pick, "id_"):
             schedule_pick[id_] = tasks
             flag = True

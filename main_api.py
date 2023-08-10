@@ -51,6 +51,10 @@ item_ids_in_transfer = []
 # patch -  new location for items in transfers (api)
 #patch_upadate_location_for_items(schedule)
 
+for emp in employees_transfer:
+    employees.remove(emp)
+    del schedule[emp.id_]
+
 # create  allocation
 for k in schedule:
     schedule[k]=[]
@@ -73,7 +77,6 @@ all_pick_jack_orders = pick_jack_one_line+pick_jack_orders
 #TODO ask Mangasha if to unit jack order to of one lines
 
 #################### create unit one line orders ####################
-#employees_pick_height,employees_pick,employees_jack
 schedule_pick, schedule_pick_height, schedule_jack = get_schedule_by_skill(schedule,employees_pick_height,employees_pick,employees_jack)
 
 allocate_pick_orders(all_pick_orders, schedule_pick, employees_pick,pick_employee_grade_cut_off,tail_percantage_to_reallocate,alpha)
