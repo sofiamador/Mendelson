@@ -1136,16 +1136,14 @@ def allocate_pick_orders(pick_orders, schedule, employees_pick):
     use_list_of_order_to_fix_for_balance(schedule, orders_to_fix)
 
 
-def allocate_pick_height_orders(pick_height_orders, schedule, employees_height_transfer,
-                                pick_height_employee_grade_cut_off, tail_percantage_to_reallocate,alpha):
+def allocate_pick_height_orders(pick_height_orders, schedule, employees_height_transfer):
 
     cumulative_distribution_function(pick_height_orders)
     skilled_employees, other_employees = get_employees_by_cut_off(employees_height_transfer,
                                                                   pick_height_employee_grade_cut_off, "pick_height")
     # if is_calculate_percentage_cut_off:
     orders_for_skilled, orders_for_other, orders_to_fix = cut_orders_by_skill(pick_height_orders, skilled_employees,
-                                                                              other_employees,
-                                                                              tail_percantage_to_reallocate)
+                                                                              other_employees)
     # else:
     #    large_amount_line_orders,other_amount_line_orders = get_orders_by_cut_off(pick_height_orders,pick_height_percentage_cut_off)
     if len(skilled_employees) != 0:
@@ -1154,15 +1152,13 @@ def allocate_pick_height_orders(pick_height_orders, schedule, employees_height_t
         allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees)
     use_list_of_order_to_fix_for_balance(schedule, orders_to_fix)
 
-def allocate_pick_jack_orders(jack_orders, schedule, employees_jack,
-                                jack_employee_grade_cut_off, tail_percantage_to_reallocate, alpha):
+def allocate_pick_jack_orders(jack_orders, schedule, employees_jack):
 
     cumulative_distribution_function(jack_orders)
     skilled_employees, other_employees = get_employees_by_cut_off(employees_jack,
                                                                    jack_employee_grade_cut_off, "jack")
     orders_for_skilled, orders_for_other, orders_to_fix = cut_orders_by_skill(jack_orders, skilled_employees,
-                                                                              other_employees,
-                                                                               tail_percantage_to_reallocate)
+                                                                              other_employees)
 
     if len(skilled_employees) != 0:
         allocate_tasks_to_employees_v2(orders_for_skilled, schedule, skilled_employees)
