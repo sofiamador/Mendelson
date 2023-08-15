@@ -23,7 +23,11 @@ lines_input = get_wtasks()
 lines, refresh_ids = create_lines_from_json_after_gal(lines_input)
 
 # create transfer tasks
-transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_dict,refresh_ids)
+
+
+
+inventory_no_c = clear_c_from_inventory_dict(inventory_dict)
+transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_no_c,refresh_ids)
 #TODO what are the options: transfer no pick height? pick height no transfer? employees_pick_height,employees_pick,employees_transfer, employees_jack
 allocate_tasks_to_employees(transfer_tasks, schedule, employees_transfer, "transfer")
 item_ids_in_transfer = []

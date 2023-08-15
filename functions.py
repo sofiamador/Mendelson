@@ -278,6 +278,7 @@ def create_group_by_items(lines, inventory_dict, refresh_ids):
         if goi.item_id not in refresh_ids:
             if goi.is_in_c1 and goi.number_of_lines > min_number_of_lines_for_transfer and is_W_in_inventory:
                 groupsOfItems.append(goi)
+
     if len(groupsOfItems) != 0:
         fix_normalized_c1_location(groupsOfItems)
 
@@ -813,14 +814,35 @@ def get_transfer_tasks_with_percent_pallet_constraint(transfer_tasks):
     return ans
 
 
+def get_locations_that_cover_all_quantity(locations_from_inv, total_quantity_req):
+    ans = []
+    for location in locations_from_inv:
+        if location.quantity >= total_quantity_req:
+            ans.append(location)
+    return ans
+
+
+def locations_from_inv_not_in_lines(locations_from_inv, goi):
+    ans = []
+
+    locations_of_lines = []
+    for line in goi.lines:
+        locations_of_lines.append(line.location)
+
+    for location_inv in locations_from_inv:
+        if location_inv not in locations_of_lines:
+            ans.append(location_inv)
+    return ans
+
+
+
+
+
 def create_transfer_tasks(lines, inventory_dict, refresh_ids):
     transfer_tasks = []
     group_of_items_list, item_ids_not_in_inventory = create_group_by_items(lines, inventory_dict, refresh_ids)
-    # create_histogram(group_of_items_list, "the_measure")
 
     item_ids_in_transfer = []
-    counter = 0
-    locations_in_tasks = []
 
     for goi in group_of_items_list:
 
@@ -828,16 +850,38 @@ def create_transfer_tasks(lines, inventory_dict, refresh_ids):
         total_quantity = 0
         for line in goi.lines:
             total_quantity += line.quantity
-        locations = inventory_dict.get(item_id, None)
-        locations = sorted(locations, key=lambda x: x.quantity, reverse=True)
 
         selected_locations = []
-        for location in locations:
-            selected_locations.append(location)
-            total_quantity = total_quantity - location.quantity
-            if total_quantity <= 0:
-                break
-        transfer_tasks.append(TaskTransfer(item_id, selected_locations, goi.lines,goi))
+
+        locations_from_inv = inventory_dict.get(item_id, None)
+        locations_that_cover_all_quantity = get_locations_that_cover_all_quantity(locations_from_inv,total_quantity)
+        if len(locations_that_cover_all_quantity) != 0:
+            location_min_quantity = min(locations_that_cover_all_quantity, key=lambda x: x.quantity)
+            selected_locations.append(location_min_quantity)
+        else:
+            locations_from_inv = locations_from_inv_not_in_lines(locations_from_inv,goi)
+            max_location = max(locations_from_inv, key=lambda x: x.quantity)
+            selected_lines = []
+            total_quantity = max_location.quantity
+            for line in sorted(goi.lines,key=lambda x: x.quantity):
+                total_quantity = total_quantity - line.quantity
+                if total_quantity<0:
+                    break
+                else:
+                    selected_lines.append(line)
+            goi.lines = selected_lines
+            if len(selected_lines)<min_number_of_lines_for_transfer:
+                selected_locations.append(max_location)
+
+        if len(selected_locations)!=0:
+            transfer_tasks.append(TaskTransfer(item_id, selected_locations, goi.lines,goi))
+
+
+        #for location in locations:
+        #    selected_locations.append(location)
+        #    total_quantity = total_quantity - location.quantity
+        #    if total_quantity <= 0:
+        #        break
 
 
     transfer_tasks = get_transfer_tasks_with_percent_pallet_constraint(transfer_tasks)
@@ -1355,4 +1399,15 @@ def get_orders_to_remove_in_transfer(lines_after_gal_by_order, ids_to_remove):
 def filter_orders_that_have_lines_with_items_from_list(lines_after_gal_by_order, ids_to_remove):
     orders_to_remove = get_orders_to_remove_in_transfer(lines_after_gal_by_order, ids_to_remove)
     ans = {key: value for key, value in lines_after_gal_by_order.items() if key not in orders_to_remove}
+    return ans
+
+
+def clear_c_from_inventory_dict(inventory_dict):
+    ans = {}
+    for item_id, locations in inventory_dict.items():
+        new_locations = []
+        for location in locations:
+            if location.warehouse_id!="C1":
+                new_locations.append(location)
+        ans[item_id] = new_locations
     return ans
