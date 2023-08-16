@@ -1413,3 +1413,16 @@ def clear_c_from_inventory_dict(inventory_dict):
                 new_locations.append(location)
         ans[item_id] = new_locations
     return ans
+
+
+def pick_employee_for_transfer(employees_pick_height, employees_data):
+    for ind in employees_data.index:
+        employee_id = employees_data['שם מלא'][ind]
+        transfer_grade = int(employees_data['רענון'][ind])
+        if transfer_grade>0:
+            for em in employees_pick_height:
+                if em.id_==employee_id:
+                    em.abilities["transfer"] = transfer_grade
+    employee_for_transfer = max(employees_pick_height,key=lambda x: x.abilities["transfer"])
+    employees_pick_height.remove(employee_for_transfer)
+    return employee_for_transfer
