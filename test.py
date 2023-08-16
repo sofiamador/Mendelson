@@ -1,5 +1,8 @@
 from functions import *
 from web_services import *
-
-inventory = get_wtasks()
-print(inventory)
+import time
+i=1
+while True:
+    print(i)
+    time.sleep(600)
+    i=i+1
