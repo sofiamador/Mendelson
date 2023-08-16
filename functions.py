@@ -492,6 +492,8 @@ def create_employees(employees_data, old_tasks_data):
         transfer_grade = int(employees_data['רענון'][ind])
         pick_height_grade = int(employees_data['גובה'][ind])
         jack_grade = int(employees_data['גק'][ind])
+        if jack_grade>0:
+            role = "jack"
         start_time = times_per_employee[employee_id].split(":")  # float(employees_data['שעת_התחלה'][ind])@sofi TODO
         start_time = int(start_time[0])+int(start_time[1])/60
         amount_of_lines = lines_per_employee.get(employee_id, 0)
