@@ -872,7 +872,7 @@ def create_transfer_tasks(lines, inventory_dict, refresh_ids):
                 else:
                     selected_lines.append(line)
             goi.lines = selected_lines
-            if len(selected_lines)<min_number_of_lines_for_transfer:
+            if len(selected_lines)>min_number_of_lines_for_transfer:
                 selected_locations.append(max_location)
 
         if len(selected_locations)!=0:
