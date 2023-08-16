@@ -25,23 +25,22 @@ lines, refresh_ids = create_lines_from_json_after_gal(lines_input)
 # create transfer tasks
 
 
+if len(employees_transfer) > -1:
+    inventory_no_c = clear_c_from_inventory_dict(inventory_dict)
+    transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_no_c,refresh_ids)
+    allocate_tasks_to_employees(transfer_tasks, schedule, employees_transfer, "transfer")
+    item_ids_in_transfer = []
 
-inventory_no_c = clear_c_from_inventory_dict(inventory_dict)
-transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_no_c,refresh_ids)
-#TODO what are the options: transfer no pick height? pick height no transfer? employees_pick_height,employees_pick,employees_transfer, employees_jack
-allocate_tasks_to_employees(transfer_tasks, schedule, employees_transfer, "transfer")
-item_ids_in_transfer = []
 
+    # post - transfer tasks (api)
+    #post_transfer_tasks(schedule)
 
-# post - transfer tasks (api)
-#post_transfer_tasks(schedule)
+    # patch -  new location for items in transfers (api)
+    #patch_upadate_location_for_items(schedule)
 
-# patch -  new location for items in transfers (api)
-#patch_upadate_location_for_items(schedule)
-
-for emp in employees_transfer:
-    employees.remove(emp)
-    del schedule[emp.id_]
+    for emp in employees_transfer:
+        employees.remove(emp)
+        del schedule[emp.id_]
 
 # create  allocation
 for k in schedule:
