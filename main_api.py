@@ -83,5 +83,6 @@ while True:
     print("end")
 
     patch_update_allocation(schedule)
-    time.sleep(600)
     print(datetime.datetime.now())
+
+    time.sleep(600)
