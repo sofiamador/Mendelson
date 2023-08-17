@@ -20,23 +20,24 @@ while True:
     lines_input = get_wtasks()
     lines, refresh_ids = create_lines_from_json_after_gal(lines_input)
 
-    # create transfer tasks
-    # inventory_no_c = clear_c_from_inventory_dict(inventory_dict)
-    # transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_no_c, refresh_ids)
-    # if len(transfer_tasks) > 0 and len(employees_pick_height) > 1 :
-    #     if len(employees_transfer) == 0:
-    #         employees_transfer.append(pick_employee_for_transfer(employees_pick_height,employees_data))
-    #     allocate_tasks_to_employees(transfer_tasks, schedule, employees_transfer, "transfer")
-    #
-    #
-    #     # post - transfer tasks (api)
-    #     # post_transfer_tasks(schedule)
-    #
-    #     # patch -  new location for items in transfers (api)
-    #     # patch_upadate_location_for_items(schedule)
-    #     for emp in employees_transfer:
-    #         employees.remove(emp)
-    #         del schedule[emp.id_]
+    ## create transfer tasks
+    inventory_no_c = clear_c_from_inventory_dict(inventory_dict)
+    transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_no_c, refresh_ids)
+    if len(transfer_tasks) > 0 and len(employees_pick_height) > 1 :
+        print("transfer" + len(transfer_tasks))
+        if len(employees_transfer) == 0:
+            employees_transfer.append(pick_employee_for_transfer(employees_pick_height,employees_data))
+        allocate_tasks_to_employees(transfer_tasks, schedule, employees_transfer, "transfer")
+
+
+        # post - transfer tasks (api)
+        post_transfer_tasks(schedule)
+
+        # patch -  new location for items in transfers (api)
+        patch_upadate_location_for_items(schedule)
+        for emp in employees_transfer:
+            employees.remove(emp)
+            del schedule[emp.id_]
 
     # create  allocation
     item_ids_in_transfer = []
