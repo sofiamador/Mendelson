@@ -21,24 +21,25 @@ while True:
     lines, refresh_ids = create_lines_from_json_after_gal(lines_input)
 
     # create transfer tasks
-    inventory_no_c = clear_c_from_inventory_dict(inventory_dict)
-    transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_no_c, refresh_ids)
-    if len(transfer_tasks) > 0 and len(employees_pick_height) > 1 :
-        if len(employees_transfer) == 0:
-            employees_transfer.append(pick_employee_for_transfer(employees_pick_height,employees_data))
-        allocate_tasks_to_employees(transfer_tasks, schedule, employees_transfer, "transfer")
-        item_ids_in_transfer = []
-
-        # post - transfer tasks (api)
-        # post_transfer_tasks(schedule)
-
-        # patch -  new location for items in transfers (api)
-        # patch_upadate_location_for_items(schedule)
-        for emp in employees_transfer:
-            employees.remove(emp)
-            del schedule[emp.id_]
+    # inventory_no_c = clear_c_from_inventory_dict(inventory_dict)
+    # transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_no_c, refresh_ids)
+    # if len(transfer_tasks) > 0 and len(employees_pick_height) > 1 :
+    #     if len(employees_transfer) == 0:
+    #         employees_transfer.append(pick_employee_for_transfer(employees_pick_height,employees_data))
+    #     allocate_tasks_to_employees(transfer_tasks, schedule, employees_transfer, "transfer")
+    #
+    #
+    #     # post - transfer tasks (api)
+    #     # post_transfer_tasks(schedule)
+    #
+    #     # patch -  new location for items in transfers (api)
+    #     # patch_upadate_location_for_items(schedule)
+    #     for emp in employees_transfer:
+    #         employees.remove(emp)
+    #         del schedule[emp.id_]
 
     # create  allocation
+    item_ids_in_transfer = []
     for k in schedule:
         schedule[k] = []
     lines_after_gal_by_order = get_lines_by_order_v2(lines)
@@ -79,7 +80,7 @@ while True:
         schedule[e] = sorted(tasks, key=lambda x: x.priority)
 
     # patch -  allocate tasks to employees
-    # patch_update_allocation(schedule)
+    patch_update_allocation(schedule)
     print("end")
     time.sleep(600)
     print(datetime.datetime.now())
