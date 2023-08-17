@@ -80,7 +80,8 @@ while True:
         schedule[e] = sorted(tasks, key=lambda x: x.priority)
 
     # patch -  allocate tasks to employees
-    patch_update_allocation(schedule)
     print("end")
+
+    patch_update_allocation(schedule)
     time.sleep(600)
     print(datetime.datetime.now())

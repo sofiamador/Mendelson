@@ -183,7 +183,11 @@ def patch_upadate_location_for_items(schedule):
     for k, tasks in schedule.items():
         if len(tasks) == 0:
             continue
+        counter = 0
         for task in tasks:
+            counter = counter+1
+            if counter ==4:
+                break
             for item in task.lines:
                 url = host + "WTASKS('" + item.order_id + "')"
 
