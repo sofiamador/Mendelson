@@ -1160,6 +1160,7 @@ def allocate_pick_orders(pick_orders, schedule, employees_pick):
     orders_for_skilled, orders_for_other, orders_to_fix = cut_orders_by_skill(pick_orders, skilled_employees,
                                                                               other_employees
                                                                               )
+    fix_if_one_group_is_empty( skilled_employees, other_employees,  orders_for_skilled, orders_for_other)
 
     allocate_tasks_to_employees_v2(tasks=orders_for_skilled, schedule=schedule, employees=skilled_employees)
     allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees)
@@ -1174,6 +1175,9 @@ def allocate_pick_height_orders(pick_height_orders, schedule, employees_height_t
     # if is_calculate_percentage_cut_off:
     orders_for_skilled, orders_for_other, orders_to_fix = cut_orders_by_skill(pick_height_orders, skilled_employees,
                                                                               other_employees)
+
+    fix_if_one_group_is_empty( skilled_employees, other_employees,  orders_for_skilled, orders_for_other)
+
     # else:
     #    large_amount_line_orders,other_amount_line_orders = get_orders_by_cut_off(pick_height_orders,pick_height_percentage_cut_off)
     if len(skilled_employees) != 0:
@@ -1183,12 +1187,22 @@ def allocate_pick_height_orders(pick_height_orders, schedule, employees_height_t
     use_list_of_order_to_fix_for_balance(schedule, orders_to_fix)
 
 
+def fix_if_one_group_is_empty(skilled_employees, other_employees, orders_for_skilled, orders_for_other):
+    if len(skilled_employees) == 0:
+        orders_for_other.extend(orders_for_skilled)
+    if len(other_employees) == 0:
+        orders_for_skilled.extend(orders_for_other)
+
+
 def allocate_pick_jack_orders(jack_orders, schedule, employees_jack):
     cumulative_distribution_function(jack_orders)
     skilled_employees, other_employees = get_employees_by_cut_off(employees_jack,
                                                                   jack_employee_grade_cut_off, "jack")
     orders_for_skilled, orders_for_other, orders_to_fix = cut_orders_by_skill(jack_orders, skilled_employees,
                                                                               other_employees)
+
+    fix_if_one_group_is_empty( skilled_employees, other_employees,  orders_for_skilled, orders_for_other)
+
 
     if len(skilled_employees) != 0:
         allocate_tasks_to_employees_v2(orders_for_skilled, schedule, skilled_employees)
