@@ -807,11 +807,13 @@ def get_locations_to_cover_quantities(goi):
 def get_transfer_tasks_with_percent_pallet_constraint(transfer_tasks):
     ans = []
     for transfer_task in transfer_tasks:
+
+
         field_to_sum_values = [obj.quantity for obj in transfer_task.lines]
         quantity_required = sum(field_to_sum_values)
         max_location = max(transfer_task.selected_locations, key=lambda x: x.quantity)
         percent_pallet_required = quantity_required / max_location.quantity
-        if percentage_of_pallet <= percent_pallet_required:
+        if percentage_of_pallet <= percent_pallet_required or len(transfer_task.lines)>=min_lines_for_no_pallet_constraint:
             ans.append(transfer_task)
     return ans
 
