@@ -60,7 +60,7 @@ class LineNoLocation(object):
 class Line(object):
 
     def __init__(self, item_id, order_id, quantity, warehouse_id, location_string, line_number=1, priority=0,
-                 importance=1, weight=0, ):
+                 importance=1, weight=0,is_store=False):
         """
 
         :param order_id: order_id that the line belongs to
@@ -80,6 +80,7 @@ class Line(object):
         self.weight = weight
         self.priority = int(priority)
         self.line_number = line_number
+        self.is_store = is_store
 
 
 class StreetObj:

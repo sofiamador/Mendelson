@@ -5,7 +5,7 @@ alpha = 0.9 #weight for current amount of line distributed
 max_transfer_tasks = 4
 center_street = 35
 min_number_of_lines_for_transfer = 3
-percentage_of_pallet = 0.5
+percentage_of_pallet = 0.2
 min_lines_for_no_pallet_constraint = 6
 
 #create_orders
