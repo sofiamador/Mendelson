@@ -34,7 +34,7 @@ while True:
         post_transfer_tasks(schedule)
 
         # patch -  new location for items in transfers (api)
-        patch_upadate_location_for_items(schedule)
+        #patch_upadate_location_for_items(schedule)
         for emp in employees_transfer:
             employees.remove(emp)
             del schedule[emp.id_]
@@ -83,7 +83,7 @@ while True:
     # patch -  allocate tasks to employees
     print("end")
 
-    patch_update_allocation(schedule)
+    #patch_update_allocation(schedule)
     print(datetime.datetime.now())
 
     time.sleep(480)

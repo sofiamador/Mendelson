@@ -190,7 +190,11 @@ def create_lines_from_json_after_gal(lines_input_):
         if task["WTASKTYPECODE"] == "PIK":
             order_id = task["WTASKNUM"]
             warehouse_id = task["STZONECODE"]
-            is_store =  task["CDES"]
+            if task["CDES"] is not None: #TODO @Sofi
+                is_store = True
+                #task["CDES"]
+            else:
+                is_store = False
             if (task["MEND_PRIO2"] > 0):
                 priority = task["MEND_PRIO2"]
             else:
