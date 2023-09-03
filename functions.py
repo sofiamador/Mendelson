@@ -200,7 +200,6 @@ def create_lines_from_json_after_gal(lines_input_):
                 quantity = float(item["PTQUANT"])
                 location_string = item["LOCNAME"]
                 line_number = item["KLINE"]
-
                 line = Line(item_id, order_id, quantity, warehouse_id, location_string, line_number, priority,is_store=is_store)
                 if line.location.warehouse_id== "C1" and line.location.street.isdigit() and line.location.row.isdigit():
                     street_number = int(line.location.street)
