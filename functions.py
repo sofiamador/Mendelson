@@ -190,7 +190,7 @@ def create_lines_from_json_after_gal(lines_input_):
         if task["WTASKTYPECODE"] == "PIK":
             order_id = task["WTASKNUM"]
             warehouse_id = task["STZONECODE"]
-            if task["CDES"] is not None: #TODO @Sofi
+            if "סניף" in task["CDES"]: #TODO @Sofi
                 is_store = True
                 #task["CDES"]
             else:
