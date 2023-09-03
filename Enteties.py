@@ -300,13 +300,14 @@ class GroupOfItem():
 
 
 class Order(Task):
-    def __init__(self, order_id, ability, lines=[]):
+    def __init__(self, order_id, ability,  lines=[],is_store = False):
         self.order_id = order_id
         self.ability = ability
         self.lines = lines
         self.priority = min(self.lines, key=lambda x: x.priority).priority
         self.amount_of_lines = len(self.lines)
         self.cumulative_value = None
+        self.is_store = is_store
 
     def update_cumulative_distribution(self, sorted_val):
         self.cumulative_value = sorted_val
@@ -320,7 +321,9 @@ class GroupOfOrders(Order):
 
         for order in orders:
             self.lines = order.lines + self.lines
+
         Order.__init__(self, order_id=orders[0].order_id, ability=orders[0].ability, lines=self.lines)
+
         self.amount_of_orders = len(self.orders)
 
 

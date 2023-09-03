@@ -922,13 +922,16 @@ def get_order_by_ability(lines_after_gal_by_order):
                     order_pick_height_lines.append(line)
 
         if len(order_pick_lines) != 0:
-            pick_orders.append(Order(order, 'pick', order_pick_lines))
+            is_store = order_pick_lines[0].is_store
+            pick_orders.append(Order(order, 'pick', order_pick_lines, is_store=is_store))
 
         if len(order_pick_height_lines) != 0:
-            pick_height_orders.append(Order(order, 'pick_height', order_pick_height_lines))
+            is_store =  order_pick_height_lines[0].is_store
+            pick_height_orders.append(Order(order, 'pick_height', order_pick_height_lines,is_store = is_store))
 
         if len(order_pick_jack_lines) != 0:
-            pick_jack_order.append(Order(order, 'jack', order_pick_jack_lines))
+            is_store = order_pick_jack_lines[0].is_store
+            pick_jack_order.append(Order(order, 'jack', order_pick_jack_lines,is_store = is_store))
 
     return pick_orders, pick_height_orders, pick_jack_order
 
@@ -1292,16 +1295,30 @@ def break_orders_one_line(orders_input):
     sorted_dict = {k: orders_by_street[k] for k in
                    sorted(orders_by_street, key=lambda k: len(orders_by_street[k]), reverse=True)}
     all_goos = []
-    for street, orders_ in sorted_dict.items():
-        all_goos.append(GroupOfOrders(street, orders_))
-    # create_histogram(all_goos,"amount_of_orders")
 
-    ans = []
+
     for street, orders_ in sorted_dict.items():
-        if len(orders_) >= amount_of_one_line_in_street:
-            ans.append(GroupOfOrders(street, orders_))
-            for order in orders_:
+        in_stores = []
+        not_in_stores = []
+        for order in orders_:
+            if order.is_store:
+                in_stores.append(order)
+            else:
+                not_in_stores.append(order)
+        if len(in_stores)!=0:
+            all_goos.append(GroupOfOrders(street, in_stores))
+        if len(not_in_stores) != 0:
+            all_goos.append(GroupOfOrders(street, not_in_stores))
+
+    # create_histogram(all_goos,"amount_of_orders")
+    ans = []
+    for goo in all_goos:
+        if len(goo.orders) >= amount_of_one_line_in_street:
+            ans.append(goo)
+            for order in goo.orders:
                 orders_input.remove(order)
+
+
 
     return ans
 
