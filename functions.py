@@ -190,9 +190,10 @@ def create_lines_from_json_after_gal(lines_input_):
         if task["WTASKTYPECODE"] == "PIK":
             order_id = task["WTASKNUM"]
             warehouse_id = task["STZONECODE"]
-            if "סניף" in task["CDES"]: #TODO @Sofi
+            prev_allocation = task["DOERLOGIN"]
+            if "סניף" in task["CDES"]:  # TODO @Sofi
                 is_store = True
-                #task["CDES"]
+                # task["CDES"]
             else:
                 is_store = False
             if (task["MEND_PRIO2"] > 0):
@@ -204,13 +205,15 @@ def create_lines_from_json_after_gal(lines_input_):
                 quantity = float(item["PTQUANT"])
                 location_string = item["LOCNAME"]
                 line_number = item["KLINE"]
-                line = Line(item_id, order_id, quantity, warehouse_id, location_string, line_number, priority,is_store=is_store)
-                if line.location.warehouse_id== "C1" and line.location.street.isdigit() and line.location.row.isdigit():
+                line = Line(item_id=item_id, order_id=order_id, quantity=quantity, warehouse_id=warehouse_id,
+                            location_string=location_string, line_number=line_number, prev_allocation=prev_allocation,
+                            priority=priority, is_store=is_store)
+                if line.location.warehouse_id == "C1" and line.location.street.isdigit() and line.location.row.isdigit():
                     street_number = int(line.location.street)
                     row_number = int(line.location.row)
 
-                    if row_number == 1 or (23<=street_number<=28 and row_number<=4):
-                        line.location.warehouse_id="D"
+                    if row_number == 1 or (23 <= street_number <= 28 and row_number <= 4):
+                        line.location.warehouse_id = "D"
                 lines.append(line)
 
 
@@ -926,12 +929,12 @@ def get_order_by_ability(lines_after_gal_by_order):
             pick_orders.append(Order(order, 'pick', order_pick_lines, is_store=is_store))
 
         if len(order_pick_height_lines) != 0:
-            is_store =  order_pick_height_lines[0].is_store
-            pick_height_orders.append(Order(order, 'pick_height', order_pick_height_lines,is_store = is_store))
+            is_store = order_pick_height_lines[0].is_store
+            pick_height_orders.append(Order(order, 'pick_height', order_pick_height_lines, is_store=is_store))
 
         if len(order_pick_jack_lines) != 0:
             is_store = order_pick_jack_lines[0].is_store
-            pick_jack_order.append(Order(order, 'jack', order_pick_jack_lines,is_store = is_store))
+            pick_jack_order.append(Order(order, 'jack', order_pick_jack_lines, is_store=is_store))
 
     return pick_orders, pick_height_orders, pick_jack_order
 
@@ -1167,7 +1170,7 @@ def allocate_pick_orders(pick_orders, schedule, employees_pick):
     orders_for_skilled, orders_for_other, orders_to_fix = cut_orders_by_skill(pick_orders, skilled_employees,
                                                                               other_employees
                                                                               )
-    fix_if_one_group_is_empty( skilled_employees, other_employees,  orders_for_skilled, orders_for_other)
+    fix_if_one_group_is_empty(skilled_employees, other_employees, orders_for_skilled, orders_for_other)
 
     allocate_tasks_to_employees_v2(tasks=orders_for_skilled, schedule=schedule, employees=skilled_employees)
     allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees)
@@ -1183,7 +1186,7 @@ def allocate_pick_height_orders(pick_height_orders, schedule, employees_height_t
     orders_for_skilled, orders_for_other, orders_to_fix = cut_orders_by_skill(pick_height_orders, skilled_employees,
                                                                               other_employees)
 
-    fix_if_one_group_is_empty( skilled_employees, other_employees,  orders_for_skilled, orders_for_other)
+    fix_if_one_group_is_empty(skilled_employees, other_employees, orders_for_skilled, orders_for_other)
 
     # else:
     #    large_amount_line_orders,other_amount_line_orders = get_orders_by_cut_off(pick_height_orders,pick_height_percentage_cut_off)
@@ -1208,8 +1211,7 @@ def allocate_pick_jack_orders(jack_orders, schedule, employees_jack):
     orders_for_skilled, orders_for_other, orders_to_fix = cut_orders_by_skill(jack_orders, skilled_employees,
                                                                               other_employees)
 
-    fix_if_one_group_is_empty( skilled_employees, other_employees,  orders_for_skilled, orders_for_other)
-
+    fix_if_one_group_is_empty(skilled_employees, other_employees, orders_for_skilled, orders_for_other)
 
     if len(skilled_employees) != 0:
         allocate_tasks_to_employees_v2(orders_for_skilled, schedule, skilled_employees)
@@ -1296,7 +1298,6 @@ def break_orders_one_line(orders_input):
                    sorted(orders_by_street, key=lambda k: len(orders_by_street[k]), reverse=True)}
     all_goos = []
 
-
     for street, orders_ in sorted_dict.items():
         in_stores = []
         not_in_stores = []
@@ -1305,7 +1306,7 @@ def break_orders_one_line(orders_input):
                 in_stores.append(order)
             else:
                 not_in_stores.append(order)
-        if len(in_stores)!=0:
+        if len(in_stores) != 0:
             all_goos.append(GroupOfOrders(street, in_stores))
         if len(not_in_stores) != 0:
             all_goos.append(GroupOfOrders(street, not_in_stores))
@@ -1317,8 +1318,6 @@ def break_orders_one_line(orders_input):
             ans.append(goo)
             for order in goo.orders:
                 orders_input.remove(order)
-
-
 
     return ans
 
@@ -1420,6 +1419,29 @@ def filter_orders_that_have_lines_with_items_from_list(lines_after_gal_by_order,
     orders_to_remove = get_orders_to_remove_in_transfer(lines_after_gal_by_order, ids_to_remove)
     ans = {key: value for key, value in lines_after_gal_by_order.items() if key not in orders_to_remove}
     return ans
+
+
+def filter_first_allocated_orders(lines_after_gal_by_order,employees,schedule):
+    dic_by_employee = {}
+    for or_id, val in lines_after_gal_by_order.items():
+        em_id = val[0].prev_allocation
+        if em_id == "בודק3":
+            continue
+        order = Order(or_id, lines=val)
+        lst_of_orders = dic_by_employee.get(em_id,[])
+        lst_of_orders.append(order)
+        dic_by_employee[em_id] = lst_of_orders
+    for em in employees:
+        em_id=em.id_
+        if em_id in dic_by_employee:
+            val = dic_by_employee[em_id]
+            sorted_orders = sorted(val, key=lambda x: x.priority)
+            first_order = sorted_orders[0]
+            schedule[em_id].append(first_order)
+            #em.amount_of_lines_in_shift += first_order.amount_of_lines
+            #em.update_amount_of_lines_in_shift_per_hour()
+            del lines_after_gal_by_order[first_order.order_id]
+    return lines_after_gal_by_order
 
 
 def clear_c_from_inventory_dict(inventory_dict):

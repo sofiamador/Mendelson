@@ -24,7 +24,7 @@ while True:
     inventory_no_c = clear_c_from_inventory_dict(inventory_dict)
     transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_no_c, refresh_ids)
     if len(transfer_tasks) > 0 and len(employees_pick_height) > 1 :
-        print("transfer" + len(transfer_tasks))
+        print("transfer" + str(len(transfer_tasks)))
         if len(employees_transfer) == 0:
             employees_transfer.append(pick_employee_for_transfer(employees_pick_height,employees_data))
         allocate_tasks_to_employees(transfer_tasks, schedule, employees_transfer, "transfer")
@@ -46,7 +46,7 @@ while True:
     lines_after_gal_by_order = get_lines_by_order_v2(lines)
     lines_after_gal_by_order = filter_orders_that_have_lines_with_items_from_list(lines_after_gal_by_order,
                                                                                   item_ids_in_transfer)
-
+    lines_after_gal_by_order = filter_first_allocated_orders(lines_after_gal_by_order,employees,schedule)
     pick_orders, pick_height_orders, pick_jack_orders = get_order_by_ability(lines_after_gal_by_order)
 
     #################### create unit one line orders #################### create unit one line orders

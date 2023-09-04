@@ -59,8 +59,8 @@ class LineNoLocation(object):
 
 class Line(object):
 
-    def __init__(self, item_id, order_id, quantity, warehouse_id, location_string, line_number=1, priority=0,
-                 importance=1, weight=0,is_store=False):
+    def __init__(self, item_id, order_id, quantity, warehouse_id, location_string, prev_allocation =None, line_number=1, priority=0,
+                 importance=1, weight=0,is_store=False,):
         """
 
         :param order_id: order_id that the line belongs to
@@ -81,6 +81,7 @@ class Line(object):
         self.priority = int(priority)
         self.line_number = line_number
         self.is_store = is_store
+        self.prev_allocation = prev_allocation
 
 
 class StreetObj:
@@ -300,7 +301,7 @@ class GroupOfItem():
 
 
 class Order(Task):
-    def __init__(self, order_id, ability,  lines=[],is_store = False):
+    def __init__(self, order_id, ability=None,lines=[],is_store = False):
         self.order_id = order_id
         self.ability = ability
         self.lines = lines
