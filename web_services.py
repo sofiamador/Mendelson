@@ -5,8 +5,8 @@ import datetime
 from Enteties import GroupOfOrders
 
 number_of_allocation_per_employee = 6
-# host = "https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/"
-host = "https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/"
+host = "https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/"
+#host = "https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/"
 date = str(datetime.date.today())
 with open('auth.txt', 'rb') as f:
     auth = f.read()
@@ -33,7 +33,7 @@ def get_stock2():
     f.close()
     return json.loads(text)["value"]
 
-
+# read open tasks
 def get_wtasks():
     # url = host +"WTASKS?$select=STZONECODE,WTASKNUM,PRIO,DOERLOGIN,STATDES,ADCSTARTED,WTASKTYPECODE,MEND_PRIO2,ADCSUDATE&$filter=WARHSNAME eq '500' and(STZONECODE eq 'C1' or STZONECODE eq 'W1' or STZONECODE eq 'W2') and DOERLOGIN ne 'dimitri' and (STATDES eq 'לביצוע' or STATDES eq 'מושהה') and (WTASKTYPECODE eq 'PIK' or WTASKTYPECODE eq 'RPI' or WTASKTYPECODE eq 'RPL' or WTASKTYPECODE eq 'MOV' or WTASKTYPECODE eq 'PUT')&$expand=WTASKITEMS_SUBFORM($select=PARTNAME, LOCNAME, PTQUANT,KLINE)"
     # url = host +"WTASKS?$select=STZONECODE,WTASKNUM,PRIO,DOERLOGIN,STATDES,ADCSTARTED,WTASKTYPECODE,MEND_PRIO2,ADCSUDATE&$filter=WARHSNAME eq '500' and CDES ne 'סניף*' and(STZONECODE eq 'C1' or STZONECODE eq 'W1' or STZONECODE eq 'W2') and DOERLOGIN ne 'dimitri' and (STATDES eq 'לביצוע' or STATDES eq 'מושהה') and (WTASKTYPECODE eq 'PIK' or WTASKTYPECODE eq 'RPI' or WTASKTYPECODE eq 'RPL' or WTASKTYPECODE eq 'MOV' or WTASKTYPECODE eq 'PUT') and ADCSTARTED ne 'Y'&$expand=WTASKITEMS_SUBFORM($select=PARTNAME, LOCNAME, PTQUANT,KLINE)"
