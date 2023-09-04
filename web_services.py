@@ -5,8 +5,8 @@ import datetime
 from Enteties import GroupOfOrders
 
 number_of_allocation_per_employee = 6
-# host = "https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/"
-host = "https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/"
+host = "https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/"
+#host = "https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/"
 date = str(datetime.date.today())
 with open('auth.txt', 'rb') as f:
     auth = f.read()
