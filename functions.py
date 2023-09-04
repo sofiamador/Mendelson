@@ -191,7 +191,7 @@ def create_lines_from_json_after_gal(lines_input_):
             order_id = task["WTASKNUM"]
             warehouse_id = task["STZONECODE"]
             prev_allocation = task["DOERLOGIN"]
-            if "סניף" in task["CDES"]:  # TODO @Sofi
+            if task["CDES"] is not None and "סניף" in task["CDES"]:  # TODO @Sofi
                 is_store = True
                 # task["CDES"]
             else:
@@ -1268,7 +1268,8 @@ def get_schedule_by_skill(schedule, employees_pick_height, employees_pick, emplo
             flag = True
 
         if not flag:
-            raise Exception("employee not suppose to be in pick")
+            #raise Exception("employee not suppose to be in pick")
+            pass
     return schedule_pick, schedule_pick_height, schedule_jack
 
 
