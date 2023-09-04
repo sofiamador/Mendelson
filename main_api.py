@@ -20,6 +20,11 @@ while True:
     lines_input = get_wtasks()
     lines, refresh_ids = create_lines_from_json_after_gal(lines_input)
 
+    # Use the filter() function to filter out lines with is_store set to False
+    if not is_with_store:
+        filtered_lines = list(filter(lambda line: line.is_store, lines))
+        lines = [item for item in lines if item not in filtered_lines]
+
     ## create transfer tasks
     inventory_no_c = clear_c_from_inventory_dict(inventory_dict)
     transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_no_c, refresh_ids)

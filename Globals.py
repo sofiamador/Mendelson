@@ -1,3 +1,5 @@
+#snifim
+is_with_store = True
 
 #prioraty
 alpha = 0.9 #weight for current amount of line distributed
