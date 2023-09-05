@@ -1,7 +1,8 @@
 from Enteties import StreetObj, TaskTransfer
 from functions import *
 from web_services import *
-import time
+import time, datetime
+
 while True:
     # get old tasks
     old_task_data = get_old_tasks()
@@ -40,7 +41,7 @@ while True:
         post_transfer_tasks(schedule)
 
         # patch -  new location for items in transfers (api)
-        #patch_upadate_location_for_items(schedule)
+        patch_upadate_location_for_items(schedule)
         for emp in employees_transfer:
             employees.remove(emp)
             del schedule[emp.id_]
@@ -87,9 +88,8 @@ while True:
         schedule[e] = sorted(tasks, key=lambda x: x.priority)
 
     # patch -  allocate tasks to employees
-    print("end")
-
+    print("before: ",datetime.datetime.now())
     patch_update_allocation(schedule)
-    print(datetime.datetime.now())
+    print("after: ", datetime.datetime.now())
 
     time.sleep(480)

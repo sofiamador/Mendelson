@@ -5,8 +5,8 @@ import datetime
 from Enteties import GroupOfOrders
 
 number_of_allocation_per_employee = 6
-#host = "https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/"
-host = "https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/"
+#host = "https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/"  #test
+host = "https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/"  #main
 date = str(datetime.date.today())
 with open('auth.txt', 'r') as f:
     auth = f.read()
@@ -184,10 +184,6 @@ def patch_update_allocation(schedule):
     }
 
     print(payload_list)
-    #string_data = bytes(payload_list).decode('utf-8')
-
-    # Serialize the string to JSON
-    #payload = json.dumps({"data": string_data})
 
     payload = json.dumps(payload_list)
     response = requests.request("POST", url, headers=headers, data=payload)

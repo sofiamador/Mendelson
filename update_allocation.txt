@@ -1,0 +1,8 @@
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1989655')
+{"WTASKITEMS_SUBFORM": [{"KLINE": 3, "LOCNAME": "RL.01"}]}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1989646')
+{"WTASKITEMS_SUBFORM": [{"KLINE": 6, "LOCNAME": "RL.01"}]}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1989641')
+{"WTASKITEMS_SUBFORM": [{"KLINE": 4, "LOCNAME": "RL.01"}]}
+https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/WTASKS('TK1989640')
+{"WTASKITEMS_SUBFORM": [{"KLINE": 13, "LOCNAME": "RL.01"}]}
