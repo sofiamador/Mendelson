@@ -119,7 +119,7 @@ def check_time(employee_line, employee_start_times, employee_roles, employee_las
     for employee, time in employee_last_times.items():
         time_split = time.split(":")
         time_float = int(time_split[0]) + int(time_split[1]) / 60
-        if time_float + 1 < tnow:
+        if time_float + time_to_ignore_employee < tnow:
             del employee_line[employee]
             del employee_start_times[employee]
             del employee_roles[employee]
@@ -142,8 +142,9 @@ def create_employees_lines_dic(old_task_data):
 
         role = check_role(type_task, zone)
         if end_time == None:
-            employee_last_times[name] = s_time
-            employee_roles[name] = role
+            if name not in employee_last_times or (name in employee_last_times and employee_last_times[name] < s_time):
+                employee_last_times[name] = s_time
+                employee_roles[name] = role
         else:
             end_time = end_time.split("T")[1].split("+")[0][:5]
             if employee_last_times.get(name, "00:00") < end_time:
@@ -500,7 +501,7 @@ def create_employees(employees_data, old_tasks_data):
         jack_grade = int(employees_data['גק'][ind])
         if jack_grade > 0:
             role = "jack"
-        start_time = times_per_employee[employee_id].split(":")  # float(employees_data['שעת_התחלה'][ind])@sofi TODO
+        start_time = times_per_employee[employee_id].split(":")  # float(employees_data['שעת_התחלה'][ind])
         start_time = int(start_time[0]) + int(start_time[1]) / 60
         amount_of_lines = lines_per_employee.get(employee_id, 0)
         abilities = {}
@@ -919,7 +920,8 @@ def get_order_by_ability(lines_after_gal_by_order):
         else:
             for line in lines:
                 warehouse_id = line.location.warehouse_id
-                if warehouse_id == "C1":
+                if warehouse_id == "C1" or warehouse_id == "D" :
+                    line.location.warehouse_id="C"
                     order_pick_lines.append(line)
                 else:
                     order_pick_height_lines.append(line)
@@ -1268,7 +1270,7 @@ def get_schedule_by_skill(schedule, employees_pick_height, employees_pick, emplo
             flag = True
 
         if not flag:
-            #raise Exception("employee not suppose to be in pick")
+            # raise Exception("employee not suppose to be in pick")
             pass
     return schedule_pick, schedule_pick_height, schedule_jack
 
@@ -1422,25 +1424,25 @@ def filter_orders_that_have_lines_with_items_from_list(lines_after_gal_by_order,
     return ans
 
 
-def filter_first_allocated_orders(lines_after_gal_by_order,employees,schedule):
+def filter_first_allocated_orders(lines_after_gal_by_order, employees, schedule):
     dic_by_employee = {}
     for or_id, val in lines_after_gal_by_order.items():
         em_id = val[0].prev_allocation
         if em_id == "בודק3":
             continue
         order = Order(or_id, lines=val)
-        lst_of_orders = dic_by_employee.get(em_id,[])
+        lst_of_orders = dic_by_employee.get(em_id, [])
         lst_of_orders.append(order)
         dic_by_employee[em_id] = lst_of_orders
     for em in employees:
-        em_id=em.id_
+        em_id = em.id_
         if em_id in dic_by_employee:
             val = dic_by_employee[em_id]
             sorted_orders = sorted(val, key=lambda x: x.priority)
             first_order = sorted_orders[0]
             schedule[em_id].append(first_order)
-            #em.amount_of_lines_in_shift += first_order.amount_of_lines
-            #em.update_amount_of_lines_in_shift_per_hour()
+            # em.amount_of_lines_in_shift += first_order.amount_of_lines
+            # em.update_amount_of_lines_in_shift_per_hour()
             del lines_after_gal_by_order[first_order.order_id]
     return lines_after_gal_by_order
 

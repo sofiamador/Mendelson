@@ -4,7 +4,7 @@ import datetime
 
 from Enteties import GroupOfOrders
 
-number_of_allocation_per_employee = 6
+number_of_allocation_per_employee = 4
 #host = "https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/"  #test
 host = "https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/"  #main
 date = str(datetime.date.today())
@@ -39,7 +39,7 @@ def get_wtasks():
     # url = host +"WTASKS?$select=STZONECODE,WTASKNUM,PRIO,DOERLOGIN,STATDES,ADCSTARTED,WTASKTYPECODE,MEND_PRIO2,ADCSUDATE&$filter=WARHSNAME eq '500' and CDES ne 'סניף*' and(STZONECODE eq 'C1' or STZONECODE eq 'W1' or STZONECODE eq 'W2') and DOERLOGIN ne 'dimitri' and (STATDES eq 'לביצוע' or STATDES eq 'מושהה') and (WTASKTYPECODE eq 'PIK' or WTASKTYPECODE eq 'RPI' or WTASKTYPECODE eq 'RPL' or WTASKTYPECODE eq 'MOV' or WTASKTYPECODE eq 'PUT') and ADCSTARTED ne 'Y'&$expand=WTASKITEMS_SUBFORM($select=PARTNAME, LOCNAME, PTQUANT,KLINE)"
     url = host + "WTASKS?$select=STZONECODE,WTASKNUM,PRIO,DOERLOGIN,STATDES,ADCSTARTED,WTASKTYPECODE,MEND_PRIO2,ADCSUDATE,CDES" \
                  "&$filter=WARHSNAME eq '500' and(STZONECODE eq 'C1' or STZONECODE eq 'W1' or STZONECODE eq 'W2' or STZONECODE eq 'A2') " \
-                 "and (DOERLOGIN ne 'dimitri' and DOERLOGIN ne 'ליאור א' and  DOERLOGIN ne 'דסה' and  DOERLOGIN ne 'menashe') " \
+                 "and (DOERLOGIN ne 'dimitri' and DOERLOGIN ne 'ליאור א' and  DOERLOGIN ne 'דסה' and  DOERLOGIN ne 'menashe' and  DOERLOGIN ne 'meirg') " \
                  "and (STATDES eq 'לביצוע' or STATDES eq 'מושהה') and (WTASKTYPECODE eq 'PIK' or WTASKTYPECODE eq 'RPI' or WTASKTYPECODE eq 'RPL' or WTASKTYPECODE eq 'MOV') " \
                  "and ADCSTARTED ne 'Y'&$expand=WTASKITEMS_SUBFORM($select=PARTNAME, LOCNAME, PTQUANT,KLINE)"
 
@@ -124,14 +124,22 @@ def patch_update_allocation(schedule):
     f = open("allocation_task.txt", "w")
     payload_list = {"requests": []}
     for k, tasks in schedule.items():
-        prio = 1
+        prio = 0
         name = k
+        sof_wmsform=3
         for t in tasks:
-            if prio == number_of_allocation_per_employee:
-                name = "בודק3"
+
             if isinstance(t, GroupOfOrders):
 
                 for order in t.orders:
+                    if prio == number_of_allocation_per_employee:
+                        if order.prev_allocation == "בודק3":
+                            continue
+                        else:
+                            name = "בודק3"
+                            sof_wmsform = 5
+                    else:
+                        prio+=1
                     prio2 = prio
                     allocation_dic = {
                         "method": "PATCH",
@@ -145,13 +153,22 @@ def patch_update_allocation(schedule):
                         "body": {
                             "MEND_PRIO2": order.priority,
                             "DOERLOGIN": name,
-                            "PRIO": prio2
+                            "PRIO": prio2,
+                            "SOF_WMSFORM": sof_wmsform
                         }
                     }
-
+                    f.write(str(allocation_dic) +" location: "+ t.warehouse_id + "\n")
                     payload_list["requests"].append(allocation_dic)
-                prio += 1
             else:
+                if prio == number_of_allocation_per_employee:
+                    if t.prev_allocation == "בודק3":
+                        continue
+                    else:
+                        name = "בודק3"
+                        sof_wmsform = 5
+                else:
+                    prio += 1
+
                 prio2 = prio
                 if t.priority > 5:
                     prio2 = t.priority
@@ -168,12 +185,12 @@ def patch_update_allocation(schedule):
                     "body": {
                         "MEND_PRIO2": t.priority,
                         "DOERLOGIN": name,
-                        "PRIO": prio2
+                        "PRIO": prio2,
+                        "SOF_WMSFORM":sof_wmsform
                     }
                 }
-
+                f.write(str(allocation_dic) +" location: "+ t.warehouse_id + "\n")
                 payload_list["requests"].append(allocation_dic)
-                prio += 1
 
     url = host + "$batch"
     headers = {
@@ -183,12 +200,12 @@ def patch_update_allocation(schedule):
         "Authorization": auth
     }
 
-    print(payload_list)
+    #print(payload_list)
 
     payload = json.dumps(payload_list)
     response = requests.request("POST", url, headers=headers, data=payload)
-
-    f.write(str(payload) + "\n")
+    print(response)
+    #f.write(str(payload) + "\n")
     f.close()
 
 

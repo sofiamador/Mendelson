@@ -6,7 +6,6 @@ class Location():
         self.street = self.loc_lst[0]
         self.pallet = pallet
 
-
         if len(self.loc_lst) > 1:
             self.column = self.loc_lst[1]
 
@@ -59,8 +58,9 @@ class LineNoLocation(object):
 
 class Line(object):
 
-    def __init__(self, item_id, order_id, quantity, warehouse_id, location_string, prev_allocation =None, line_number=1, priority=0,
-                 importance=1, weight=0,is_store=False,):
+    def __init__(self, item_id, order_id, quantity, warehouse_id, location_string, prev_allocation=None, line_number=1,
+                 priority=0,
+                 importance=1, weight=0, is_store=False, ):
         """
 
         :param order_id: order_id that the line belongs to
@@ -187,11 +187,11 @@ class TaskPick(Task):
 
 
 class TaskTransfer(Task):
-    def __init__(self, item_id, selected_locations,lines, goi):
+    def __init__(self, item_id, selected_locations, lines, goi):
         Task.__init__(self, item_id)
         self.item_id = item_id
         self.selected_locations = selected_locations
-        self.goi = goi #group of items
+        self.goi = goi  # group of items
         self.lines = lines
         # self.grouped_items =[]
         # self.create_grouped_items()
@@ -226,7 +226,7 @@ class GroupOfItem():
         self.locations = locations_lines_dict.keys()
         self.locations_no_c1 = []
         self.is_in_c1 = False
-        #counter = 0
+        # counter = 0
         locations_c1 = []
         for location in self.locations:
             warehouse_id = location.warehouse_id
@@ -237,17 +237,17 @@ class GroupOfItem():
         #        counter = counter + 1
         #    else:
         #        self.locations_no_c1.append(location)
-        #if counter > 1:
+        # if counter > 1:
         #    pass
-            # raise Exception("we have something in invetory with more them 1 c1 location, what to do?")
-        #total_quantity_c1 = 0
+        # raise Exception("we have something in invetory with more them 1 c1 location, what to do?")
+        # total_quantity_c1 = 0
         for location_c1 in locations_c1:
-            #total_quantity_c1 = total_quantity_c1 + location_c1.quantity
+            # total_quantity_c1 = total_quantity_c1 + location_c1.quantity
             self.location_c1 = min(locations_c1, key=lambda x: x.manhattan)
 
-        #try:
+        # try:
         #    self.total_quantity_required_from_w = self.total_quantity_required - total_quantity_c1
-        #except:
+        # except:
         #    self.total_quantity_required_from_w = self.total_quantity_required
 
         self.normalized_location_c1 = None
@@ -257,16 +257,17 @@ class GroupOfItem():
 
         self.location_lines_dict = locations_lines_dict
 
-    def get_lines_per_location(self,location):
+    def get_lines_per_location(self, location):
         print(self.location_lines_dict)
         return self.location_lines_dict[location]
+
     def update_the_measure(self):
         self.the_measure = (
                                    1 - self.weight_on_orders_reps) * self.normalized_location_c1 + self.weight_on_orders_reps * self.normalized_number_of_lines
 
     def update_normalized_location_c1(self, location_c1_manhattan_max):
-        if location_c1_manhattan_max==0:
-            location_c1_manhattan_max=1
+        if location_c1_manhattan_max == 0:
+            location_c1_manhattan_max = 1
         self.normalized_location_c1 = self.location_c1.manhattan / location_c1_manhattan_max
 
     def update_normalized_number_of_lines(self, number_of_lines_max):
@@ -301,7 +302,7 @@ class GroupOfItem():
 
 
 class Order(Task):
-    def __init__(self, order_id, ability=None,lines=[],is_store = False):
+    def __init__(self, order_id, ability=None, lines=[], is_store=False):
         self.order_id = order_id
         self.ability = ability
         self.lines = lines
@@ -309,6 +310,8 @@ class Order(Task):
         self.amount_of_lines = len(self.lines)
         self.cumulative_value = None
         self.is_store = is_store
+        self.prev_allocation = lines[0].prev_allocation
+        self.warehouse_id = lines[0].location.warehouse_id
 
     def update_cumulative_distribution(self, sorted_val):
         self.cumulative_value = sorted_val
@@ -378,7 +381,7 @@ class Employee():
     def __str__(self):
         return str(self.id_) + "  " + str(self.abilities)
 
-    def update_amount_of_lines_in_shift_per_hour(self,tnow):
+    def update_amount_of_lines_in_shift_per_hour(self, tnow):
         diff = tnow - self.first_pick_time
-
-        self.amount_of_lines_in_shift_per_hour = self.amount_of_lines_in_shift/diff
+        if diff > 0:
+            self.amount_of_lines_in_shift_per_hour = self.amount_of_lines_in_shift / diff

@@ -13,10 +13,6 @@ while True:
     employees_pick_height, employees_pick, employees_transfer, employees_jack = get_employees_by_skill(employees)
     schedule = init_schedule(employees)
 
-    # get stock - create
-    inventory = get_stock()
-    inventory_dict = create_inventory_dict_from_json(inventory)
-
     # get wtasks
     lines_input = get_wtasks()
     lines, refresh_ids = create_lines_from_json_after_gal(lines_input)
@@ -26,22 +22,27 @@ while True:
         filtered_lines = list(filter(lambda line: line.is_store, lines))
         lines = [item for item in lines if item not in filtered_lines]
 
-    ## create transfer tasks
-    inventory_no_c = clear_c_from_inventory_dict(inventory_dict)
-    transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_no_c, refresh_ids)
-    if len(transfer_tasks) > 0 and len(employees_pick_height) > 1 :
-        print("transfer" + str(len(transfer_tasks)))
-        if len(employees_transfer) == 0:
-            employees_transfer.append(pick_employee_for_transfer(employees_pick_height,employees_data))
-        allocate_tasks_to_employees(transfer_tasks, schedule, employees_transfer, "transfer")
+    #### create transfer tasks####
+    if is_with_transfer:
+        # get stock - create
+        inventory = get_stock()
+        inventory_dict = create_inventory_dict_from_json(inventory)
+
+        inventory_no_c = clear_c_from_inventory_dict(inventory_dict)
+        transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_no_c, refresh_ids)
+        if len(transfer_tasks) > 0 and len(employees_pick_height) > 1 :
+            print("transfer" + str(len(transfer_tasks)))
+            if len(employees_transfer) == 0:
+                employees_transfer.append(pick_employee_for_transfer(employees_pick_height,employees_data))
+            allocate_tasks_to_employees(transfer_tasks, schedule, employees_transfer, "transfer")
 
 
 
-        # post - transfer tasks (api)
-        post_transfer_tasks(schedule)
+            # post - transfer tasks (api)
+            post_transfer_tasks(schedule)
 
-        # patch -  new location for items in transfers (api)
-        patch_upadate_location_for_items(schedule)
+            # patch -  new location for items in transfers (api)
+            patch_upadate_location_for_items(schedule)
         for emp in employees_transfer:
             employees.remove(emp)
             del schedule[emp.id_]
