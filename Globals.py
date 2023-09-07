@@ -1,5 +1,5 @@
 # snifim
-is_with_store = True
+is_with_store = False
 # transfer
 is_with_transfer = False
 
