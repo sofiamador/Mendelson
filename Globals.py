@@ -5,7 +5,7 @@ is_with_transfer = False
 
 # employees
 time_to_ignore_employee = 1
-emloyees_to_ignore= ["hasna","rami","meird"]
+employees_to_ignore= ["hasana", "rami", "meird"]
 
 # prioraty
 alpha = 0.9  # weight for current amount of line distributed
