@@ -1008,6 +1008,7 @@ def init_amount_of_lines_in_schedule_per_emp(schedule, employees):
 
 
 def allocate_tasks_to_employees_v2(tasks, schedule, employees):
+    sorted_tasks = sorted(tasks, key= lambda x: x.priority)
     pasts = init_amount_of_lines_in_schedule_per_emp(schedule, employees)
 
     # 4. בתוך כל קבוצה (חזקים וחלשים) למשקל את העובדים לפי נתוני העבר וכמות השורות שקיבלו-למיין מהקטן לגדול. כלומר מי שלא קיבל עדיין הקצאה יהיה לו משקל נמוך יותר ומי שקיבל שורות בהקצאה הנוכחית הציון שלו עולה -  הוגנות מול יעילות
@@ -1017,38 +1018,13 @@ def allocate_tasks_to_employees_v2(tasks, schedule, employees):
     for employee in employees:
         presents[employee.id_] = 0
 
-    for task in tasks:
+    for task in sorted_tasks:
         for employee in employees:
             employee.distribution_grade = (1 - alpha) * pasts[employee.id_] + (alpha) * presents[employee.id_]
 
         min_emp = min(employees, key=lambda x: x.distribution_grade)
         schedule[min_emp.id_].append(task)
         presents[min_emp.id_] = presents[min_emp.id_] + task.amount_of_lines
-
-        # min_amount_of_tasks = min(grade_to_distribute.values())
-        # for employee in employees
-        #
-        # if (len(employees_lines_amount_up_to_now_normalized) > 0):  # TODO @BEN
-        #
-        #     employees_with_min_tasks = []
-        #     for employee in employees:
-        #         if grade_to_distribute[employee.id_] == min_amount_of_tasks:
-        #             employees_with_min_tasks.append(employee)
-        #
-        #     employee_selected = max(employees_with_min_tasks, key=lambda x: x.abilities[ability_str])
-        #     schedule[employee_selected.id_].append(task)
-        #     amount_of_lines_in_schedule_per_emp[employee_selected.id_] = amount_of_lines_in_schedule_per_emp[
-        #                                                                      employee_selected.id_] + task.amount_of_lines
-        #     max_lines_distribute_in_schedule = max(amount_of_lines_in_schedule_per_emp.values())
-        #     for employee in employees:
-        #         id_ = employee.id_
-        #         if max_lines_distribute_in_schedule != 0:
-        #             grade_to_distribute[id_] = employees_lines_amount_up_to_now_normalized[id_] + (
-        #                         amount_of_lines_in_schedule_per_emp[
-        #                             employee_selected.id_] / max_lines_distribute_in_schedule)
-
-        # employees_lines_amount_up_to_now_normalized[employee_selected.id_] = employees_lines_amount_up_to_now_normalized[employee_selected.id_] + task.amount_of_lines
-
 
 def init_schedule(employees):
     schedule = {}
