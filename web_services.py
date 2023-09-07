@@ -36,11 +36,24 @@ def get_stock2():
 
 # read open tasks
 def get_wtasks():
+    names_to_ignore = "(DOERLOGIN ne 'dimitri' and DOERLOGIN ne 'ליאור א' and  DOERLOGIN ne 'דסה' and  DOERLOGIN ne 'menashe'"
+    if len(employees_to_ignore)>0:
+        names_to_ignore +=" and "
+        i = 0
+        for name in employees_to_ignore:
+            names_to_ignore +="DOERLOGIN ne '"+name +"'"
+            i+=1
+            if i==len(employees_to_ignore):
+                names_to_ignore+=""
+            else:
+                names_to_ignore += " and "
+    names_to_ignore+=")"
+    print(names_to_ignore)
     # url = host +"WTASKS?$select=STZONECODE,WTASKNUM,PRIO,DOERLOGIN,STATDES,ADCSTARTED,WTASKTYPECODE,MEND_PRIO2,ADCSUDATE&$filter=WARHSNAME eq '500' and(STZONECODE eq 'C1' or STZONECODE eq 'W1' or STZONECODE eq 'W2') and DOERLOGIN ne 'dimitri' and (STATDES eq 'לביצוע' or STATDES eq 'מושהה') and (WTASKTYPECODE eq 'PIK' or WTASKTYPECODE eq 'RPI' or WTASKTYPECODE eq 'RPL' or WTASKTYPECODE eq 'MOV' or WTASKTYPECODE eq 'PUT')&$expand=WTASKITEMS_SUBFORM($select=PARTNAME, LOCNAME, PTQUANT,KLINE)"
     # url = host +"WTASKS?$select=STZONECODE,WTASKNUM,PRIO,DOERLOGIN,STATDES,ADCSTARTED,WTASKTYPECODE,MEND_PRIO2,ADCSUDATE&$filter=WARHSNAME eq '500' and CDES ne 'סניף*' and(STZONECODE eq 'C1' or STZONECODE eq 'W1' or STZONECODE eq 'W2') and DOERLOGIN ne 'dimitri' and (STATDES eq 'לביצוע' or STATDES eq 'מושהה') and (WTASKTYPECODE eq 'PIK' or WTASKTYPECODE eq 'RPI' or WTASKTYPECODE eq 'RPL' or WTASKTYPECODE eq 'MOV' or WTASKTYPECODE eq 'PUT') and ADCSTARTED ne 'Y'&$expand=WTASKITEMS_SUBFORM($select=PARTNAME, LOCNAME, PTQUANT,KLINE)"
     url = host + "WTASKS?$select=STZONECODE,WTASKNUM,PRIO,DOERLOGIN,STATDES,ADCSTARTED,WTASKTYPECODE,MEND_PRIO2,ADCSUDATE,CDES" \
                  "&$filter=WARHSNAME eq '500' and(STZONECODE eq 'C1' or STZONECODE eq 'W1' or STZONECODE eq 'W2' or STZONECODE eq 'A2') " \
-                 "and (DOERLOGIN ne 'dimitri' and DOERLOGIN ne 'ליאור א' and  DOERLOGIN ne 'דסה' and  DOERLOGIN ne 'menashe' and  DOERLOGIN ne 'meirg') " \
+                 "and"+names_to_ignore+ \
                  "and (STATDES eq 'לביצוע' or STATDES eq 'מושהה') and (WTASKTYPECODE eq 'PIK' or WTASKTYPECODE eq 'RPI' or WTASKTYPECODE eq 'RPL' or WTASKTYPECODE eq 'MOV') " \
                  "and ADCSTARTED ne 'Y'&$expand=WTASKITEMS_SUBFORM($select=PARTNAME, LOCNAME, PTQUANT,KLINE)"
 
@@ -74,7 +87,7 @@ def get_old_tasks():
                 names_to_ignore+=")"
             else:
                 names_to_ignore += " and "
-    print(names_to_ignore)
+    #print(names_to_ignore)
     url = host + "WTASKS?$select=STZONECODE,WTASKNUM,PRIO,DOERLOGIN,STATDES,ADCSTARTED,WTASKTYPECODE,MEND_PRIO2,ADCSUSERLOGIN,ADCSUDATE,ADCFUDATE,LINES" \
                  "&$filter=ADCSUDATE ge " + date + "T00:00:00%2B03:00 " \
                                                    "and(WTASKTYPECODE eq 'PIK' or WTASKTYPECODE eq 'RPI' or WTASKTYPECODE eq 'RPL' or WTASKTYPECODE eq 'MOV' or WTASKTYPECODE eq 'PUT') " \
