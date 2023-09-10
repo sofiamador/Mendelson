@@ -1,11 +1,11 @@
 # snifim
-is_with_store = False
+is_with_store = True
 # transfer
 is_with_transfer = False
 
 # employees
 time_to_ignore_employee = 1
-employees_to_ignore= ["hasana", "rami", "meird","meirg"]
+employees_to_ignore= ["hasana", "rami"]
 
 # prioraty
 alpha = 0.9  # weight for current amount of line distributed
