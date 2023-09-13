@@ -77,6 +77,13 @@ while True:
         allocate_pick_height_orders(all_pick_height_orders, schedule_pick_height, employees_pick_height)
     if len(employees_jack) != 0:
         allocate_pick_jack_orders(all_pick_jack_orders, schedule_jack, employees_jack)
+    # TODO add secondary sort according to amount of lines
+    # create common function for jack and pick allocations
+    # first allocate for every jack employee at most 2 tasks
+    #  sort pick tasks
+    # choose which task to allocate to pick employee according to priority at the head of the list of ordered tasks
+    # continue iterating over pick employees until each employee has 2 allocated tasks
+    # back to jack employees (only with jack tasks) until each employees has 3 allocated tasks...
 
     for e, tasks in schedule_pick.items():
         schedule[e] = sorted(tasks, key=lambda x: x.priority)

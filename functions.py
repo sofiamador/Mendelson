@@ -1008,7 +1008,7 @@ def init_amount_of_lines_in_schedule_per_emp(schedule, employees):
 
 
 def allocate_tasks_to_employees_v2(tasks, schedule, employees):
-    sorted_tasks = sorted(tasks, key= lambda x: x.priority)
+    sorted_tasks = sorted(tasks, key= lambda x: x.priority) #TODO add secondary sort according to amount of lines
     pasts = init_amount_of_lines_in_schedule_per_emp(schedule, employees)
 
     # 4. בתוך כל קבוצה (חזקים וחלשים) למשקל את העובדים לפי נתוני העבר וכמות השורות שקיבלו-למיין מהקטן לגדול. כלומר מי שלא קיבל עדיין הקצאה יהיה לו משקל נמוך יותר ומי שקיבל שורות בהקצאה הנוכחית הציון שלו עולה -  הוגנות מול יעילות
