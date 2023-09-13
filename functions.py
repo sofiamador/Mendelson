@@ -1299,10 +1299,33 @@ def allocate_tasks_to_employees_pick_and_jack_after_min(tasks_jack, tasks_pick, 
             presents_jack[min_emp.id_] = presents_jack[min_emp.id_] + task.amount_of_lines
 
 
+def get_jack_task_to_remove(schedule_jack):
+    ans = []
+    for list_of_tasks in schedule_jack.values():
+        ans+=list_of_tasks
+    return ans
+
+
+def check_if_task_need_to_remove(task, jack_task_to_remove):
+    for task_in_remove in jack_task_to_remove:
+        if task_in_remove.order_id == task.order_id:
+            return True
+    return False
+
+
+def filter_jack_tasks(tasks_jack, jack_task_to_remove):
+    ans = []
+    for task in tasks_jack:
+        if not check_if_task_need_to_remove(task, jack_task_to_remove):
+            ans.append(task)
+
+    return ans
+
 def allocate_tasks_to_employees_pick_and_jack(tasks_jack, tasks_pick, employees_jack, employees_pick, schedule_jack,
                                               schedule_pick):
     allocate_min_amount_of_jack_tasks (tasks_jack,employees_jack,schedule_jack)
-
+    jack_task_to_remove = get_jack_task_to_remove(schedule_jack)
+    tasks_jack = filter_jack_tasks(tasks_jack,jack_task_to_remove)
     allocate_tasks_to_employees_pick_and_jack_after_min(tasks_jack, tasks_pick, employees_jack, employees_pick, schedule_jack,
                                               schedule_pick)
 
