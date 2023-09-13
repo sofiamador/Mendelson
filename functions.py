@@ -1209,22 +1209,7 @@ def is_allocate_together_pick_and_jack(employees_pick, employees_jack):
     #     presents[min_emp.id_] = presents[min_emp.id_] + task.amount_of_lines
 
 
-def allocate_jack_tasks_to_jack_employees(jack_orders, schedule, employees_jack,min_number_of_tasks_for_employee):
-    cumulative_distribution_function(jack_orders)
-    skilled_employees, other_employees = get_employees_by_cut_off(employees_jack,
-                                                                  jack_employee_grade_cut_off, "jack")
-    orders_for_skilled, orders_for_other, orders_to_fix = cut_orders_by_skill(jack_orders, skilled_employees,
-                                                                              other_employees)
 
-    fix_if_one_group_is_empty(skilled_employees, other_employees, orders_for_skilled, orders_for_other)
-
-
-
-    if len(skilled_employees) != 0:
-        allocate_tasks_to_employees_v3(orders_for_skilled, schedule, skilled_employees,min_number_of_tasks_for_employee)
-    if len(other_employees) != 0:
-        allocate_tasks_to_employees_v3(orders_for_other, schedule, other_employees,min_number_of_tasks_for_employee)
-    use_list_of_order_to_fix_for_balance(schedule, orders_to_fix)
 
 
 #def allocate_tasks_to_pick_employees(all_pick_jack_orders, all_pick_orders, schedule_pick, employees_pick):
@@ -1317,6 +1302,7 @@ def allocate_tasks_to_employees_pick_and_jack_after_min(tasks_jack, tasks_pick, 
 def allocate_tasks_to_employees_pick_and_jack(tasks_jack, tasks_pick, employees_jack, employees_pick, schedule_jack,
                                               schedule_pick):
     allocate_min_amount_of_jack_tasks (tasks_jack,employees_jack,schedule_jack)
+
     allocate_tasks_to_employees_pick_and_jack_after_min(tasks_jack, tasks_pick, employees_jack, employees_pick, schedule_jack,
                                               schedule_pick)
 
@@ -1338,7 +1324,7 @@ def allocate_pick_and_jack_orders(all_pick_jack_orders, all_pick_orders: list, s
     cumulative_distribution_function(all_pick_jack_orders)
     skilled_employees_jack, other_employees_jack = get_employees_by_cut_off(employees_jack, jack_employee_grade_cut_off, "jack")
     orders_for_skilled_jack, orders_for_other_jack, orders_to_fix_jack = cut_orders_by_skill(all_pick_jack_orders, skilled_employees_jack, other_employees_jack)
-    orders_for_skilled_jack=orders_for_skilled_jack+orders_for_skilled_jack
+    orders_for_skilled_jack=orders_for_skilled_jack+orders_to_fix_jack
     fix_if_one_group_is_empty(skilled_employees_jack, other_employees_jack, orders_for_skilled_jack, orders_for_other_jack)
     #####################
 
