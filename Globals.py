@@ -23,3 +23,4 @@ pick_height_employee_grade_cut_off = 0
 jack_employee_grade_cut_off = 0
 tail_percantage_to_reallocate = 0.10
 max_hour_to_ignore_noon = 13
+min_amount_of_jack_tasks = 2

@@ -920,8 +920,8 @@ def get_order_by_ability(lines_after_gal_by_order):
         else:
             for line in lines:
                 warehouse_id = line.location.warehouse_id
-                if warehouse_id == "C1" or warehouse_id == "D" :
-                    line.location.warehouse_id="C"
+                if warehouse_id == "C1" or warehouse_id == "D":
+                    line.location.warehouse_id = "C"
                     order_pick_lines.append(line)
                 else:
                     order_pick_height_lines.append(line)
@@ -1008,7 +1008,7 @@ def init_amount_of_lines_in_schedule_per_emp(schedule, employees):
 
 
 def allocate_tasks_to_employees_v2(tasks, schedule, employees):
-    sorted_tasks = sorted(tasks, key= lambda x: x.priority) #TODO add secondary sort according to amount of lines
+    sorted_tasks = sorted(tasks, key=lambda x: x.priority)  # TODO add secondary sort according to amount of lines
     pasts = init_amount_of_lines_in_schedule_per_emp(schedule, employees)
 
     # 4. בתוך כל קבוצה (חזקים וחלשים) למשקל את העובדים לפי נתוני העבר וכמות השורות שקיבלו-למיין מהקטן לגדול. כלומר מי שלא קיבל עדיין הקצאה יהיה לו משקל נמוך יותר ומי שקיבל שורות בהקצאה הנוכחית הציון שלו עולה -  הוגנות מול יעילות
@@ -1025,6 +1025,7 @@ def allocate_tasks_to_employees_v2(tasks, schedule, employees):
         min_emp = min(employees, key=lambda x: x.distribution_grade)
         schedule[min_emp.id_].append(task)
         presents[min_emp.id_] = presents[min_emp.id_] + task.amount_of_lines
+
 
 def init_schedule(employees):
     schedule = {}
@@ -1150,8 +1151,6 @@ def allocate_pick_orders(pick_orders, schedule, employees_pick):
                                                                               )
     fix_if_one_group_is_empty(skilled_employees, other_employees, orders_for_skilled, orders_for_other)
 
-
-
     allocate_tasks_to_employees_v2(tasks=orders_for_skilled, schedule=schedule, employees=skilled_employees)
     allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees)
 
@@ -1183,6 +1182,65 @@ def fix_if_one_group_is_empty(skilled_employees, other_employees, orders_for_ski
     if len(other_employees) == 0:
         orders_for_skilled.extend(orders_for_other)
 
+
+def is_allocate_together_pick_and_jack(employees_pick, employees_jack):
+    return (len(employees_pick) != 0 and len(employees_jack) != 0) or (
+                len(employees_pick) != 0 and len(employees_jack) == 0)
+
+# TODO BEN allocate minimum amount to jack
+def allocate_tasks_to_employees_v3(tasks, schedule, employees,min_number_of_tasks_for_employee):
+    # sorted_tasks = sorted(tasks, key=lambda x: x.priority)  # TODO add secondary sort according to amount of lines
+    # pasts = init_amount_of_lines_in_schedule_per_emp(schedule, employees)
+    #
+    # # 4. בתוך כל קבוצה (חזקים וחלשים) למשקל את העובדים לפי נתוני העבר וכמות השורות שקיבלו-למיין מהקטן לגדול. כלומר מי שלא קיבל עדיין הקצאה יהיה לו משקל נמוך יותר ומי שקיבל שורות בהקצאה הנוכחית הציון שלו עולה -  הוגנות מול יעילות
+    #
+    # presents = {}
+    #
+    # for employee in employees:
+    #     presents[employee.id_] = 0
+    #
+    # for task in sorted_tasks:
+    #     for employee in employees:
+    #         employee.distribution_grade = (1 - alpha) * pasts[employee.id_] + (alpha) * presents[employee.id_]
+    #
+    #     min_emp = min(employees, key=lambda x: x.distribution_grade)
+    #     schedule[min_emp.id_].append(task)
+    #     presents[min_emp.id_] = presents[min_emp.id_] + task.amount_of_lines
+
+
+def allocate_jack_tasks_to_jack_employees(jack_orders, schedule, employees_jack,min_number_of_tasks_for_employee):
+    cumulative_distribution_function(jack_orders)
+    skilled_employees, other_employees = get_employees_by_cut_off(employees_jack,
+                                                                  jack_employee_grade_cut_off, "jack")
+    orders_for_skilled, orders_for_other, orders_to_fix = cut_orders_by_skill(jack_orders, skilled_employees,
+                                                                              other_employees)
+
+    fix_if_one_group_is_empty(skilled_employees, other_employees, orders_for_skilled, orders_for_other)
+
+    if len(skilled_employees) != 0:
+        allocate_tasks_to_employees_v3(orders_for_skilled, schedule, skilled_employees,min_number_of_tasks_for_employee)
+    if len(other_employees) != 0:
+        allocate_tasks_to_employees_v3(orders_for_other, schedule, other_employees,min_number_of_tasks_for_employee)
+    use_list_of_order_to_fix_for_balance(schedule, orders_to_fix)
+
+
+def allocate_tasks_to_pick_employees(all_pick_jack_orders, all_pick_orders, schedule_pick, employees_pick):
+    pass
+
+
+def allocate_pick_and_jack_orders(all_pick_jack_orders, all_pick_orders: list, schedule_jack, schedule_pick,
+                                      employees_jack, employees_pick):
+    min_number_of_tasks_for_employee = min_amount_of_jack_tasks
+    
+    if(len(employees_jack)==0): # edge case when the lost of jack employees is empty
+        all_pick_orders.extend(all_pick_jack_orders)
+        allocate_pick_orders(all_pick_orders, schedule_pick, employees_pick)
+        return 
+    allocate_jack_tasks_to_jack_employees(all_pick_jack_orders,schedule_jack,employees_jack,min_number_of_tasks_for_employee)
+    allocate_tasks_to_pick_employees(all_pick_jack_orders,all_pick_orders,schedule_pick,employees_pick)
+    #can not take tasks from jack orders in area a2
+    
+    
 
 def allocate_pick_jack_orders(jack_orders, schedule, employees_jack):
     cumulative_distribution_function(jack_orders)
