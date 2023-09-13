@@ -85,13 +85,7 @@ while True:
         allocate_pick_height_orders(all_pick_height_orders, schedule_pick_height, employees_pick_height)
 
     # TODO add secondary sort according to amount of lines
-    # create common function for jack and pick allocations
-    # first allocate for every jack employee at most 2 tasks
-    #  sort pick tasks
-    # choose which task to allocate to pick employee according to priority at the head of the list of ordered tasks
-    # continue iterating over pick employees until each employee has 2 allocated tasks
-    # back to jack employees (only with jack tasks) until each employees has 3 allocated tasks...
-    # make sure that if there are no jack employees it all goes to jack
+
     for e, tasks in schedule_pick.items():
         schedule[e] = sorted(tasks, key=lambda x: x.priority)
 
@@ -103,7 +97,7 @@ while True:
 
     # patch -  allocate tasks to employees
     print("before: ",datetime.datetime.now())
-    patch_update_allocation(schedule)
+    #patch_update_allocation(schedule)
     print("after: ", datetime.datetime.now())
 
     time.sleep(600)

@@ -1,7 +1,6 @@
 import csv
 import random, datetime
 import statistics
-from select import epoll
 
 import pandas as pd
 from Enteties import Line, TaskPick, StreetObj, Employee, Location, LineNoLocation, GroupOfItem, TaskTransfer, Order, \
@@ -1246,6 +1245,7 @@ def allocate_min_amount_of_jack_tasks(tasks_jack, employees_jack, schedule_jack)
     for task in sorted_tasks:
         min_emp = min(employees_jack,key=lambda x: x.amount_tasks_jack)
         schedule_jack[min_emp.id_].append(task)
+        min_emp.amount_tasks_jack+=1
         if allHaveMinAmount(employees_jack):
             break
 
@@ -1282,8 +1282,18 @@ def allocate_tasks_to_employees_pick_and_jack_after_min(tasks_jack, tasks_pick, 
     for employee in employees_pick:
         presents_pick[employee.id_] = 0
 
+
     all_tasks = tasks_jack+tasks_pick
-    sorted_all_tasks = sorted(all_tasks, key=lambda x: x.priority)
+
+    # Define sorting key
+    from operator import attrgetter
+    sorting_key = attrgetter('priority', 'warehouse_id')
+
+    # Sort tasks
+    sorted_all_tasks = sorted(all_tasks, key=sorting_key)
+
+
+    #sorted_all_tasks = sorted(all_tasks, key=lambda x: x.priority)
     for task in sorted_all_tasks:
         for employee in employees_pick:
             employee.distribution_grade = (1 - alpha) * pasts_pick[employee.id_] + (alpha) * presents_pick[employee.id_]
@@ -1291,8 +1301,7 @@ def allocate_tasks_to_employees_pick_and_jack_after_min(tasks_jack, tasks_pick, 
         for employee in employees_jack:
             employee.distribution_grade = (1 - alpha) * pasts_jack[employee.id_] + (alpha) * presents_jack[employee.id_]
 
-        warehouse_id = task.location.warehouse_id
-        relevant_emp = get_relevant_emp(warehouse_id,employees_jack,employees_pick)
+        relevant_emp = get_relevant_emp(task.warehouse_id,employees_jack,employees_pick)
         min_emp = min(relevant_emp, key=lambda x: x.distribution_grade)
 
 
@@ -1313,7 +1322,7 @@ def allocate_tasks_to_employees_pick_and_jack(tasks_jack, tasks_pick, employees_
 
 def allocate_pick_and_jack_orders(all_pick_jack_orders, all_pick_orders: list, schedule_jack, schedule_pick,
                                       employees_jack, employees_pick):
-    min_number_of_tasks_for_employee = min_amount_of_jack_tasks
+    #min_number_of_tasks_for_employee = min_amount_of_jack_tasks
 
     if(len(employees_jack)==0): # edge case when the lost of jack employees is empty
         all_pick_orders.extend(all_pick_jack_orders)
@@ -1323,11 +1332,13 @@ def allocate_pick_and_jack_orders(all_pick_jack_orders, all_pick_orders: list, s
     cumulative_distribution_function(all_pick_orders)
     skilled_employees_pick, other_employees_pick = get_employees_by_cut_off(employees_pick, pick_employee_grade_cut_off, "pick")
     orders_for_skilled_pick, orders_for_other_pick, orders_to_fix_pick = cut_orders_by_skill(all_pick_orders, skilled_employees_pick, other_employees_pick)
+    orders_for_skilled_pick =orders_for_skilled_pick+orders_to_fix_pick
     fix_if_one_group_is_empty(skilled_employees_pick, other_employees_pick, orders_for_skilled_pick, orders_for_other_pick)
 #####################
     cumulative_distribution_function(all_pick_jack_orders)
-    skilled_employees_jack, other_employees_jack = get_employees_by_cut_off(employees_jack, jack_employee_grade_cut_off, "pick")
+    skilled_employees_jack, other_employees_jack = get_employees_by_cut_off(employees_jack, jack_employee_grade_cut_off, "jack")
     orders_for_skilled_jack, orders_for_other_jack, orders_to_fix_jack = cut_orders_by_skill(all_pick_jack_orders, skilled_employees_jack, other_employees_jack)
+    orders_for_skilled_jack=orders_for_skilled_jack+orders_for_skilled_jack
     fix_if_one_group_is_empty(skilled_employees_jack, other_employees_jack, orders_for_skilled_jack, orders_for_other_jack)
     #####################
 
