@@ -1150,6 +1150,8 @@ def allocate_pick_orders(pick_orders, schedule, employees_pick):
                                                                               )
     fix_if_one_group_is_empty(skilled_employees, other_employees, orders_for_skilled, orders_for_other)
 
+
+
     allocate_tasks_to_employees_v2(tasks=orders_for_skilled, schedule=schedule, employees=skilled_employees)
     allocate_tasks_to_employees_v2(orders_for_other, schedule, other_employees)
 
