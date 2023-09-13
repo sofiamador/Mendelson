@@ -1190,7 +1190,7 @@ def is_allocate_together_pick_and_jack(employees_pick, employees_jack):
                 len(employees_pick) != 0 and len(employees_jack) == 0)
 
 # TODO BEN allocate minimum amount to jack
-def allocate_tasks_to_employees_v3(tasks, schedule, employees,min_number_of_tasks_for_employee):
+#def allocate_tasks_to_employees_v3(tasks, schedule, employees,min_number_of_tasks_for_employee):
     # sorted_tasks = sorted(tasks, key=lambda x: x.priority)  # TODO add secondary sort according to amount of lines
     # pasts = init_amount_of_lines_in_schedule_per_emp(schedule, employees)
     #
