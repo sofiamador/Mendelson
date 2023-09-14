@@ -97,7 +97,7 @@ while True:
 
     # patch -  allocate tasks to employees
     print("before: ",datetime.datetime.now())
-    patch_update_allocation(schedule)
+    #patch_update_allocation(schedule)
     print("after: ", datetime.datetime.now())
 
     time.sleep(600)

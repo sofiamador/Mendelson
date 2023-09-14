@@ -370,6 +370,7 @@ class Employee():
 
     def __init__(self, id_, role, first_pick, amount_of_lines, abilities={}):
         self.abilities = abilities
+        self.score = sum(abilities.values())
         # self.location = location
         # self.name = name
         self.id_ = id_
