@@ -1316,7 +1316,10 @@ def allocate_pick_and_jack_orders(all_pick_jack_orders, all_pick_orders: list, s
     # min_number_of_tasks_for_employee = min_amount_of_jack_tasks
 
     if (len(employees_jack) == 0):  # edge case when the lost of jack employees is empty
-        all_pick_orders.extend(all_pick_jack_orders)
+        for order in all_pick_jack_orders:
+            if order.warehouse_id == "D":
+                all_pick_orders.append(order)
+
         allocate_pick_orders(all_pick_orders, schedule_pick, employees_pick)
         return
     ###################
