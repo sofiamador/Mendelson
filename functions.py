@@ -1010,7 +1010,9 @@ def init_amount_of_lines_in_schedule_per_emp(schedule, employees):
 
 
 def calculate_distribution_grade(pasts, presents, employee_id_, employee_score):
-    x = ((1 - alpha) * (pasts[employee_id_]) + alpha * (presents[employee_id_]))*(10 - employee_score)**(0.8)
+    #x = ((1 - alpha) * (pasts[employee_id_]) + alpha * (presents[employee_id_]))*(10 - employee_score)**(0.8)
+    x = ((1 - alpha) * (pasts[employee_id_]) + alpha * (presents[employee_id_]))
+
     return x
 
 
