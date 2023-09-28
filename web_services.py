@@ -5,10 +5,7 @@ import datetime
 from Enteties import GroupOfOrders
 from Globals import *
 
-number_of_allocation_per_employee = 5
-#host = "https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/"  #test
-host = "https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/"  #main
-date = str(datetime.date.today())
+
 with open('auth.txt', 'r') as f:
     auth = f.read()
 

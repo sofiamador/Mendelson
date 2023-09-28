@@ -1,3 +1,6 @@
+import datetime
+
+
 # snifim
 is_with_store = True
 # transfer
@@ -6,6 +9,10 @@ is_with_transfer = False
 # employees
 time_to_ignore_employee = 1
 employees_to_ignore= ["hasana", "rami","meirg","chaimh"]
+number_of_allocation_per_employee = 5
+#host = "https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/"  #test
+host = "https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/"  #main
+date = str(datetime.date.today())
 
 # prioraty
 alpha = 0.9  # weight for current amount of line distributed
