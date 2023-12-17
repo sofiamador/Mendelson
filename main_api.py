@@ -2,8 +2,9 @@ from Enteties import StreetObj, TaskTransfer
 from functions import *
 from web_services import *
 import time, datetime
-try:
-    while True:
+
+while True:
+    try:
         # get old tasks
         old_task_data = get_old_tasks()
 
@@ -102,10 +103,11 @@ try:
         print("after: ", datetime.datetime.now())
 
         time.sleep(600)
-except:
-    HOUR = datetime.datetime.now().hour
-    if HOUR > 22 or HOUR < 7:
-        time.sleep(1800)
-    else:
-        time.sleep(600)
+    except:
+        hour = datetime.datetime.now().hour
+        if hour > 22 or hour < 7:
+            time.sleep(1800)
+        else:
+            time.sleep(600)
+
 
