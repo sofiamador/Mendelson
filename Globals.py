@@ -12,7 +12,6 @@ employees_to_ignore= ["hasana", "rami","meirg","chaimh","gavriel"]
 number_of_allocation_per_employee = 5
 #host = "https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/"  #test
 host = "https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/"  #main
-date = str(datetime.date.today())
 
 # prioraty
 alpha = 0.9  # weight for current amount of line distributed

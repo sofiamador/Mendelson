@@ -73,6 +73,7 @@ def get_wtasks2():
 
 
 def get_old_tasks():
+    date = str(datetime.date.today())
     names_to_ignore = ""
     if len(employees_to_ignore)>0:
         names_to_ignore ="and("

@@ -4,13 +4,13 @@ from web_services import *
 import time, datetime
 
 while True:
-    try:
-        # get old tasks
-        old_task_data = get_old_tasks()
+    # get old tasks
+    old_task_data = get_old_tasks()
 
-        # read employees input and create employees
-        employees_data = read_input("employees.xlsx")
-        employees = create_employees(employees_data, old_task_data)
+    # read employees input and create employees
+    employees_data = read_input("employees.xlsx")
+    employees = create_employees(employees_data, old_task_data)
+    if (len(employees) != 0):
         employees_pick_height, employees_pick, employees_transfer, employees_jack = get_employees_by_skill(employees)
         schedule = init_schedule(employees)
 
@@ -31,13 +31,11 @@ while True:
 
             inventory_no_c = clear_c_from_inventory_dict(inventory_dict)
             transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_no_c, refresh_ids)
-            if len(transfer_tasks) > 0 and len(employees_pick_height) > 1 :
+            if len(transfer_tasks) > 0 and len(employees_pick_height) > 1:
                 print("transfer" + str(len(transfer_tasks)))
                 if len(employees_transfer) == 0:
-                    employees_transfer.append(pick_employee_for_transfer(employees_pick_height,employees_data))
+                    employees_transfer.append(pick_employee_for_transfer(employees_pick_height, employees_data))
                 allocate_tasks_to_employees(transfer_tasks, schedule, employees_transfer, "transfer")
-
-
 
                 # post - transfer tasks (api)
                 post_transfer_tasks(schedule)
@@ -55,7 +53,7 @@ while True:
         lines_after_gal_by_order = get_lines_by_order_v2(lines)
         lines_after_gal_by_order = filter_orders_that_have_lines_with_items_from_list(lines_after_gal_by_order,
                                                                                       item_ids_in_transfer)
-        lines_after_gal_by_order = filter_first_allocated_orders(lines_after_gal_by_order,employees,schedule)
+        lines_after_gal_by_order = filter_first_allocated_orders(lines_after_gal_by_order, employees, schedule)
         pick_orders, pick_height_orders, pick_jack_orders = get_order_by_ability(lines_after_gal_by_order)
 
         #################### create unit one line orders #################### create unit one line orders
@@ -73,7 +71,7 @@ while True:
         #################### create unit one line orders ####################
         schedule_pick, schedule_pick_height, schedule_jack = get_schedule_by_skill(schedule, employees_pick_height,
                                                                                    employees_pick, employees_jack)
-        if is_allocate_together_pick_and_jack(employees_pick,employees_jack):
+        if is_allocate_together_pick_and_jack(employees_pick, employees_jack):
             allocate_pick_and_jack_orders(all_pick_jack_orders, all_pick_orders, schedule_jack, schedule_pick,
                                           employees_jack, employees_pick)
         else:
@@ -98,16 +96,8 @@ while True:
             schedule[e] = sorted(tasks, key=lambda x: x.priority)
 
         # patch -  allocate tasks to employees
-        print("before: ",datetime.datetime.now())
+        print("before: ", datetime.datetime.now())
         patch_update_allocation(schedule)
         print("after: ", datetime.datetime.now())
 
-        time.sleep(600)
-    except:
-        hour = datetime.datetime.now().hour
-        if hour > 22 or hour < 7:
-            time.sleep(1800)
-        else:
-            time.sleep(600)
-
-
+    time.sleep(600)
