@@ -6,9 +6,8 @@ import time, datetime
 while True:
     # get old tasks
     old_task_data = get_old_tasks()
-
     # read employees input and create employees
-    employees_data = read_input("employees.xlsx")
+    employees_data = get_emplpoyees()
     employees = create_employees(employees_data, old_task_data)
     if (len(employees) != 0):
         employees_pick_height, employees_pick, employees_transfer, employees_jack = get_employees_by_skill(employees)
@@ -57,6 +56,7 @@ while True:
         pick_orders, pick_height_orders, pick_jack_orders = get_order_by_ability(lines_after_gal_by_order)
 
         #################### create unit one line orders #################### create unit one line orders
+
         pick_orders_one_line = break_orders_one_line(pick_orders)
         all_pick_orders = pick_orders_one_line + pick_orders
 

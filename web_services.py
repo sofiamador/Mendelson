@@ -9,6 +9,18 @@ from Globals import *
 with open('auth.txt', 'r') as f:
     auth = f.read()
 
+def get_emplpoyees():
+    url = host + "MEND_USERSCHEDULE"
+
+    payload = {}
+    headers = {
+        'Authorization': auth
+    }
+
+    response = requests.request("GET", url, headers=headers, data=payload)
+
+    return json.loads(response.text)["value"]
+
 
 def get_stock():
     url = host + "PARTBAL?$select=PARTNAME, LOCNAME, STZONECODE,BALANCE,ACTNAME&$filter=WARHSNAME eq '500' and (STZONECODE eq 'C1' or STZONECODE eq 'W1' or STZONECODE eq 'W2') and BALANCE ne 0 AND CUSTNAME eq 'Goods'"
@@ -324,3 +336,7 @@ def patch_upadate_location_for_items(schedule):
                 f.write(url + "\n")
                 f.write(str(payload) + "\n")
     f.close()
+
+
+print(get_emplpoyees())
+
