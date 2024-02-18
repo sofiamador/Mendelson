@@ -8,8 +8,9 @@ while True:
     old_task_data = get_old_tasks()
 
     # read employees input and create employees
-    employees_data = read_input("employees.xlsx")
-    employees = create_employees(employees_data, old_task_data)
+    #employees_data = read_input("employees.xlsx")
+    employees_data = get_employees()
+    employees = create_employees2(employees_data, old_task_data)
     if (len(employees) != 0):
         employees_pick_height, employees_pick, employees_transfer, employees_jack = get_employees_by_skill(employees)
         schedule = init_schedule(employees)

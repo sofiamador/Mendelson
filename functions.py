@@ -546,6 +546,73 @@ def create_employees(employees_data, old_tasks_data):
 
     return employees_
 
+def create_employees2(employees_data, old_tasks_data):
+    lines_per_employee, times_per_employee, role_per_employee = create_employees_lines_dic(old_tasks_data)
+    employees_ = []
+    HOUR = datetime.datetime.now().hour  # the current hour
+    MINUTE = datetime.datetime.now().minute  # the current minute
+    tnow = HOUR + (MINUTE / 60)
+
+    # HOUR = 11
+    # MINUTE = 30
+    # tnow = HOUR + (MINUTE/60)
+
+    start_time_dict = {}
+    for ind in employees_data.index:
+        employee_id = employees_data['שם מלא'][ind]
+        # role = employees_data['תפקיד'][ind]
+        if employee_id not in role_per_employee:
+            continue
+        role = role_per_employee[employee_id]
+        pick_grade = int(employees_data['ליקוט'][ind])
+        transfer_grade = int(employees_data['רענון'][ind])
+        pick_height_grade = int(employees_data['גובה'][ind])
+        jack_grade = int(employees_data['גק'][ind])
+        if jack_grade > 0:
+            role = "jack"
+        start_time = times_per_employee[employee_id].split(":")  # float(employees_data['שעת_התחלה'][ind])
+        start_time = int(start_time[0]) + int(start_time[1]) / 60
+        amount_of_lines = lines_per_employee.get(employee_id, 0)
+        abilities = {}
+        if pick_grade != 0 and role == "pick":
+            abilities["pick"] = pick_grade
+        if transfer_grade != 0 and role == "transfer":
+            abilities["transfer"] = transfer_grade
+        if pick_height_grade != 0 and role == "pick_height":
+            abilities["pick_height"] = pick_height_grade
+        if jack_grade != 0 and role == "jack":
+            abilities["jack"] = jack_grade
+
+        employee = Employee(id_=employee_id, abilities=abilities, role=role, first_pick=start_time,
+                            amount_of_lines=amount_of_lines)
+        employee.update_amount_of_lines_in_shift_per_hour(tnow)
+        employees_.append(employee)
+
+        if start_time not in start_time_dict.keys():
+            start_time_dict[start_time] = []
+        start_time_dict[start_time].append(employee)
+
+    if 12 <= HOUR <= max_hour_to_ignore_noon:  # ASK BEN
+        min_start_time = min(start_time_dict.keys())
+        max_start_time = max(start_time_dict.keys())
+
+        employees_min = start_time_dict[min_start_time]
+        dict_ability_avg = calculate_average_lines_per_hour(employees_min)
+
+        employees_max = start_time_dict[max_start_time]
+        for employee in employees_max:
+            if 'pick' in employee.abilities.keys():
+                employee.amount_of_lines_in_shift_per_hour = dict_ability_avg['pick']
+            elif "pick_height" in employee.abilities.keys():
+                employee.amount_of_lines_in_shift_per_hour = dict_ability_avg["pick_height"]
+            else:
+                employee.amount_of_lines_in_shift_per_hour = dict_ability_avg["transfer"]
+
+            # else:
+            #    raise Exception("something is wrong with abilities")
+
+    return employees_
+
 
 def get_random_schedule(employees, pick_tasks, transfer_tasks):
     schedule = {}
