@@ -336,3 +336,4 @@ def patch_upadate_location_for_items(schedule):
                 f.write(str(payload) + "\n")
     f.close()
 
+#print(get_employees())

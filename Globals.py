@@ -12,7 +12,7 @@ employees_to_ignore= ["hasana", "rami","meirg","chaimh","gavriel"]
 number_of_allocation_per_employee = 5
 #host = "https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/"  #test
 host = "https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/"  #main
-
+roles={"גק":"jack","מלקט":"pick","היגש":"pick_height","רענון":"transfer"}
 # prioraty
 alpha = 0.9  # weight for current amount of line distributed
 # create_transfer
@@ -30,3 +30,4 @@ jack_employee_grade_cut_off = 0
 tail_percantage_to_reallocate = 0.10
 max_hour_to_ignore_noon = 13
 min_amount_of_jack_tasks = 2
+
