@@ -43,7 +43,7 @@ def get_stock2():
     return json.loads(text)["value"]
 
 # read open tasks
-def get_wtasks():
+def get_wtasks(employees_to_ignore):
     names_to_ignore = ""
     if len(employees_to_ignore)>0:
         names_to_ignore = "("
@@ -83,7 +83,7 @@ def get_wtasks2():
     return json.loads(text)["value"]
 
 
-def get_old_tasks():
+def get_old_tasks(employees_to_ignore):
     date = str(datetime.date.today())
     names_to_ignore = ""
     if len(employees_to_ignore)>0:

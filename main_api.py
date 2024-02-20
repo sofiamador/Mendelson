@@ -3,20 +3,20 @@ from functions import *
 from web_services import *
 import time, datetime
 
+employees_to_ignore=[]
 while True:
     # get old tasks
-    old_task_data = get_old_tasks()
-
+    old_task_data = get_old_tasks(employees_to_ignore)
     # read employees input and create employees
     #employees_data = read_input("employees.xlsx")
     employees_data = get_employees()
-    employees = create_employees(employees_data, old_task_data)
+    employees,employees_to_ignore = create_employees(employees_data, old_task_data)
     if (len(employees) != 0):
         employees_pick_height, employees_pick, employees_transfer, employees_jack = get_employees_by_skill(employees)
         schedule = init_schedule(employees)
 
         # get wtasks
-        lines_input = get_wtasks()
+        lines_input = get_wtasks(employees_to_ignore)
         lines, refresh_ids = create_lines_from_json_after_gal(lines_input)
 
         # Use the filter() function to filter out lines with is_store set to False

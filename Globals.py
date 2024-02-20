@@ -8,7 +8,6 @@ is_with_transfer = False
 
 # employees
 time_to_ignore_employee = 1
-employees_to_ignore= []
 number_of_allocation_per_employee = 5
 #host = "https://menprime.mendelson.co.il/odata/Priority/tabula.ini/a121204/"  #test
 host = "https://priweb.mendelson.co.il/odata/Priority/tabula.ini/a121204/"  #main

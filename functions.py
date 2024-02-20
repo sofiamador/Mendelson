@@ -470,7 +470,7 @@ def create_employees(employees_data, old_tasks_data):
     MINUTE = datetime.datetime.now().minute  # the current minute
     tnow = HOUR + (MINUTE / 60)
 
-
+    employees_to_ignore = []
     start_time_dict = {}
     for employee in employees_data:
         is_not_working = employee["NOTSCHEDULE"]
@@ -531,7 +531,7 @@ def create_employees(employees_data, old_tasks_data):
             # else:
             #    raise Exception("something is wrong with abilities")
 
-    return employees_
+    return employees_,employees_to_ignore
 
 
 
