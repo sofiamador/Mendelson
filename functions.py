@@ -475,6 +475,7 @@ def create_employees(employees_data, old_tasks_data):
     for employee in employees_data:
         is_not_working = employee["NOTSCHEDULE"]
         if(is_not_working=="Y"):
+            employees_to_ignore.append(employee["USERLOGIN"])
             continue
         employee_id = employee["USERLOGIN"]
         # role = employees_data['תפקיד'][ind]
