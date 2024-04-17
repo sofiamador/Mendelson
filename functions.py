@@ -132,31 +132,15 @@ def check_time(employee_line, employee_start_times, employee_roles, employee_las
 def create_employees_lines_dic(old_task_data):
     employee_line = {}
     employee_start_times = {}
-    employee_last_times = {}
-    employee_roles = {}
     for task in old_task_data:
         name = task['DOERLOGIN']
         count_of_lines = task['LINES']
         s_time = task['ADCSUDATE'].split("T")[1].split("+")[0][:5]
-        end_time = task['ADCFUDATE']
-        type_task = task['WTASKTYPECODE']
-        zone = task["STZONECODE"]
-
-        role = check_role(type_task, zone)
-        if end_time == None:
-            if name not in employee_last_times or (name in employee_last_times and employee_last_times[name] < s_time):
-                employee_last_times[name] = s_time
-                employee_roles[name] = role
-        else:
-            end_time = end_time.split("T")[1].split("+")[0][:5]
-            if employee_last_times.get(name, "00:00") < end_time:
-                employee_last_times[name] = end_time
-                employee_roles[name] = role
         employee_line[name] = employee_line.get(name, 0) + count_of_lines
         if employee_start_times.get(name, "99:99") > s_time:
             employee_start_times[name] = s_time
-
-    return check_time(employee_line, employee_start_times, employee_roles, employee_last_times)
+    return employee_line, employee_start_times
+    #return check_time(employee_line, employee_start_times)
 
 
 def create_lines_before_gal(lines_input_):
@@ -480,31 +464,34 @@ def calculate_average_lines_per_hour(employees):
 
 
 def create_employees(employees_data, old_tasks_data):
-    lines_per_employee, times_per_employee, role_per_employee = create_employees_lines_dic(old_tasks_data)
+    lines_per_employee, times_per_employee= create_employees_lines_dic(old_tasks_data)
     employees_ = []
     HOUR = datetime.datetime.now().hour  # the current hour
     MINUTE = datetime.datetime.now().minute  # the current minute
     tnow = HOUR + (MINUTE / 60)
 
-    # HOUR = 11
-    # MINUTE = 30
-    # tnow = HOUR + (MINUTE/60)
-
+    employees_to_ignore = []
     start_time_dict = {}
-    for ind in employees_data.index:
-        employee_id = employees_data['שם מלא'][ind]
-        # role = employees_data['תפקיד'][ind]
-        if employee_id not in role_per_employee:
+    for employee in employees_data:
+        is_not_working = employee["NOTSCHEDULE"]
+        if(is_not_working=="Y"):
+            employees_to_ignore.append(employee["USERLOGIN"])
             continue
-        role = role_per_employee[employee_id]
-        pick_grade = int(employees_data['ליקוט'][ind])
-        transfer_grade = int(employees_data['רענון'][ind])
-        pick_height_grade = int(employees_data['גובה'][ind])
-        jack_grade = int(employees_data['גק'][ind])
-        if jack_grade > 0:
-            role = "jack"
-        start_time = times_per_employee[employee_id].split(":")  # float(employees_data['שעת_התחלה'][ind])
-        start_time = int(start_time[0]) + int(start_time[1]) / 60
+        employee_id = employee["USERLOGIN"]
+        # role = employees_data['תפקיד'][ind]
+
+        role = roles[employee["ROLE"]]
+        pick_grade = int(employee['GATHERING'])
+        transfer_grade = int(employee['REFRASHING'])
+        pick_height_grade = int(employee['HIGHET'])
+        jack_grade = int(employee['JACK'])
+
+
+        if employee_id  in times_per_employee:
+            start_time = times_per_employee[employee_id].split(":")  # float(employees_data['שעת_התחלה'][ind])
+            start_time = int(start_time[0]) + int(start_time[1]) / 60
+        else:
+            start_time = tnow
         amount_of_lines = lines_per_employee.get(employee_id, 0)
         abilities = {}
         if pick_grade != 0 and role == "pick":
@@ -544,7 +531,8 @@ def create_employees(employees_data, old_tasks_data):
             # else:
             #    raise Exception("something is wrong with abilities")
 
-    return employees_
+    return employees_,employees_to_ignore
+
 
 
 def get_random_schedule(employees, pick_tasks, transfer_tasks):

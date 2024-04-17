@@ -9,9 +9,8 @@ from Globals import *
 with open('auth.txt', 'r') as f:
     auth = f.read()
 
-def get_emplpoyees():
+def get_employees():
     url = host + "MEND_USERSCHEDULE"
-
     payload = {}
     headers = {
         'Authorization': auth
@@ -44,10 +43,10 @@ def get_stock2():
     return json.loads(text)["value"]
 
 # read open tasks
-def get_wtasks():
-    names_to_ignore = "(DOERLOGIN ne 'dimitri' and DOERLOGIN ne 'ליאור א' and  DOERLOGIN ne 'דסה' and  DOERLOGIN ne 'menashe'"
+def get_wtasks(employees_to_ignore):
+    names_to_ignore = ""
     if len(employees_to_ignore)>0:
-        names_to_ignore +=" and "
+        names_to_ignore = "("
         i = 0
         for name in employees_to_ignore:
             names_to_ignore +="DOERLOGIN ne '"+name +"'"
@@ -56,7 +55,7 @@ def get_wtasks():
                 names_to_ignore+=""
             else:
                 names_to_ignore += " and "
-    names_to_ignore+=")"
+        names_to_ignore+=")"
     print(names_to_ignore)
     # url = host +"WTASKS?$select=STZONECODE,WTASKNUM,PRIO,DOERLOGIN,STATDES,ADCSTARTED,WTASKTYPECODE,MEND_PRIO2,ADCSUDATE&$filter=WARHSNAME eq '500' and(STZONECODE eq 'C1' or STZONECODE eq 'W1' or STZONECODE eq 'W2') and DOERLOGIN ne 'dimitri' and (STATDES eq 'לביצוע' or STATDES eq 'מושהה') and (WTASKTYPECODE eq 'PIK' or WTASKTYPECODE eq 'RPI' or WTASKTYPECODE eq 'RPL' or WTASKTYPECODE eq 'MOV' or WTASKTYPECODE eq 'PUT')&$expand=WTASKITEMS_SUBFORM($select=PARTNAME, LOCNAME, PTQUANT,KLINE)"
     # url = host +"WTASKS?$select=STZONECODE,WTASKNUM,PRIO,DOERLOGIN,STATDES,ADCSTARTED,WTASKTYPECODE,MEND_PRIO2,ADCSUDATE&$filter=WARHSNAME eq '500' and CDES ne 'סניף*' and(STZONECODE eq 'C1' or STZONECODE eq 'W1' or STZONECODE eq 'W2') and DOERLOGIN ne 'dimitri' and (STATDES eq 'לביצוע' or STATDES eq 'מושהה') and (WTASKTYPECODE eq 'PIK' or WTASKTYPECODE eq 'RPI' or WTASKTYPECODE eq 'RPL' or WTASKTYPECODE eq 'MOV' or WTASKTYPECODE eq 'PUT') and ADCSTARTED ne 'Y'&$expand=WTASKITEMS_SUBFORM($select=PARTNAME, LOCNAME, PTQUANT,KLINE)"
@@ -84,7 +83,7 @@ def get_wtasks2():
     return json.loads(text)["value"]
 
 
-def get_old_tasks():
+def get_old_tasks(employees_to_ignore):
     date = str(datetime.date.today())
     names_to_ignore = ""
     if len(employees_to_ignore)>0:
@@ -337,6 +336,4 @@ def patch_upadate_location_for_items(schedule):
                 f.write(str(payload) + "\n")
     f.close()
 
-
-print(get_emplpoyees())
-
+#print(get_employees())

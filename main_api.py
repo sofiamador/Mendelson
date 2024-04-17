@@ -3,18 +3,20 @@ from functions import *
 from web_services import *
 import time, datetime
 
+employees_to_ignore=[]
 while True:
     # get old tasks
-    old_task_data = get_old_tasks()
+    old_task_data = get_old_tasks(employees_to_ignore)
     # read employees input and create employees
-    employees_data = get_emplpoyees()
-    employees = create_employees(employees_data, old_task_data)
+    #employees_data = read_input("employees.xlsx")
+    employees_data = get_employees()
+    employees,employees_to_ignore = create_employees(employees_data, old_task_data)
     if (len(employees) != 0):
         employees_pick_height, employees_pick, employees_transfer, employees_jack = get_employees_by_skill(employees)
         schedule = init_schedule(employees)
 
         # get wtasks
-        lines_input = get_wtasks()
+        lines_input = get_wtasks(employees_to_ignore)
         lines, refresh_ids = create_lines_from_json_after_gal(lines_input)
 
         # Use the filter() function to filter out lines with is_store set to False
@@ -30,7 +32,6 @@ while True:
 
             inventory_no_c = clear_c_from_inventory_dict(inventory_dict)
             transfer_tasks, item_ids_in_transfer = create_transfer_tasks(lines, inventory_no_c, refresh_ids)
-
             if len(transfer_tasks) > 0 and len(employees_pick_height) > 1:
                 print("transfer" + str(len(transfer_tasks)))
                 if len(employees_transfer) == 0:
@@ -57,7 +58,6 @@ while True:
         pick_orders, pick_height_orders, pick_jack_orders = get_order_by_ability(lines_after_gal_by_order)
 
         #################### create unit one line orders #################### create unit one line orders
-
         pick_orders_one_line = break_orders_one_line(pick_orders)
         all_pick_orders = pick_orders_one_line + pick_orders
 
@@ -71,19 +71,13 @@ while True:
 
         #################### create unit one line orders ####################
         schedule_pick, schedule_pick_height, schedule_jack = get_schedule_by_skill(schedule, employees_pick_height,
-                                                                                employees_pick, employees_jack)
-
-        if len(employees_pick) + len(employees_jack)  != 0:
+                                                                                   employees_pick, employees_jack)
+        if len(employees_pick) + len(employees_jack) != 0:
             if is_allocate_together_pick_and_jack(employees_pick, employees_jack):
-
                 allocate_pick_and_jack_orders(all_pick_jack_orders, all_pick_orders, schedule_jack, schedule_pick,
                                               employees_jack, employees_pick)
-
             else:
-
                 allocate_pick_jack_orders(all_pick_jack_orders, schedule_jack, employees_jack)
-
-
         # if len(employees_pick) != 0:
         #     allocate_pick_orders(all_pick_orders, schedule_pick, employees_pick)
         # if len(employees_jack) != 0:
@@ -91,7 +85,6 @@ while True:
         # (len(employees_pick) != 0 and  len(employees_jack) != 0) or  (len(employees_pick) != 0 and  len(employees_jack) == 0)
         if len(employees_pick_height) != 0:
             allocate_pick_height_orders(all_pick_height_orders, schedule_pick_height, employees_pick_height)
-
 
         # TODO add secondary sort according to amount of lines
 
