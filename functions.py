@@ -4,8 +4,7 @@ import statistics
 from operator import attrgetter
 
 import pandas as pd
-from Enteties import Line, TaskPick, StreetObj, Employee, Location, LineNoLocation, GroupOfItem, TaskTransfer, Order, \
-    GroupOfOrders
+from Enteties import *
 from Globals import *
 
 import matplotlib.pyplot as plt
@@ -178,9 +177,8 @@ def create_lines_from_json_after_gal(lines_input_):
             order_id = task["WTASKNUM"]
             warehouse_id = task["STZONECODE"]
             prev_allocation = task["DOERLOGIN"]
-            if task["CDES"] is not None and "סניף" in task["CDES"]:  # TODO @Sofi
+            if task["CDES"] is not None and "סניף" in task["CDES"]:
                 is_store = True
-                # task["CDES"]
             else:
                 is_store = False
             if (task["MEND_PRIO2"] > 0):
@@ -481,6 +479,7 @@ def create_employees(employees_data, old_tasks_data):
         # role = employees_data['תפקיד'][ind]
 
         role = roles[employee["ROLE"]]
+
         pick_grade = int(employee['GATHERING'])
         transfer_grade = int(employee['REFRASHING'])
         pick_height_grade = int(employee['HIGHET'])
@@ -511,25 +510,25 @@ def create_employees(employees_data, old_tasks_data):
         if start_time not in start_time_dict.keys():
             start_time_dict[start_time] = []
         start_time_dict[start_time].append(employee)
+    if len(start_time_dict)!=0:
+        if 12 <= HOUR <= max_hour_to_ignore_noon:  # ASK BEN
+            min_start_time = min(start_time_dict.keys())
+            max_start_time = max(start_time_dict.keys())
 
-    if 12 <= HOUR <= max_hour_to_ignore_noon:  # ASK BEN
-        min_start_time = min(start_time_dict.keys())
-        max_start_time = max(start_time_dict.keys())
+            employees_min = start_time_dict[min_start_time]
+            dict_ability_avg = calculate_average_lines_per_hour(employees_min)
 
-        employees_min = start_time_dict[min_start_time]
-        dict_ability_avg = calculate_average_lines_per_hour(employees_min)
+            employees_max = start_time_dict[max_start_time]
+            for employee in employees_max:
+                if 'pick' in employee.abilities.keys():
+                    employee.amount_of_lines_in_shift_per_hour = dict_ability_avg['pick']
+                elif "pick_height" in employee.abilities.keys():
+                    employee.amount_of_lines_in_shift_per_hour = dict_ability_avg["pick_height"]
+                else:
+                    employee.amount_of_lines_in_shift_per_hour = dict_ability_avg["transfer"]
 
-        employees_max = start_time_dict[max_start_time]
-        for employee in employees_max:
-            if 'pick' in employee.abilities.keys():
-                employee.amount_of_lines_in_shift_per_hour = dict_ability_avg['pick']
-            elif "pick_height" in employee.abilities.keys():
-                employee.amount_of_lines_in_shift_per_hour = dict_ability_avg["pick_height"]
-            else:
-                employee.amount_of_lines_in_shift_per_hour = dict_ability_avg["transfer"]
-
-            # else:
-            #    raise Exception("something is wrong with abilities")
+                # else:
+                #    raise Exception("something is wrong with abilities")
 
     return employees_,employees_to_ignore
 
@@ -1182,8 +1181,7 @@ def fix_if_one_group_is_empty(skilled_employees, other_employees, orders_for_ski
 
 
 def is_allocate_together_pick_and_jack(employees_pick, employees_jack):
-    return (len(employees_pick) != 0 and len(employees_jack) != 0) or (
-            len(employees_pick) != 0 and len(employees_jack) == 0)
+    return (len(employees_pick) != 0 and len(employees_jack) != 0) or (len(employees_pick) != 0 and len(employees_jack) == 0)
 
 
 def allHaveMinAmount(employees_jack):
@@ -1342,9 +1340,7 @@ def allocate_pick_and_jack_orders(all_pick_jack_orders, all_pick_orders: list, s
                                               employees_jack=other_employees_jack, employees_pick=other_employees_pick,
                                               schedule_jack=schedule_jack, schedule_pick=schedule_pick)
 
-    # allocate_jack_tasks_to_jack_employees(all_pick_jack_orders,schedule_jack,employees_jack)
-    # allocate_tasks_to_pick_employees(all_pick_jack_orders,all_pick_orders,schedule_pick,employees_pick)
-    # can not take tasks from jack orders in area a2
+
 
 
 def allocate_pick_jack_orders(jack_orders, schedule, employees_jack):

@@ -55,6 +55,8 @@ while True:
         lines_after_gal_by_order = filter_orders_that_have_lines_with_items_from_list(lines_after_gal_by_order,
                                                                                       item_ids_in_transfer)
         lines_after_gal_by_order = filter_first_allocated_orders(lines_after_gal_by_order, employees, schedule)
+
+
         pick_orders, pick_height_orders, pick_jack_orders = get_order_by_ability(lines_after_gal_by_order)
 
         #################### create unit one line orders #################### create unit one line orders
@@ -73,20 +75,16 @@ while True:
         schedule_pick, schedule_pick_height, schedule_jack = get_schedule_by_skill(schedule, employees_pick_height,
                                                                                    employees_pick, employees_jack)
         if len(employees_pick) + len(employees_jack) != 0:
-            if is_allocate_together_pick_and_jack(employees_pick, employees_jack):
+
+            if is_allocate_together_pick_and_jack(employees_pick, employees_jack): # len(employees_pick) != 0
                 allocate_pick_and_jack_orders(all_pick_jack_orders, all_pick_orders, schedule_jack, schedule_pick,
                                               employees_jack, employees_pick)
             else:
                 allocate_pick_jack_orders(all_pick_jack_orders, schedule_jack, employees_jack)
-        # if len(employees_pick) != 0:
-        #     allocate_pick_orders(all_pick_orders, schedule_pick, employees_pick)
-        # if len(employees_jack) != 0:
-        #     allocate_pick_jack_orders(all_pick_jack_orders, schedule_jack, employees_jack)
-        # (len(employees_pick) != 0 and  len(employees_jack) != 0) or  (len(employees_pick) != 0 and  len(employees_jack) == 0)
+
         if len(employees_pick_height) != 0:
             allocate_pick_height_orders(all_pick_height_orders, schedule_pick_height, employees_pick_height)
 
-        # TODO add secondary sort according to amount of lines
 
         for e, tasks in schedule_pick.items():
             schedule[e] = sorted(tasks, key=lambda x: x.priority)
@@ -99,7 +97,7 @@ while True:
 
         # patch -  allocate tasks to employees
         print("before: ", datetime.datetime.now())
-        patch_update_allocation(schedule)
+        #patch_update_allocation(schedule)
         print("after: ", datetime.datetime.now())
 
     time.sleep(600)
