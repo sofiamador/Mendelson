@@ -67,8 +67,7 @@ def get_wtasks(employees_to_ignore):
 
     payload = {}
     headers = {
-        'X-App-Id': 'APPSS04',
-        'X-App-Key': '18B75A16244B4664BF5A3C5AD58BCAEA',
+
         'Authorization': auth
     }
 
@@ -103,8 +102,6 @@ def get_old_tasks(employees_to_ignore):
                                                    "and(STZONECODE eq 'C1' or STZONECODE eq 'W1' or STZONECODE eq 'W2' or STZONECODE eq 'A2') and ADCSTARTED eq 'Y'"+names_to_ignore+"&$expand="
     payload = {}
     headers = {
-        'X-App-Id': 'APPSS04',
-        'X-App-Key': '18B75A16244B4664BF5A3C5AD58BCAEA',
         'Authorization': auth
     }
 
@@ -180,8 +177,6 @@ def patch_update_allocation(schedule):
                         "method": "PATCH",
                         "url": host + "WTASKS('" + order.order_id + "')",
                         "headers": {
-                            "X-App-Id": "APPSS04",
-                            "X-App-Key": "18B75A16244B4664BF5A3C5AD58BCAEA",
                             "Content-Type": "application/json",
                             "Authorization": auth
                         },
@@ -212,8 +207,6 @@ def patch_update_allocation(schedule):
                     "method": "PATCH",
                     "url": host + "WTASKS('" + t.order_id + "')",
                     "headers": {
-                        "X-App-Id": "APPSS04",
-                        "X-App-Key": "18B75A16244B4664BF5A3C5AD58BCAEA",
                         "Content-Type": "application/json",
                         "Authorization": auth
                     },
@@ -229,8 +222,7 @@ def patch_update_allocation(schedule):
 
     url = host + "$batch"
     headers = {
-        "X-App-Id": "APPSS04",
-        "X-App-Key": "18B75A16244B4664BF5A3C5AD58BCAEA",
+
         "Content-Type": "application/json",
         "Authorization": auth
     }
