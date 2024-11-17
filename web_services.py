@@ -10,7 +10,7 @@ with open('auth.txt', 'r') as f:
     auth = f.read()
 
 def get_employees():
-    url = host + "MEND_USERSCHEDULE"
+    url = host + "MEND_USERSCHEDULE?$select=*&$filter=MJD_WARHSNAME eq '500'"
     payload = {}
     headers = {
         'Authorization': auth

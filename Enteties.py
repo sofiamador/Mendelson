@@ -11,9 +11,13 @@ class Location():
 
         if len(self.loc_lst) > 2:
             self.row = self.loc_lst[2]
+        else:
+            self.row = "None"
 
         if len(self.loc_lst) > 3:
             self.cell = self.loc_lst[3]
+        else:
+            self.cell = "None"
 
         if quantity is not None:
             self.quantity = float(quantity)
